@@ -1,0 +1,24 @@
+@import 'material-symbols/outlined.css';
+
+@layer base {
+  .icon {
+    @apply font-['Material_Symbols_Outlined'] text-lg;
+  }
+}
+.fillHover {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+
+  transition: font-variation-settings 200ms ease;
+
+  &:hover {
+    font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+  }
+}

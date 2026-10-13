@@ -1,0 +1,9 @@
+@use '_variables.scss';
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-backg: var(--white);
+  --color-sf1: var(--grey-50);
+  --color-sf2: var(--grey-100);
+  --color-foreg: var(--black);
+}

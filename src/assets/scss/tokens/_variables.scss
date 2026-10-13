@@ -1,0 +1,112 @@
+:root {
+  //   Neutral colors
+  --white: #ffffff;
+  --grey-50: #f9f8f7;
+  //   --grey-100: #;
+  //   --grey-200: #;
+  //   --grey-300: #;
+  //   --grey-400: #;
+  //   --grey-500: #;
+  //   --grey-600: #;
+  //   --grey-700: #;
+  --grey-800: #5f5e59;
+  --grey-900: #2c2c2b;
+  --black: #171717;
+
+  --yellow: #ffc766;
+  --blue: #2d83e2;
+  --red: #e16358;
+}
+
+// Tema por defecto (modo claro)
+@theme {
+  /* COLORES ---------------------------------------------------------------------*/
+  /* Variables de color (--color-*) */
+  --color-blue: var(--blue);
+
+  --color-backg: var(--white);
+  --color-sf1: var(--grey-50);
+  --color-sf2: var(--grey-100);
+  --color-foreg: var(--black);
+
+  --color-border: var(--black);
+
+  --color-accent: var(--blue);
+  --color-danger: var(--red);
+
+  /* UNIDADES --------------------------------------------------------------------*/
+  /* Variables de border-radius (--radius-*) */
+  --radius-12: 12px;
+
+  /* Variables de espaciado (--spacing-*) esto es el equivalente a definir unidades numéricas en tailwind 
+    a mí­ esto me gusta hacerlo en nuemritos, mientras que el radius quizÃ¡s tiene más sentido hacerlo de manera semÃ¡ntica (sm, md. lg...)
+  */
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+
+  /* TEXTO Y TIPOGRAFÍA ----------------------------------------------------------*/
+  /* Variables de font-family (--font-*) */
+  --font-main: 'Inter', system-ui, sans-serif;
+  --font-sans: var(--font-inter-import), sans-serif;
+  --font-inter: var(--font-inter-import), sans-serif;
+
+  /* Variables de font-size (--text-*) con su leading asociado*/
+  --text-xs: 12px;
+  --text-xs--line-height: 1.5;
+  --text-sm: 14px;
+  --text-sm--line-height: 1.2;
+  --text-md: 16px;
+  --text-md--line-height: 1.5;
+  --text-lg: 18px;
+  --text-lg--line-height: 1.3;
+  --text-xl: 20px;
+  --text-xl--line-height: 1.3;
+  --text-2xl: 24px;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 30px;
+  --text-3xl--line-height: 1.3;
+  --text-4xl: 40px;
+  --text-4xl--line-height: 1.2;
+
+  /* Variables de line-height (--leading-*) */
+  //   --leading-xl: 40px;
+
+  /* Variables de font-weight (--font-weight-*) */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* BREAKPOINTS -----------------------------------------------------------------*/
+  /* Variables de width para usar como breakpoints para hacer el responsive (--breakpoint-*) */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+
+  /* SOMBRAS / ELEVACIONES -------------------------------------------------------*/
+  /* Variables de box-shadow (--shadow-*) */
+  --shadow-sm: 0 4px 4px rgb(0 0 0 / 0.08);
+  --shadow-card: 0 4px 20px rgb(0 0 0 / 0.16);
+
+  /* OPACIDAD --------------------------------------------------------------------*/
+  /* Variables de opacity (--opacity-*) */
+  --opacity-5: 5%;
+  --opacity-25: 25%;
+  --opacity-75: 75%;
+
+  /* ANIMACIONES / TRANSICIONES -----------------------------------------------------------*/
+  /* Variables para definir curvas de animaciÃ³n de ease (--ease-*) */
+  --ease-custom: cubic-bezier(0.5, 0.9, 0.3, 0.9);
+  --ease-smooth: cubic-bezier(0.2, 0.9, 0.3, 1);
+
+  /* Variables para definir la duraciÃ³n de una animaciÃ³n (--duration-*) */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+
+  /* PROPORCIONES -----------------------------------------------------------*/
+  /* Variables para definir aspect-ratio (--aspect-ratio-*) */
+  --aspect-old-tv: 4/3;
+}

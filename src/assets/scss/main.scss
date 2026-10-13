@@ -1,0 +1,57 @@
+@use './tokens/variables';
+@use './tokens/icons';
+// @use './tokens/lightTheme';
+@use './tokens/darkTheme';
+
+@import 'tailwindcss';
+
+* {
+  // border: 1px solid salmon;
+}
+
+body {
+  @apply mx-auto h-[100dvh] w-full;
+  @apply flex;
+  @apply bg-backg text-foreg;
+  @apply font-sans;
+}
+
+// Necesito anidar los estilos en capas para que funcione como quiero el orden de prioridad
+// Tailwind trae su propia jerarquía de capas y todo lo que no meta en una capa tendrá prioridad sobre las capas de TW
+
+// Este orden es: @layer theme -> base -> components -> utilities;
+
+// me voy a ceñir a estas capas ya que quiero poder añadir estilos al usar componentes y que estos tengan prioridad
+
+@layer base {
+  // TIPOGRAPHY
+  h1,
+  .display {
+    @apply text-4xl font-bold;
+  }
+  h2,
+  .h1 {
+    @apply text-3xl font-semibold;
+  }
+  h3,
+  .h2 {
+    @apply text-2xl font-semibold;
+  }
+  h4,
+  .h3 {
+    @apply text-xl font-semibold;
+  }
+  h5,
+  .h4 {
+    @apply text-lg font-semibold;
+  }
+  p {
+    @apply text-md font-regular;
+  }
+  small {
+    @apply text-sm font-regular;
+  }
+  button {
+    @apply text-md font-medium;
+  }
+}

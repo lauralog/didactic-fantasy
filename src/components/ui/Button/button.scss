@@ -1,0 +1,32 @@
+// Necesito esto para cargar las variables de tailwind y que funcionen, que están definidas en tokens
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .button {
+    @apply py-2 px-4;
+    @apply rounded-[8px] border-2;
+    @apply text-lg;
+    @apply cursor-pointer;
+    transition:
+      transform 150ms ease,
+      opacity 150ms ease;
+
+    &:hover {
+      @apply opacity-80;
+    }
+
+    &:active {
+      @apply scale-[.97];
+    }
+
+    &--primary {
+      @apply border-danger;
+      @apply bg-accent;
+      @apply text-white;
+    }
+    &--secondary {
+      background-color: var(--yellow);
+      color: var(--black);
+    }
+  }
+}

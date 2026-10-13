@@ -1,0 +1,8 @@
+@use '_variables.scss';
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-backg: var(--black);
+  --color-sf1: var(--grey-900);
+  --color-foreg: var(--white);
+}

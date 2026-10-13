@@ -1,0 +1,53 @@
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .appPage {
+    @apply grid;
+    grid-template-columns: repeat(12, 1fr);
+    & > * {
+      grid-column: 4 / 10;
+    }
+
+    &__imgBanner {
+      grid-column: 1 / -1;
+      @apply -z-10 w-full h-[200px];
+      @apply object-cover opacity-20;
+    }
+
+    &__header {
+      .headerIcon {
+        @apply h-[42px] flex;
+        .icon {
+          @apply text-[78px] -mt-[calc(78px/1.5)];
+        }
+      }
+      .headerControls {
+        @apply pt-4 pb-2;
+      }
+      .headerTitle {
+        @apply py-3;
+      }
+    }
+
+    &__block {
+      &--h1 {
+        @apply p-[6px] pt-[30px];
+      }
+      &--h2 {
+        @apply p-[6px] pt-[26px];
+      }
+      &--h3 {
+        @apply p-[6px] pt-[22px];
+      }
+      &--h4 {
+        @apply p-[6px] pt-[18px];
+      }
+      &--h5 {
+        @apply p-[6px] pt-[6px];
+      }
+      &--p {
+        @apply p-[6px] pt-[6px];
+      }
+    }
+  }
+}
