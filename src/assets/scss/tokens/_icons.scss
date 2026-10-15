@@ -3,6 +3,15 @@
 @layer base {
   .icon {
     @apply font-['Material_Symbols_Outlined'] text-lg;
+
+    &_size {
+      &-md {
+        @apply h-[18px] text-[18px];
+      }
+      &-lg {
+        @apply h-[18px] text-[18px];
+      }
+    }
   }
 }
 .fillHover {

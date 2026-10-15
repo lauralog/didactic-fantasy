@@ -7,13 +7,14 @@
 
 * {
   // border: 1px solid salmon;
+  @apply box-border;
 }
 
 body {
   @apply mx-auto h-[100dvh] w-full;
   @apply flex;
   @apply bg-backg text-foreg;
-  @apply font-sans;
+  @apply font-sans text-[16px];
 }
 
 // Necesito anidar los estilos en capas para que funcione como quiero el orden de prioridad

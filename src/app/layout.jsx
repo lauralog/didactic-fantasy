@@ -3,7 +3,6 @@ import '@/assets/scss/main.scss';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-inter-import',
 });
 

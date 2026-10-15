@@ -11,7 +11,7 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab }) => {
         <button
           key={key}
           onClick={() => setActiveTab(key)}
-          className={`${activeTab === key ? 'active' : ''} inline-flex flex-nowrap capitalize`}
+          className={`${activeTab === key ? 'active' : ''}  capitalize`}
         >
           {tab.icon && <span className="icon">{tab.icon}</span>}
           {tab.label}

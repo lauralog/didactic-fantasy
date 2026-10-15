@@ -3,8 +3,9 @@ import './appPage.scss';
 // Components
 import Button from '@/components/ui/Button/Button';
 
-const AppPage = ({ className = '', ...props }) => {
-  const pageTitle = 'Título de la página';
+const AppPage = ({ page, className = '', ...props }) => {
+  const { icon, title } = page;
+
   return (
     <section className={`appPage ${className}`} {...props}>
       <img
@@ -14,14 +15,14 @@ const AppPage = ({ className = '', ...props }) => {
       />
       <div className="appPage__header">
         <div className="headerIcon">
-          <span className="icon">home</span>
+          <span className="icon">{icon}</span>
         </div>
         <div className="headerControls">
           <span>Backlinks</span>
           <span>Comments</span>
         </div>
         <div className="headerTitle">
-          <h1 className="display">{pageTitle}</h1>
+          <h1 className="display">{title}</h1>
         </div>
       </div>
 
