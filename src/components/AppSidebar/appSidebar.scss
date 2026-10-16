@@ -4,21 +4,63 @@
   .appSidebar {
     @apply w-[300px] bg-sf1 text-foreg;
     @apply border-r border-foreg/10;
-    @apply p-0 [&>*]:px-4 [&>*]:py-2;
+    @apply p-0 [&>*]:px-6; // [&>*]:py-2
     @apply flex flex-col;
+
+    &__tabGroup {
+      @apply px-[6px] pt-[12px] pb-[8px];
+      @apply flex items-center justify-start gap-[2px];
+
+      .tabItem {
+        @apply h-[32px];
+        @apply pl-[5px] pr-[8px];
+        @apply flex items-center;
+        @apply rounded-[8px];
+        @apply capitalize;
+
+        &__icon {
+          @apply text-[#A6A5A2];
+        }
+        &__label {
+          @apply pl-[6px];
+          @apply text-[#7D7A75];
+        }
+
+        &:hover {
+          @apply bg-foreg/5;
+        }
+
+        &--active {
+          @apply bg-foreg/5;
+          .tabItem__icon {
+            @apply text-[#55534E];
+          }
+          .tabItem__label {
+            @apply text-foreg;
+          }
+        }
+      }
+    }
 
     &__pagesNav {
       @apply px-2 h-full overflow-y-scroll;
 
       .pageList {
-        @apply mt-4 [&>*]:px-2;
+        @apply mb-[12px] [&>*]:px-2;
         @apply flex flex-col gap-[1px];
+        &__title {
+          @apply h-[30px] flex items-center;
+          @apply rounded-sm text-xs font-medium text-[#a19e99];
+          &:hover {
+            @apply bg-foreg/5 text-foreg;
+          }
+        }
 
         /* _sidebarListItem */
         &__item {
           @apply py-1.25 px-2;
           @apply flex items-center flex-nowrap text-nowrap overflow-x-hidden;
-          @apply rounded-sm text-[#5F5E59];
+          @apply rounded-sm text-sm text-[#5F5E59];
 
           .icon {
             @apply mr-2;

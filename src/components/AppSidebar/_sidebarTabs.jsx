@@ -6,15 +6,16 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
 
   return (
-    <nav className="flex gap-2">
+    <nav className="appSidebar__tabGroup">
       {sidebarTabs.map((tab, key) => (
         <button
           key={key}
-          onClick={() => setActiveTab(key)}
-          className={`${activeTab === key ? 'active' : ''}  capitalize`}
+          data-active={activeTab === tab.label}
+          onClick={() => setActiveTab(tab.label)}
+          className={`tabItem ${activeTab === tab.label ? 'tabItem--active' : ''}`}
         >
-          {tab.icon && <span className="icon">{tab.icon}</span>}
-          {tab.label}
+          {tab.icon && <span className="icon tabItem__icon">{tab.icon}</span>}
+          <span className="tabItem__label">{tab.label}</span>
         </button>
       ))}
     </nav>

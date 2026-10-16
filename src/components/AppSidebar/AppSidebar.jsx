@@ -12,12 +12,17 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
     <aside className={`appSidebar ${className}`} {...props}>
       Sidebar header <br /> Search
       {/* TABS */}
-      <SidebarTabsMenu sidebarTabs={sidebarTabs} initialTab={'home'} />
+      <SidebarTabsMenu
+        className={`appSidebar__tabGroup ${className}`}
+        sidebarTabs={sidebarTabs}
+        initialTab={'home'}
+      />
       {/* PAGES */}
+      {/* >>>> Convertir pageList's a componente */}
       {/* ___Favs */}
       <nav className={`appSidebar__pagesNav ${className}`}>
         <ul className="pageList">
-          <small>Favourites</small>
+          <small className="pageList__title">Favourites</small>
           {notionPages
             .filter(({ isFav }) => isFav === true)
             .map((page) => (
@@ -32,7 +37,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
 
         {/* ___Shared */}
         <ul className="pageList">
-          <small>Shared</small>
+          <small className="pageList__title">Shared</small>
           {notionPages
             .filter(({ isShared }) => isShared === true)
             .map((page) => (
@@ -47,7 +52,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
 
         {/* ___Private */}
         <ul className="pageList">
-          <small>Private</small>
+          <small className="pageList__title">Private</small>
           {notionPages
             .filter(({ isShared }) => !isShared)
             .map((page) => (
