@@ -4,6 +4,13 @@ import {
   CalendarToday as CalendarTodayIcon,
 } from '@material-symbols-svg/react';
 
+export const notifications = [
+  { item: 'notification 1' },
+  { item: 'notification 2' },
+  { item: 'notification 3' },
+  { item: 'notification 4' },
+];
+
 export const sidebarTabs = [
   {
     // home: {
@@ -27,3 +34,5 @@ export const sidebarTabs = [
     // },
   },
 ];
+
+// export default {notifications, sidebarTabs};

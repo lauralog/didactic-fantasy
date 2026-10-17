@@ -16,13 +16,22 @@
         @apply flex items-center gap-[2px];
         @apply text-[20px];
         &__iconButton {
-          @apply w-[28px] aspect-square;
+          @apply relative w-[28px] aspect-square;
           @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
           @apply flex items-center text-center;
           @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
 
           &:hover {
             @apply bg-foreg/10;
+          }
+
+          .notificationBlubble {
+            @apply absolute top-0 right-0;
+            @apply p-[1px] h-[12px] aspect-square;
+            @apply inline-flex items-center justify-center shrink-0;
+            @apply rounded-full pointer-events-none;
+            @apply bg-danger text-backg;
+            @apply text-[9px] font-semibold;
           }
         }
       }

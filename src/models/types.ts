@@ -17,6 +17,14 @@ interface NotionPage {
   parent: String; // ID de la página padre si la tiene
 }
 
+// Las páginas contienen un array content que
+// guarda el orden de renderizado los ids de
+// los bloques, de esa forma los bloques no
+// tienen ni necesitan de un att. en referencia a
+// la página ya que se gestionan desde estas.
+// Esto es mega ineficiente en la vida real pero
+// para este ejercicio voy a hacerlo así
+
 interface NotionBlock {
   id: string;
   content: any;
@@ -25,6 +33,8 @@ interface NotionBlock {
   lastModifiedBy: string; // usuario que ha creado el bloque
   creationDate: string;
   lastModifiedDate: string;
+  // bgColor
+  // textColor
 }
 
 interface NotionUser {

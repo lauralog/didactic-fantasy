@@ -1,13 +1,14 @@
 'use client';
 import './appSidebar.scss';
 // Data
-import { sidebarTabs } from '@/models/appMenus';
+import { notifications, sidebarTabs } from '@/models/appMenus';
 import notionPages from '@/models/pages.json';
 // Components
 import SidebarTabsMenu from './_sidebarTabs';
 import SidebarListItem from './_sidebarListItem';
 
 const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
+  console.log(notifications);
   return (
     <aside className={`appSidebar ${className}`} {...props}>
       {/* HEADER */}
@@ -21,6 +22,9 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
         <div className="headerGroup">
           {/* Refactor >>> Button Component */}
           <button className="headerGroup__iconButton">
+            {notifications.length > 0 && (
+              <span className="notificationBlubble">{notifications.length}</span>
+            )}
             <span className="icon icon_size-md">inbox</span>
           </button>
           {/* Refactor >>> Button Component */}
@@ -43,7 +47,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
         initialTab={'home'}
       />
       {/* PAGES */}
-      {/* >>>> Convertir pageList's a componente */}
+      {/* Refactor >>> Convertir pageList's a componente */}
       {/* ___Favs */}
       <nav className={`appSidebar__pagesNav ${className}`}>
         <ul className="pageList">
