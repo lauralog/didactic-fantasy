@@ -2,6 +2,7 @@
 
 @layer components {
   .appPage {
+    @apply pb-[30dvh];
     @apply grid;
     grid-template-columns: repeat(12, 1fr);
     & > * {

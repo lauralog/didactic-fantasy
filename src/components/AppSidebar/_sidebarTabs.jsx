@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const SidebarTabsMenu = ({ sidebarTabs, initialTab }) => {
+const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
 
   return (

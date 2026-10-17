@@ -14,8 +14,8 @@
   --black: #171717;
 
   --yellow: #ffc766;
-  --blue: #2d83e2;
-  --notion-blue: #2d83e2;
+  --blue: #3083de;
+  --notion-blue: #3083de;
   --red: #e16358;
 }
 
@@ -23,7 +23,6 @@
 @theme {
   /* COLORES ---------------------------------------------------------------------*/
   /* Variables de color (--color-*) */
-  --color-notion-blue: var(--notion-blue);
 
   --color-backg: var(--white);
   --color-sf1: var(--grey-50);
@@ -32,7 +31,8 @@
 
   --color-border: var(--black);
 
-  --color-accent: var(--blue);
+  --color-notion-blue: var(--notion-blue);
+  --color-primary: var(--blue);
   --color-danger: var(--red);
 
   /* UNIDADES --------------------------------------------------------------------*/

@@ -9,31 +9,12 @@
     @apply bg-sf1 text-foreg;
 
     &__header {
-      @apply min-h-[44px] max-h-[44px];
+      @apply h-[44px] shrink-0;
       @apply px-[12px] flex;
 
       .headerGroup {
         @apply flex items-center gap-[2px];
         @apply text-[20px];
-        &__iconButton {
-          @apply relative w-[28px] aspect-square;
-          @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
-          @apply flex items-center text-center;
-          @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
-
-          &:hover {
-            @apply bg-foreg/10;
-          }
-
-          .notificationBlubble {
-            @apply absolute top-0 right-0;
-            @apply p-[1px] h-[12px] aspect-square;
-            @apply inline-flex items-center justify-center shrink-0;
-            @apply rounded-full pointer-events-none;
-            @apply bg-danger text-backg;
-            @apply text-[9px] font-semibold;
-          }
-        }
       }
     }
 
@@ -134,6 +115,38 @@
           &[data-active='true'] {
             @apply bg-foreg/5 text-foreg;
           }
+        }
+      }
+    }
+
+    &__footer {
+      @apply px-[8px];
+      @apply w-full h-[44px] shrink-0;
+      @apply flex items-center gap-[2px];
+      @apply border-t border-foreg/10;
+
+      .icon {
+        @apply text-[#8E8B86];
+      }
+
+      .userToggle {
+        @apply py-[4px] px-[8px];
+        @apply flex-1 h-[30px];
+        @apply flex items-center overflow-hidden;
+        @apply text-sm;
+        &__avatarWrapper {
+          @include imgWrapper(cover);
+          @apply mr-[8px];
+          @apply h-[22px] aspect-square;
+          @apply rounded-full;
+        }
+        &__username {
+          @apply flex-1 truncate text-nowrap;
+          @apply text-[#5f5e59] font-medium;
+          @apply font-medium capitalize;
+        }
+        &__icon {
+          // @apply shrink-0;
         }
       }
     }

@@ -18,22 +18,40 @@
       }
     }
   }
+
+  .iconButton {
+    @apply relative w-[28px] aspect-square;
+    @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
+    @apply flex items-center text-center;
+    @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
+
+    &:hover {
+      @apply bg-foreg/10;
+    }
+
+    &__bubble {
+      @apply absolute top-0 right-0;
+      @apply p-[1px] aspect-square shrink-0;
+      @apply inline-flex items-center justify-center;
+      @apply rounded-full pointer-events-none;
+      @apply text-[9px] text-backg font-semibold;
+
+      &--notification {
+        @apply bg-danger;
+      }
+      &--new {
+        @apply bg-primary;
+        @apply outline-1 outline-white;
+      }
+
+      &_size {
+        &-sm {
+          @apply h-[8px];
+        }
+        &-md {
+          @apply h-[12px];
+        }
+      }
+    }
+  }
 }
-
-// .fillHover {
-//   font-variation-settings:
-//     'FILL' 0,
-//     'wght' 400,
-//     'GRAD' 0,
-//     'opsz' 24;
-
-//   // transition: font-variation-settings 200ms ease;
-
-//   &:hover {
-//     font-variation-settings:
-//       'FILL' 1,
-//       'wght' 400,
-//       'GRAD' 0,
-//       'opsz' 24;
-//   }
-// }

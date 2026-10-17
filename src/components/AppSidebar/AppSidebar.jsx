@@ -1,11 +1,12 @@
 'use client';
 import './appSidebar.scss';
 // Data
-import { notifications, sidebarTabs } from '@/models/appMenus';
+import { notifications, sidebarTabs, user } from '@/models/appMenus';
 import notionPages from '@/models/pages.json';
 // Components
 import SidebarTabsMenu from './_sidebarTabs';
 import SidebarListItem from './_sidebarListItem';
+import SidebarUserFooter from './_sidebarUserFooter';
 
 const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
   console.log(notifications);
@@ -15,20 +16,22 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
       <header className="appSidebar__header">
         <div className="headerGroup flex-1">
           {/* Refactor >>> Button Component */}
-          <button className="headerGroup__iconButton">
+          <button className="iconButton">
             <span className="icon icon_size-md">thumbnail_bar</span>
           </button>
         </div>
         <div className="headerGroup">
           {/* Refactor >>> Button Component */}
-          <button className="headerGroup__iconButton">
+          <button className="iconButton">
             {notifications.length > 0 && (
-              <span className="notificationBlubble">{notifications.length}</span>
+              <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
+                {notifications.length}
+              </span>
             )}
             <span className="icon icon_size-md">inbox</span>
           </button>
           {/* Refactor >>> Button Component */}
-          <button className="headerGroup__iconButton">
+          <button className="iconButton">
             <span className="icon icon_size-md">edit_square</span>
           </button>
         </div>
@@ -95,7 +98,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
         </ul>
       </nav>
       {/* USER MENU */}
-      <SidebarTabsMenu sidebarTabs={sidebarTabs} initialTab={'home'} />
+      <SidebarUserFooter user={user} />
     </aside>
   );
 };

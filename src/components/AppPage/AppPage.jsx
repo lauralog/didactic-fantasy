@@ -37,9 +37,9 @@ const AppPage = ({ page, className = '', ...props }) => {
       <h5 className="appPage__block appPage__block--h4">hola soy un texto</h5>
       <p className="appPage__block appPage__block--p">hola soy un texto</p>
       {/* <small>hola soy un texto</small> */}
-      <Button onClick={() => printAlert('click!')} className="mt-8 w-full">
+      {/* <Button onClick={() => printAlert('click!')} className="mt-8 w-full">
         ¡Pulsa!
-      </Button>
+      </Button> */}
     </section>
   );
 };

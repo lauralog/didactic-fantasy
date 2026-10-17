@@ -35,4 +35,12 @@ export const sidebarTabs = [
   },
 ];
 
+export const user = {
+  username: 'nombre apellido1 apellido2',
+  mail: 'user.profile@mail.com',
+  avatar:
+    'https://evasanmartin.com/wp-content/uploads/2022/05/Gatos-masajes-Eva-San-Mart%C3%ADn-Comportamiento-Felino-e1651773306246.jpg',
+  teamspaces: '',
+};
+
 // export default {notifications, sidebarTabs};
