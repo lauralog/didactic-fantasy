@@ -15,6 +15,7 @@
 
   --yellow: #ffc766;
   --blue: #2d83e2;
+  --notion-blue: #2d83e2;
   --red: #e16358;
 }
 
@@ -22,7 +23,7 @@
 @theme {
   /* COLORES ---------------------------------------------------------------------*/
   /* Variables de color (--color-*) */
-  --color-blue: var(--blue);
+  --color-notion-blue: var(--notion-blue);
 
   --color-backg: var(--white);
   --color-sf1: var(--grey-50);
@@ -51,6 +52,7 @@
   --font-inter: var(--font-inter-import), sans-serif;
 
   /* Variables de font-size (--text-*) con su leading asociado*/
+  --text-2xs: 11px;
   --text-xs: 12px;
   --text-xs--line-height: 1.5;
   --text-sm: 14px;

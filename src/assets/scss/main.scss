@@ -8,6 +8,9 @@
 * {
   // border: 1px solid salmon;
   @apply box-border;
+  &:focus {
+    @apply outline-2 outline-notion-blue outline-offset-2;
+  }
 }
 
 body {
@@ -54,5 +57,10 @@ body {
   }
   button {
     @apply text-md font-medium;
+  }
+
+  input,
+  .inputWrapper {
+    @apply cursor-pointer;
   }
 }

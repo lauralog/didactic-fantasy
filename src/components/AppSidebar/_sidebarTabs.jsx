@@ -8,13 +8,14 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab }) => {
   return (
     <nav className="appSidebar__tabGroup">
       {sidebarTabs.map((tab, key) => (
+        // Refactor >>> Button Component
         <button
           key={key}
           data-active={activeTab === tab.label}
           onClick={() => setActiveTab(tab.label)}
           className={`tabItem ${activeTab === tab.label ? 'tabItem--active' : ''}`}
         >
-          {tab.icon && <span className="icon tabItem__icon">{tab.icon}</span>}
+          {tab.icon && <span className="icon fillHover tabItem__icon">{tab.icon}</span>}
           <span className="tabItem__label">{tab.label}</span>
         </button>
       ))}

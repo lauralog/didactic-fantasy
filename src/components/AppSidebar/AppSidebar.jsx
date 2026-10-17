@@ -10,7 +10,32 @@ import SidebarListItem from './_sidebarListItem';
 const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
   return (
     <aside className={`appSidebar ${className}`} {...props}>
-      Sidebar header <br /> Search
+      {/* HEADER */}
+      <header className="appSidebar__header">
+        <div className="headerGroup flex-1">
+          {/* Refactor >>> Button Component */}
+          <button className="headerGroup__iconButton">
+            <span className="icon icon_size-md">thumbnail_bar</span>
+          </button>
+        </div>
+        <div className="headerGroup">
+          {/* Refactor >>> Button Component */}
+          <button className="headerGroup__iconButton">
+            <span className="icon icon_size-md">inbox</span>
+          </button>
+          {/* Refactor >>> Button Component */}
+          <button className="headerGroup__iconButton">
+            <span className="icon icon_size-md">edit_square</span>
+          </button>
+        </div>
+      </header>
+      {/* SEARCHBAR */}
+      <div className="appSidebar__search">
+        <div className="inputWrapper searchbar" tab-index="0" aria-label="search or ask">
+          <input type="text" className="searchbar__input" placeholder="Busca una página..." />
+          <span className="searchbar__shortcut">⌘K</span>
+        </div>
+      </div>
       {/* TABS */}
       <SidebarTabsMenu
         className={`appSidebar__tabGroup ${className}`}
