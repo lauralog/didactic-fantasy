@@ -1,4 +1,5 @@
 @use '@/assets/scss/main.scss';
+@use '@/assets/scss/tokens/mixins' as *;
 
 @layer components {
   .appSidebar {
@@ -58,22 +59,25 @@
       @apply relative z-10;
 
       .tabItem {
-        @apply h-[32px];
-        @apply pl-[5px] pr-[8px];
+        @apply h-[32px] pl-[5px] pr-[8px];
         @apply flex items-center;
         @apply rounded-[8px];
         @apply text-sm capitalize;
 
+        &:hover {
+          @apply bg-foreg/5;
+          .icon {
+            @include fillHover(1);
+          }
+        }
+
         &__icon {
           @apply text-[#A6A5A2];
+          @include fillHover(0);
         }
         &__label {
           @apply pl-[6px];
           @apply text-[#7D7A75];
-        }
-
-        &:hover {
-          @apply bg-foreg/5;
         }
 
         &--active {
