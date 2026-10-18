@@ -3,8 +3,8 @@ import './appPage.scss';
 // Components
 import Button from '@/components/ui/Button/Button';
 
-const AppPage = ({ page, className = '', ...props }) => {
-  const { icon, title } = page;
+const AppPage = ({ activePage, className = '', ...props }) => {
+  const { icon, title } = activePage;
 
   return (
     <section className={`appPage ${className}`} {...props}>

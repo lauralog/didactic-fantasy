@@ -20,7 +20,7 @@
   }
 
   .iconButton {
-    @apply relative w-[28px] aspect-square;
+    @apply relative h-[28px] aspect-square;
     @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
     @apply flex items-center text-center;
     @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
@@ -29,12 +29,18 @@
       @apply bg-foreg/10;
     }
 
+    &_wText {
+      @apply px-[8px];
+      @apply aspect-auto text-nowrap;
+      @apply flex items-center gap-[6px];
+    }
+
     &__bubble {
       @apply absolute top-0 right-0;
       @apply p-[1px] aspect-square shrink-0;
       @apply inline-flex items-center justify-center;
       @apply rounded-full pointer-events-none;
-      @apply text-[9px] text-backg font-semibold;
+      @apply text-[9px] text-white font-semibold;
 
       &--notification {
         @apply bg-danger;

@@ -9,7 +9,6 @@ import SidebarListItem from './_sidebarListItem';
 import SidebarUserFooter from './_sidebarUserFooter';
 
 const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
-  console.log(notifications);
   return (
     <aside className={`appSidebar ${className}`} {...props}>
       {/* HEADER */}
@@ -61,7 +60,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
               <SidebarListItem
                 key={page.id}
                 page={page}
-                active={page.id === activePageId}
+                isActive={page.id === activePageId}
                 onClick={() => setActivePageId(page.id)}
               />
             ))}

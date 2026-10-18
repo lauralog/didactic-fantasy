@@ -107,6 +107,9 @@
             @apply text-[18px];
             // token refactor icon-sm size & color
           }
+          .label {
+            @apply truncate;
+          }
 
           &:hover {
             @apply bg-foreg/5;

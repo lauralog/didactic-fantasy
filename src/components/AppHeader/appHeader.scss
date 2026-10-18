@@ -4,6 +4,53 @@
   .appHeader {
     @apply w-full h-[44px] px-[12px];
     @apply flex justify-between items-center overflow-hidden;
-    @apply bg-backg;
+    @apply bg-backg text-sm text-foreg;
+
+    &__navigation {
+      @apply h-full flex-1 mr-[8px];
+      @apply flex items-center overflow-hidden;
+      .breadcrumbList {
+        @apply h-full w-fit;
+        @apply flex items-center overflow-hidden;
+        .breadcrumb {
+          // token refactor units
+          @apply pl-[3px];
+          @apply min-w-0 max-w-48 overflow-hidden;
+          @apply flex items-center;
+
+          &_last {
+            @apply flex-1 min-w-0 max-w-full overflow-hidden;
+
+            .breadcrumb__label {
+              @apply min-w-0 text-nowrap truncate;
+            }
+          }
+
+          &__label {
+            // token refactor units
+            @apply me-[5px];
+            @apply min-w-0 text-nowrap truncate;
+          }
+
+          .icon {
+            // token refactor units
+            @apply me-[5px];
+            @apply leading-[100%] shrink-0;
+          }
+
+          &__separator {
+            // token refactor color
+            @apply text-[#e6e5e3] shrink-0;
+          }
+        }
+      }
+    }
+    &__actions {
+      @apply w-fit shrink-0;
+      @apply flex items-center gap-[2px];
+      .iconButton {
+        @apply text-sm text-foreg font-regular;
+      }
+    }
   }
 }

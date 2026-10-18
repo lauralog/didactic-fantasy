@@ -15,30 +15,26 @@ import './appSidebar.scss';
  *
  * @component
  *
- * @param {Object} props - Propiedades del componente.
- * @param {Object} props.page - Datos de la página que se mostrará.
- * @param {string} props.page.id - Identificador único de la página.
- * @param {React.ReactNode} props.page.icon - Icono que representa la página.
- * @param {string} props.page.title - Título visible de la página.
- * @param {boolean} [props.active=false] - Indica si la página está activa.
- * @param {Function} [props.onClick] - evento 'click'. La lógica de selección se define en el componente padre
- * @param {string} [props.className=''] - Clase CSS adicional opcional
+ * @param {Object} props - fallback de propiedades del componente con operador spread.
+ * @param {Object} page - Datos de la página que se mostrará.
+ * @param {boolean} active - Indica si la página está activa.
+ * @param {Function} onClick - evento 'click'. La lógica de selección se define en el componente padre
  * @param {Object} props.props - Fallback para propiedades adicionales recibidas
  *
  * @returns {JSX.Element} Elemento de lista que representa una página del sidebar.
  */
-const SidebarListItem = ({ page, active = false, onClick, className = '', ...props }) => {
+const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...props }) => {
   const { id, icon, title } = page;
 
   return (
     <li
       id={id}
       onClick={onClick}
-      data-active={active}
-      className={`pageList__item ${active ? 'pageList__item--active' : ''}`}
+      data-active={isActive}
+      className={`pageList__item ${isActive ? 'pageList__item--active' : ''}`}
     >
       <span className="icon">{icon}</span>
-      <span>{title}</span>
+      <span className="label">{title}</span>
     </li>
   );
 };

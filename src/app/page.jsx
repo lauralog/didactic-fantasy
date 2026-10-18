@@ -33,8 +33,8 @@ export default function Home() {
       <AppSidebar activePageId={activePageId} setActivePageId={setActivePageId} />
 
       <div className="w-full flex flex-col overflow-y-hidden">
-        <AppHeader className="relative z-50 shrink-0"></AppHeader>
-        <AppPage page={activePage} className="w-full overflow-y-auto"></AppPage>
+        <AppHeader activePage={activePage} className="relative z-50 shrink-0"></AppHeader>
+        <AppPage activePage={activePage} className="w-full overflow-y-auto"></AppPage>
       </div>
 
       <Button
