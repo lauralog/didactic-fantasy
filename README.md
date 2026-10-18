@@ -60,7 +60,7 @@ Prompt 2:
 - [x] Theming via CSS/Tailwind variables + themes
 - [x] App global content management (pages)
 - [x] App Sidebar html/scss
-- [ ] App Header html/scss
+- [x] App Header html/scss
 - [ ] Tooltip Component
 - [ ] Pop-up Menu Component for contextual menus
 - [ ] Collapsable sidebar interaction
