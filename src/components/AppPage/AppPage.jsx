@@ -2,6 +2,7 @@ import './appPage.scss';
 
 // Components
 import Button from '@/components/ui/Button/Button';
+import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 const AppPage = ({ activePage, className = '', ...props }) => {
   const { icon, title } = activePage;
@@ -31,6 +32,11 @@ const AppPage = ({ activePage, className = '', ...props }) => {
       <h2 className="appPage__block appPage__block--h1">hola soy un texto</h2>
       <h2 className="appPage__block appPage__block--h1">hola soy un texto</h2>
       <h2 className="appPage__block appPage__block--h1">hola soy un texto</h2>
+      <Tooltip tooltipText="botón de home">
+        <Button>
+          <span className="icon text-2xl">home</span>
+        </Button>
+      </Tooltip>
       <h2 className="appPage__block appPage__block--h1">hola soy un texto</h2>
       <h3 className="appPage__block appPage__block--h2">hola soy un texto</h3>
       <h4 className="appPage__block appPage__block--h3">hola soy un texto</h4>

@@ -1,0 +1,22 @@
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .tooltipWrapper {
+    @apply relative;
+    @apply w-fit h-fit bg-green-500/5;
+
+    .tooltip {
+      @apply hidden opacity-0 pointer-events-none;
+      @apply transition-opacity duration-200 ease-out;
+
+      @apply absolute bottom-0 translate-y-[calc(100%+4px)] left-1/2 -translate-x-1/2;
+      @apply w-fit px-2 py-1 rounded-md;
+      @apply bg-fg1 text-backg;
+      @apply text-nowrap text-xs;
+    }
+
+    &:hover .tooltip {
+      @apply block opacity-100;
+    }
+  }
+}

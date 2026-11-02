@@ -36,23 +36,6 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 3. @layer theme: temas. Esta capa la uso para configurar las variables de cada tema, en mi caso el 'light' y el 'dark' mode.
 4. @layer base: básicos. Para estilos básicos, normalmente aquí guardo los selectores genéricos para tener unos estilos base. También el útil para meter estilos de reseteo del user agent.
 
-## Uso de IA
-
-### Función getBreadcrumbs en appHeader.jsx
-
-Función para obtener un array de breadcrumbs para pasárselo a BreadcrumbList.
-He usado la IA para agilizar esta tarea ya que sabía lo que necesitaba y cómo lo quería pero no sabía muy bien por dónde empezar a hacerlo ni los métodos exactos para realizar una búsqueda recursiva.
-Por las limitaciones de tiempo y como hay otras tareas que resolver para completar el ejercicio, voy a seguir con eso y posteriormente estudiaré lo que hace exactamente la función para entenderla completamente.
-
-Prompt 1:
-"Tengo la estructura de datos (código de models/pages.json), y un app header que contiene unos breadcrumbs así (código de appHeader.jsx).
-necesito hacer llegar un array con los breadcrumbs al componente BreadcrumbList que contenga el id, título e icono de cada página. Para ello me gustaría tener una función que configure dicho array buscando de manera recursiva el elemento parentId de cada página, hasta que el resultado sea un string vacío, que indica que dicha página no tiene ningún parent page más (siendo el primer nivel de navegación y terminando ahí), la página inicial por la que esta función debe empezar a buscar es la que se pasa como prop activePage al appHeader."
-
-Este prompt devolvió lo que le pedí pero decidí simplificarlo para ahorrarme dentro de esta función la configuración de la estructura del nuevo array y así simplificarla para que me resulte más fácil comprender lo que hace.
-
-Prompt 2:
-"Para simplificar la función, podrías hacer que el array devuelva las páginas completas en lugar de solamente los atributos seleccionados aunque sea menos eficiente?"
-
 ## Roadmap
 
 ### Must Do
@@ -61,17 +44,19 @@ Prompt 2:
 - [x] App global content management (pages)
 - [x] App Sidebar html/scss
 - [x] App Header html/scss
-- [ ] Tooltip Component
+- [x] Tooltip Component (basic)
 - [ ] Pop-up Menu Component for contextual menus
 - [ ] Collapsable sidebar interaction
-- [ ] App Page Block management
+- [ ] App Page Block management??? >>> Block Component
+- [ ] Responsive layout
 
 ### Should Do
 
 - Refactor Buttons into ui/Button component/s
+- Tooltip: content hierarchy (changes text-color)
 - Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
 - [ ] Sidebar/ add onMouseEnter + State management for page actions
-- Layout sensitive position tooltip component
+- Tooltip: Layout sensitive position tooltip component
 
 ### Could Do
 
@@ -91,3 +76,20 @@ Prompt 2:
 <!-- Borrar antes de hacer push
 - Para hacer el compoennte Breadcrumb he intentado seguir el modelo de la librería de shadcn para ver cómo están hechos y entenderlos y también porque me parece una buena idea crear esqueletos de ese estilo, aunque cuando hacemos componentes para una app directamente con su propio DS definido etc. creo que no son tan útiles ya que no necesitan esa flexibilidad que sí necesitan componentes de librerías para adaptarse a cualquier DS.
  -->
+
+## Uso de IA
+
+### Función getBreadcrumbs en appHeader.jsx
+
+Función para obtener un array de breadcrumbs para pasárselo a BreadcrumbList.
+He usado la IA para agilizar esta tarea ya que sabía lo que necesitaba y cómo lo quería pero no sabía muy bien por dónde empezar a hacerlo ni los métodos exactos para realizar una búsqueda recursiva.
+Por las limitaciones de tiempo y como hay otras tareas que resolver para completar el ejercicio, voy a seguir con eso y posteriormente estudiaré lo que hace exactamente la función para entenderla completamente.
+
+Prompt 1:
+"Tengo la estructura de datos (código de models/pages.json), y un app header que contiene unos breadcrumbs así (código de appHeader.jsx).
+necesito hacer llegar un array con los breadcrumbs al componente BreadcrumbList que contenga el id, título e icono de cada página. Para ello me gustaría tener una función que configure dicho array buscando de manera recursiva el elemento parentId de cada página, hasta que el resultado sea un string vacío, que indica que dicha página no tiene ningún parent page más (siendo el primer nivel de navegación y terminando ahí), la página inicial por la que esta función debe empezar a buscar es la que se pasa como prop activePage al appHeader."
+
+Este prompt devolvió lo que le pedí pero decidí simplificarlo para ahorrarme dentro de esta función la configuración de la estructura del nuevo array y así simplificarla para que me resulte más fácil comprender lo que hace.
+
+Prompt 2:
+"Para simplificar la función, podrías hacer que el array devuelva las páginas completas en lugar de solamente los atributos seleccionados aunque sea menos eficiente?"

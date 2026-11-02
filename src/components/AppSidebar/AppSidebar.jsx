@@ -7,6 +7,7 @@ import notionPages from '@/models/pages.json';
 import SidebarTabsMenu from './_sidebarTabs';
 import SidebarListItem from './_sidebarListItem';
 import SidebarUserFooter from './_sidebarUserFooter';
+import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
 const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
   return (
@@ -17,6 +18,7 @@ const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) =>
           {/* Refactor >>> Button Component */}
           <button className="iconButton">
             <span className="icon icon_size-md">thumbnail_bar</span>
+            <Tooltip tooltipText="Ocultar barra lateral" />
           </button>
         </div>
         <div className="headerGroup">

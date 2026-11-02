@@ -3,8 +3,10 @@ import './button.scss';
 export default function Button({
   children,
   onClick,
-  variant = 'primary',
   type = 'button',
+  variant = 'primary',
+  style = 'primary',
+  size = 'md',
   className = '',
   ...props
 }) {
@@ -13,7 +15,7 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`button button--${variant} ${className}`}
+      className={`button button--${variant} button--${style} button--${size} ${className}`}
       onClick={onClick}
       {...props}
     >
