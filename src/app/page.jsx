@@ -16,6 +16,7 @@ export default function Home() {
   // Estados
   const [theme, setTheme] = useState('light');
   const [activePageId, setActivePageId] = useState(initialPageId);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   // Obtengo el objeto completo de la página activa
   const activePage = notionPages.find((page) => page.id === activePageId);
@@ -27,13 +28,32 @@ export default function Home() {
     setTheme(nextTheme);
   };
 
+  const toggleSidebar = () => {
+    // setSidebarOpen((sidebarOpen) => !sidebarOpen);
+
+    setSidebarOpen((sidebarOpen) => {
+      console.log('Sidebar abierto:', !sidebarOpen);
+      return !sidebarOpen;
+    });
+  };
+
   // HTML Element
   return (
-    <main className="relative w-full h-[100dvh] overflow-y-hidden flex">
-      <AppSidebar activePageId={activePageId} setActivePageId={setActivePageId} />
+    <main className="relative w-screen h-screen overflow-y-hidden flex">
+      <AppSidebar
+        activePageId={activePageId}
+        setActivePageId={setActivePageId}
+        isSidebarOpen={sidebarOpen}
+        toggleSidebar={toggleSidebar}
+      />
 
       <div className="w-full flex flex-col overflow-y-hidden">
-        <AppHeader activePage={activePage} className="relative z-50 shrink-0"></AppHeader>
+        <AppHeader
+          activePage={activePage}
+          isSidebarOpen={sidebarOpen}
+          toggleSidebar={toggleSidebar}
+          className="relative z-50 shrink-0"
+        ></AppHeader>
         <AppPage activePage={activePage} className="w-full overflow-y-auto"></AppPage>
       </div>
 

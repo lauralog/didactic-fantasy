@@ -8,18 +8,26 @@ import SidebarTabsMenu from './_sidebarTabs';
 import SidebarListItem from './_sidebarListItem';
 import SidebarUserFooter from './_sidebarUserFooter';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
+import Button from '@/components/ui/Button/Button';
 
-const Sidebar = ({ activePageId, setActivePageId, className = '', ...props }) => {
+const Sidebar = ({
+  activePageId,
+  setActivePageId,
+  isSidebarOpen,
+  toggleSidebar,
+  className = '',
+  ...props
+}) => {
   return (
-    <aside className={`appSidebar ${className}`} {...props}>
+    <aside className={`appSidebar ${isSidebarOpen ? 'hidden' : ''} ${className}`} {...props}>
       {/* HEADER */}
       <header className="appSidebar__header">
         <div className="headerGroup flex-1">
           {/* Refactor >>> Button Component */}
-          <button className="iconButton">
+          <Button className="iconButton" onClick={toggleSidebar}>
             <span className="icon icon_size-md">thumbnail_bar</span>
             <Tooltip tooltipText="Ocultar barra lateral" />
-          </button>
+          </Button>
         </div>
         <div className="headerGroup">
           {/* Refactor >>> Button Component */}

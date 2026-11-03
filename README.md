@@ -46,7 +46,8 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] App Header html/scss
 - [x] Tooltip Component (basic)
 - [ ] Pop-up Menu Component for contextual menus
-- [ ] Collapsable sidebar interaction
+- [x] Collapsible sidebar interaction (basic)
+- [ ] Collapsible sidebar transitions & hover
 - [ ] App Page Block management??? >>> Block Component
 - [ ] Responsive layout
 
