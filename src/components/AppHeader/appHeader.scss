@@ -2,7 +2,7 @@
 
 @layer components {
   .appHeader {
-    @apply w-full h-[44px] px-[12px];
+    @apply w-full h-[var(--headerH)] px-[12px];
     @apply flex justify-between items-center overflow-visible;
     @apply bg-backg text-sm text-foreg;
 

@@ -3,154 +3,180 @@
 
 @layer components {
   .appSidebar {
-    @apply p-0 [&>*]:px-6; // [&>*]:py-2
-    @apply w-[300px] flex flex-col;
-    @apply border-r border-foreg/10;
-    @apply bg-sf1 text-foreg;
+    @apply h-full;
+    &--floating {
+      @apply absolute z-50 h-[calc(100dvh-var(--headerH))];
+      @apply left-0 bottom-0;
+      @apply w-fit py-4;
 
-    &__header {
-      @apply h-[44px] shrink-0;
-      @apply px-[12px] flex;
+      @apply translate-x-0 opacity-100 visible;
+      @apply bg-blue-500/20;
 
-      .headerGroup {
-        @apply flex items-center gap-[2px];
-        @apply text-[20px];
+      &:hover {
+        .sidebarWrapper {
+          @apply visible;
+        }
       }
     }
 
-    &__search {
-      @apply px-[12px] pb-[6px];
-      @apply w-full flex items-center;
+    .sidebarWrapper {
+      @apply p-0 [&>*]:px-6; // [&>*]:py-2
+      @apply w-[300px] h-full flex flex-col;
+      @apply border-r border-foreg/10;
+      @apply bg-sf1 text-foreg;
 
-      .searchbar {
-        @apply pl-[8px] pr-[6px];
-        @apply w-full h-[32px];
+      &--floating {
+        @apply w-[300px] h-full max-h-[90dvh];
+
+        @apply translate-x-0 opacity-100 visible;
+        @apply rounded-r-[24px] border border-foreg/10;
+        @apply bg-sf1 shadow-xl;
+      }
+
+      &__header {
+        @apply h-[44px] shrink-0;
+        @apply px-[12px] flex;
+
+        .headerGroup {
+          @apply flex items-center gap-[2px];
+          @apply text-[20px];
+        }
+      }
+
+      &__search {
+        @apply px-[12px] pb-[6px];
+        @apply w-full flex items-center;
+
+        .searchbar {
+          @apply pl-[8px] pr-[6px];
+          @apply w-full h-[32px];
+          @apply flex items-center justify-start gap-[2px];
+          @apply rounded-[8px] border border-foreg/10;
+          &__input {
+            @apply w-full min-w-0;
+            @apply flex-1 text-sm;
+            border: none;
+            outline: none;
+            box-shadow: none;
+          }
+          &__shortcut {
+            @apply py-[2px] px-[4px];
+            @apply bg-foreg/5 text-2xs text-[#8E8B86] font-semibold;
+            @apply rounded-[4px] pointer-events-none;
+          }
+        }
+      }
+
+      &__tabGroup {
+        @apply py-[6px] pr-[8px] pl-[12px];
         @apply flex items-center justify-start gap-[2px];
-        @apply rounded-[8px] border border-foreg/10;
-        &__input {
-          @apply w-full min-w-0;
-          @apply flex-1 text-sm;
-          border: none;
-          outline: none;
-          box-shadow: none;
-        }
-        &__shortcut {
-          @apply py-[2px] px-[4px];
-          @apply bg-foreg/5 text-2xs text-[#8E8B86] font-semibold;
-          @apply rounded-[4px] pointer-events-none;
-        }
-      }
-    }
+        @apply shadow-[-4px_8px_8px_0px_var(--color-sf1)];
+        @apply relative z-10;
 
-    &__tabGroup {
-      @apply py-[6px] pr-[8px] pl-[12px];
-      @apply flex items-center justify-start gap-[2px];
-      @apply shadow-[-4px_8px_8px_0px_var(--color-sf1)];
-      @apply relative z-10;
-
-      .tabItem {
-        @apply h-[32px] pl-[5px] pr-[8px];
-        @apply flex items-center;
-        @apply rounded-[8px];
-        @apply text-sm capitalize;
-
-        &:hover {
-          @apply bg-foreg/5;
-          .icon {
-            @include fillHover(1);
-          }
-        }
-
-        &__icon {
-          @apply text-[#A6A5A2];
-          @include fillHover(0);
-        }
-        &__label {
-          @apply pl-[6px];
-          @apply text-[#7D7A75];
-        }
-
-        &--active {
-          @apply bg-foreg/5;
-          .tabItem__icon {
-            @apply text-[#55534E];
-            @include fillHover(1);
-          }
-          .tabItem__label {
-            @apply text-foreg;
-          }
-        }
-      }
-    }
-
-    &__pagesNav {
-      @apply px-2 h-full z-0 overflow-y-scroll;
-
-      .pageList {
-        @apply mb-[12px] [&>*]:px-2;
-        @apply flex flex-col gap-[1px];
-        &__title {
-          @apply h-[30px] flex items-center;
-          @apply rounded-sm text-xs font-medium text-[#a19e99];
-          &:hover {
-            @apply bg-foreg/5 text-foreg;
-          }
-        }
-
-        /* _sidebarListItem */
-        &__item {
-          @apply py-1.25 px-2;
-          @apply flex items-center flex-nowrap text-nowrap overflow-x-hidden;
-          @apply rounded-sm text-sm text-[#5F5E59];
-
-          .icon {
-            @apply mr-2;
-            @apply text-[18px];
-            // token refactor icon-sm size & color
-          }
-          .label {
-            @apply truncate;
-          }
+        .tabItem {
+          @apply h-[32px] pl-[5px] pr-[8px];
+          @apply flex items-center;
+          @apply rounded-[8px];
+          @apply text-sm capitalize;
 
           &:hover {
             @apply bg-foreg/5;
+            .icon {
+              @include fillHover(1);
+            }
           }
-          &--active,
-          &[data-active='true'] {
-            @apply bg-foreg/5 text-foreg;
+
+          &__icon {
+            @apply text-[#A6A5A2];
+            @include fillHover(0);
+          }
+          &__label {
+            @apply pl-[6px];
+            @apply text-[#7D7A75];
+          }
+
+          &--active {
+            @apply bg-foreg/5;
+            .tabItem__icon {
+              @apply text-[#55534E];
+              @include fillHover(1);
+            }
+            .tabItem__label {
+              @apply text-foreg;
+            }
           }
         }
       }
-    }
 
-    &__footer {
-      @apply px-[8px];
-      @apply w-full h-[44px] shrink-0;
-      @apply flex items-center gap-[2px];
-      @apply border-t border-foreg/10;
+      &__pagesNav {
+        @apply px-2 h-full z-0 overflow-y-scroll;
 
-      .icon {
-        @apply text-[#8E8B86];
+        .pageList {
+          @apply mb-[12px] [&>*]:px-2;
+          @apply flex flex-col gap-[1px];
+          &__title {
+            @apply h-[30px] flex items-center;
+            @apply rounded-sm text-xs font-medium text-[#a19e99];
+            &:hover {
+              @apply bg-foreg/5 text-foreg;
+            }
+          }
+
+          /* _sidebarListItem */
+          &__item {
+            @apply py-1.25 px-2;
+            @apply flex items-center flex-nowrap text-nowrap overflow-x-hidden;
+            @apply rounded-sm text-sm text-[#5F5E59];
+
+            .icon {
+              @apply mr-2;
+              @apply text-[18px];
+              // token refactor icon-sm size & color
+            }
+            .label {
+              @apply truncate;
+            }
+
+            &:hover {
+              @apply bg-foreg/5;
+            }
+            &--active,
+            &[data-active='true'] {
+              @apply bg-foreg/5 text-foreg;
+            }
+          }
+        }
       }
 
-      .userToggle {
-        @apply py-[4px] px-[8px];
-        @apply flex-1 h-[30px];
-        @apply flex items-center overflow-hidden;
-        @apply text-sm;
-        &__avatarWrapper {
-          @include imgWrapper(cover);
-          @apply mr-[8px];
-          @apply h-[22px] aspect-square;
-          @apply rounded-full;
+      &__footer {
+        @apply px-[8px];
+        @apply w-full h-[44px] shrink-0;
+        @apply flex items-center gap-[2px];
+        @apply border-t border-foreg/10;
+
+        .icon {
+          @apply text-[#8E8B86];
         }
-        &__username {
-          @apply flex-1 truncate text-nowrap;
-          @apply text-[#5f5e59] font-medium;
-          @apply font-medium capitalize;
-        }
-        &__icon {
-          // @apply shrink-0;
+
+        .userToggle {
+          @apply py-[4px] px-[8px];
+          @apply flex-1 h-[30px];
+          @apply flex items-center overflow-hidden;
+          @apply text-sm;
+          &__avatarWrapper {
+            @include imgWrapper(cover);
+            @apply mr-[8px];
+            @apply h-[22px] aspect-square;
+            @apply rounded-full;
+          }
+          &__username {
+            @apply flex-1 truncate text-nowrap;
+            @apply text-[#5f5e59] font-medium;
+            @apply font-medium capitalize;
+          }
+          &__icon {
+            // @apply shrink-0;
+          }
         }
       }
     }

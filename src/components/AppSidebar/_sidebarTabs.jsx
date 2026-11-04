@@ -6,7 +6,7 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) 
   const [activeTab, setActiveTab] = useState(initialTab);
 
   return (
-    <nav className="appSidebar__tabGroup">
+    <nav className="sidebarWrapper__tabGroup">
       {sidebarTabs.map((tab, key) => (
         // Refactor >>> Button Component
         <button

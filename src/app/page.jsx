@@ -17,17 +17,20 @@ export default function Home() {
   const [theme, setTheme] = useState('light');
   const [activePageId, setActivePageId] = useState(initialPageId);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarHover, setSidebarHover] = useState(false);
 
   // Obtengo el objeto completo de la página activa
   const activePage = notionPages.find((page) => page.id === activePageId);
 
-  // Funciones
+  /** FUNCIONES */
+  // Tema
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     document.documentElement.dataset.theme = nextTheme;
     setTheme(nextTheme);
   };
 
+  // Sidebar colapsable
   const toggleSidebar = () => {
     // setSidebarOpen((sidebarOpen) => !sidebarOpen);
 
@@ -35,6 +38,15 @@ export default function Home() {
       console.log('Sidebar abierto:', !sidebarOpen);
       return !sidebarOpen;
     });
+  };
+
+  // Sidebar flotante desde hover en appHeader
+  const handleSidebarHover = () => {
+    setSidebarHover(true);
+  };
+
+  const handleSidebarLeave = () => {
+    setSidebarHover(false);
   };
 
   // HTML Element
@@ -45,6 +57,9 @@ export default function Home() {
         setActivePageId={setActivePageId}
         isSidebarOpen={sidebarOpen}
         toggleSidebar={toggleSidebar}
+        isSidebarHovered={sidebarHover}
+        onSidebarHover={handleSidebarHover}
+        onSidebarLeave={handleSidebarLeave}
       />
 
       <div className="w-full flex flex-col overflow-y-hidden">
@@ -52,8 +67,11 @@ export default function Home() {
           activePage={activePage}
           isSidebarOpen={sidebarOpen}
           toggleSidebar={toggleSidebar}
+          onSidebarHover={handleSidebarHover}
+          onSidebarLeave={handleSidebarLeave}
           className="relative z-50 shrink-0"
         ></AppHeader>
+
         <AppPage activePage={activePage} className="w-full overflow-y-auto"></AppPage>
       </div>
 

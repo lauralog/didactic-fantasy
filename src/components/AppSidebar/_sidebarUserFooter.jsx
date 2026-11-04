@@ -3,7 +3,7 @@
 const SidebarTabsMenu = ({ user, className = '', ...props }) => {
   const news = true;
   return (
-    <footer className={`appSidebar__footer ${className}`}>
+    <footer className={`sidebarWrapper__footer ${className}`}>
       {/* USER */}
       <div role="button" className="iconButton userToggle">
         {/* Refactor >>> Avatar Component */}

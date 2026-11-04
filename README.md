@@ -50,10 +50,10 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [ ] Collapsible sidebar transitions & hover
 - [ ] App Page Block management??? >>> Block Component
 - [ ] Responsive layout
+- [ ] Refactor Buttons into ui/Button component/s
 
 ### Should Do
 
-- Refactor Buttons into ui/Button component/s
 - Tooltip: content hierarchy (changes text-color)
 - Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
 - [ ] Sidebar/ add onMouseEnter + State management for page actions

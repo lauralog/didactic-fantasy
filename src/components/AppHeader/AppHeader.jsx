@@ -24,7 +24,15 @@ const getBreadcrumbs = (activePageId, pages) => {
   return [...getBreadcrumbs(page.parentId, pages), page];
 };
 
-const AppHeader = ({ activePage, isSidebarOpen, toggleSidebar, className = '', ...props }) => {
+const AppHeader = ({
+  activePage,
+  isSidebarOpen,
+  toggleSidebar,
+  onSidebarHover,
+  onSidebarLeave,
+  className = '',
+  ...props
+}) => {
   console.log('páginas:', activePage, activePage.id);
   return (
     <header className={`appHeader ${className}`} {...props}>
@@ -36,6 +44,8 @@ const AppHeader = ({ activePage, isSidebarOpen, toggleSidebar, className = '', .
           variant="secondary"
           className={`iconButton ${isSidebarOpen ? 'hidden' : ''} mr-2`}
           onClick={toggleSidebar}
+          onMouseEnter={onSidebarHover}
+          onMouseLeave={onSidebarLeave}
         >
           {notifications.length > 0 && (
             <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
