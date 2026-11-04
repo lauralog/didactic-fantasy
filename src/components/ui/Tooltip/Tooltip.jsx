@@ -13,3 +13,11 @@ const Tooltip = ({ tooltipText, children, className = '', ...props }) => {
 };
 
 export default Tooltip;
+
+/**
+ * USAGE
+ *
+ * <Tooltip tooltipText="Lock sidebar open">
+ *  <Component />
+ * </Tooltip>
+ */

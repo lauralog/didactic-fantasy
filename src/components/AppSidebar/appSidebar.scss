@@ -26,7 +26,7 @@
         @apply pl-[8px] pr-[6px];
         @apply w-full h-[32px];
         @apply flex items-center justify-start gap-[2px];
-        @apply rounded-[8px] border border-foreg/5;
+        @apply rounded-[8px] border border-foreg/10;
         &__input {
           @apply w-full min-w-0;
           @apply flex-1 text-sm;
@@ -36,7 +36,7 @@
         }
         &__shortcut {
           @apply py-[2px] px-[4px];
-          @apply bg-foreg/5 text-2xs text-[#8E8B86];
+          @apply bg-foreg/5 text-2xs text-[#8E8B86] font-semibold;
           @apply rounded-[4px] pointer-events-none;
         }
       }
@@ -74,6 +74,7 @@
           @apply bg-foreg/5;
           .tabItem__icon {
             @apply text-[#55534E];
+            @include fillHover(1);
           }
           .tabItem__label {
             @apply text-foreg;

@@ -19,12 +19,17 @@ const Sidebar = ({
   ...props
 }) => {
   return (
-    <aside className={`appSidebar ${isSidebarOpen ? 'hidden' : ''} ${className}`} {...props}>
+    <aside className={`appSidebar ${isSidebarOpen ? '' : 'hidden'} ${className}`} {...props}>
       {/* HEADER */}
       <header className="appSidebar__header">
         <div className="headerGroup flex-1">
           {/* Refactor >>> Button Component */}
-          <Button className="iconButton" onClick={toggleSidebar}>
+          <Button
+            className="button iconButton"
+            onClick={toggleSidebar}
+            variant="secondary"
+            style="ghost"
+          >
             <span className="icon icon_size-md">thumbnail_bar</span>
             <Tooltip tooltipText="Ocultar barra lateral" />
           </Button>

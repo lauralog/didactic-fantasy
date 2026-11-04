@@ -3,13 +3,22 @@
 
 @layer components {
   .button {
-    @apply py-2 px-4;
+    @apply py-2 px-4 w-fit flex items-center justify-center;
     @apply rounded-[8px] border-2;
-    @apply text-lg;
+    @apply text-lg min-h-fit;
     @apply cursor-pointer;
     transition:
       transform 150ms ease,
-      opacity 150ms ease;
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+
+    // Valores por defecto.
+    // Uso variables locales para el componente botón
+    // para gestionar los colores y su modo de aplicación
+    // de manera independiente
+    --button-color: var(--primary);
+    --button-bg-opacity: 100%;
 
     &:hover {
       @apply opacity-80;
@@ -19,14 +28,87 @@
       @apply scale-[.97];
     }
 
+    // Variants
     &--primary {
       @apply border-danger;
-      @apply bg-primary;
+      --button-color: var(--color-primary);
       @apply text-white;
     }
     &--secondary {
-      background-color: var(--yellow);
+      --button-color: var(--foreg);
       color: var(--black);
+      // bg-foreg/10
+    }
+    &--danger {
+      --button-color: var(--color-danger);
+    }
+
+    // Styles
+    &--solid {
+      @apply bg-[var(--button-color)]/100;
+    }
+    &--outline {
+      @apply border border-[var(--button-color)];
+      @apply bg-transparent;
+    }
+    &--ghost {
+      @apply bg-transparent border-0;
+      &:hover {
+        @apply bg-[var(--button-color)/30];
+      }
+    }
+
+    // Sizes
+    &--xs {
+      @apply h-[8px];
+    }
+    &--sm {
+      @apply h-[12px];
+    }
+    &--md {
+      @apply h-[28px];
+    }
+  }
+
+  .iconButton {
+    @apply relative h-[28px] aspect-square;
+    @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
+    @apply flex items-center text-center;
+    @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
+
+    &:hover {
+      @apply bg-foreg/10;
+    }
+
+    &_wText {
+      @apply px-[8px];
+      @apply aspect-auto text-nowrap;
+      @apply flex items-center gap-[6px];
+    }
+
+    &__bubble {
+      @apply absolute top-0 right-0;
+      @apply p-[1px] aspect-square shrink-0;
+      @apply inline-flex items-center justify-center;
+      @apply rounded-full pointer-events-none;
+      @apply text-[9px] text-white font-semibold;
+
+      &--notification {
+        @apply bg-danger;
+      }
+      &--new {
+        @apply bg-primary;
+        @apply outline-1 outline-white;
+      }
+
+      &_size {
+        &-sm {
+          @apply h-[8px];
+        }
+        &-md {
+          @apply h-[12px];
+        }
+      }
     }
   }
 }

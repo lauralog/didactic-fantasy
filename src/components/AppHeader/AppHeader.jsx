@@ -3,6 +3,9 @@ import './appHeader.scss';
 import pages from '@/models/pages.json';
 import BreadcrumbList from './_breadcrumbList';
 import Button from '@/components/ui/Button/Button';
+import Tooltip from '@/components/ui/Tooltip/Tooltip';
+
+import { notifications } from '@/models/appMenus';
 
 // Esto creo que podría ser un hook porque hay anidación de páginas en el sidebar tb
 // Pero aún no sé cómo se hace un custom hook
@@ -26,12 +29,22 @@ const AppHeader = ({ activePage, isSidebarOpen, toggleSidebar, className = '', .
   return (
     <header className={`appHeader ${className}`} {...props}>
       {/* SIDEBAR TOGGLE */}
-      <Button
-        className={`p-1 bg-transparent text-foreg border-0 ${isSidebarOpen ? '' : 'hidden'} ${className}`}
-        onClick={toggleSidebar}
-      >
-        <span className="icon">menu</span>
-      </Button>
+      {/* Refactor >>> Button Component */}
+      <Tooltip tooltipText="Lock sidebar open">
+        <Button
+          hasIcon={true}
+          variant="secondary"
+          className={`iconButton ${isSidebarOpen ? 'hidden' : ''} mr-2`}
+          onClick={toggleSidebar}
+        >
+          {notifications.length > 0 && (
+            <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
+              {notifications.length}
+            </span>
+          )}
+          <span className="icon">menu</span>
+        </Button>
+      </Tooltip>
       {/* BREADCRUMBS */}
       <nav className="appHeader__navigation">
         <BreadcrumbList breadcrumbs={getBreadcrumbs(activePage.id, pages)} />
