@@ -28,9 +28,7 @@ const Sidebar = ({
       onMouseLeave={onSidebarLeave}
       {...props}
     >
-      <div
-        className={`sidebarWrapper ${isSidebarOpen ? '' : isSidebarHovered ? 'sidebarWrapper--floating' : ''} ${className}`}
-      >
+      <div className={`sidebarWrapper`}>
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">

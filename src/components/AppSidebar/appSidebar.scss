@@ -3,7 +3,7 @@
 
 @layer components {
   .appSidebar {
-    @apply h-full;
+    @apply h-full w-[300px];
 
     &--floating {
       @apply absolute z-50;
@@ -11,16 +11,7 @@
       @apply w-fit pt-2 pb-6 flex flex-col justify-center items-center;
 
       @apply translate-x-0 opacity-100 visible;
-      @apply bg-blue-500/20;
-
-      &:hover {
-        .sidebarWrapper {
-          @apply visible;
-        }
-      }
-    }
-    .sidebarWrapper {
-      &--floating {
+      .sidebarWrapper {
         @apply h-full max-h-[90dvh];
 
         @apply translate-x-0 opacity-100 visible;
