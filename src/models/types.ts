@@ -33,8 +33,8 @@ interface NotionBlock {
   lastModifiedBy: string; // usuario que ha creado el bloque
   creationDate: string;
   lastModifiedDate: string;
-  // bgColor
-  // textColor
+  bgColor: string;
+  textColor: string;
 }
 
 interface NotionUser {

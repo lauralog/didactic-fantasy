@@ -3,7 +3,8 @@
 
 @layer components {
   .button {
-    @apply py-2 px-4 w-fit flex items-center justify-center;
+    @apply py-2 px-4 w-fit;
+    @apply flex items-center justify-center;
     @apply rounded-[8px] border-2;
     @apply text-lg min-h-fit;
     @apply cursor-pointer;
@@ -42,6 +43,7 @@
     &--danger {
       --button-color: var(--color-danger);
     }
+    // Button Handler
 
     // Styles
     &--solid {
@@ -64,6 +66,9 @@
     }
     &--sm {
       @apply h-[12px];
+    }
+    &--base {
+      @apply h-[24px];
     }
     &--md {
       @apply h-[28px];

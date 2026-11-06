@@ -29,26 +29,5 @@
         @apply py-3;
       }
     }
-
-    &__block {
-      &--h1 {
-        @apply p-[6px] pt-[30px];
-      }
-      &--h2 {
-        @apply p-[6px] pt-[26px];
-      }
-      &--h3 {
-        @apply p-[6px] pt-[22px];
-      }
-      &--h4 {
-        @apply p-[6px] pt-[18px];
-      }
-      &--h5 {
-        @apply p-[6px] pt-[6px];
-      }
-      &--p {
-        @apply p-[6px] pt-[6px];
-      }
-    }
   }
 }

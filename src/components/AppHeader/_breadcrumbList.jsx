@@ -11,7 +11,7 @@ import BreadcrumbItem from './__breadcrumbItem';
  */
 
 const BreadcrumbList = ({ breadcrumbs, className, ...props }) => {
-  console.log(breadcrumbs);
+  // console.log(breadcrumbs);
   return (
     <ol className="breadcrumbList">
       {breadcrumbs.map((breadcrumb, index) => (

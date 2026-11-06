@@ -45,12 +45,13 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] App Sidebar html/scss
 - [x] App Header html/scss
 - [x] Tooltip Component (basic)
-- [ ] Pop-up Menu Component for contextual menus
 - [x] Collapsible sidebar interaction (basic)
-- [ ] Collapsible sidebar transitions & hover
-- [ ] App Page Block management??? >>> Block Component
+- [PASSfn] Sidebar animations (branch sidebar-animations)
+- [ ] Page content bocks & Block Component (basic)
+- [ ] Pop-up Menu Component for contextual menus
 - [ ] Responsive layout
 - [ ] Refactor Buttons into ui/Button component/s
+- [ ] App Page Block management??? >>> Block Component
 
 ### Should Do
 

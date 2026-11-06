@@ -1,0 +1,60 @@
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .block {
+    @apply w-full h-fit relative;
+    @apply flex;
+    // @apply bg-blue-500/10;
+
+    &__handlers {
+      @apply opacity-0;
+      @apply absolute w-fit max-w-fit;
+      @apply top-[6px] left-0 -translate-x-full;
+      // @apply top-0 left-0 -translate-x-[66%];
+      @apply flex items-center;
+      // @apply bg-amber-500/10;
+      .icon {
+        @apply text-[20px] text-[#ada9a3];
+      }
+
+      &:hover {
+        @apply opacity-100;
+      }
+    }
+
+    &__content {
+      // Refactor into tailwind units
+      // @apply p-[6px] [&>*]:p-2;
+      // @apply bg-green-500/10;
+    }
+
+    &--h1 {
+      @apply p-[6px] pt-[30px];
+    }
+    &--h2 {
+      @apply p-[6px] pt-[26px];
+    }
+    &--h3 {
+      @apply p-[6px] pt-[22px];
+    }
+    &--h4 {
+      @apply p-[6px] pt-[18px];
+    }
+    &--text {
+      @apply p-[6px];
+    }
+    // &--quote {
+    //   @apply;
+    // }
+    // &--code {
+    //   @apply;
+    // }
+    // &--list {
+    //   @apply;
+    // }
+  }
+
+  .blockContent {
+    @apply p-[2px];
+  }
+}
