@@ -1,41 +1,12 @@
 @use '@/assets/scss/main.scss';
 @use '@/assets/scss/tokens/mixins' as *;
 
-@layer components {
-  .appSidebar {
-    @apply h-full;
-
-    &--floating {
-      @apply absolute z-50;
-      @apply left-0 bottom-0 h-[calc(100dvh-var(--headerH))];
-      @apply w-fit pt-2 pb-6 flex flex-col justify-center items-center;
-
-      @apply translate-x-0 opacity-100 visible;
-      @apply bg-blue-500/20;
-
-      &:hover {
-        .sidebarWrapper {
-          @apply visible;
-        }
-      }
-    }
-    .sidebarWrapper {
-      &--floating {
-        @apply h-full max-h-[90dvh];
-
-        @apply translate-x-0 opacity-100 visible;
-        @apply rounded-r-[24px] border border-foreg/10;
-        @apply bg-sf1 shadow-xl;
-      }
-    }
-  }
-}
-
+// Sidebar wrapper content
 @layer components {
   .appSidebar {
     .sidebarWrapper {
       @apply p-0 [&>*]:px-6; // [&>*]:py-2
-      @apply w-[300px] h-full flex flex-col;
+      @apply h-full w-full flex flex-col;
       @apply border-r border-foreg/10;
       @apply bg-sf1 text-foreg;
 
@@ -184,6 +155,45 @@
             // @apply shrink-0;
           }
         }
+      }
+    }
+  }
+}
+
+@layer components {
+  .appSidebar {
+    @apply relative shrink-0;
+    @apply w-[300px] min-w-[300px] h-full;
+    @apply translate-x-0 opacity-100;
+    @apply transition-[transform_opacity_visibility] duration-500 ease-in-out;
+
+    &--open {
+      @apply relative;
+      @apply w-[300px] min-w-[300px];
+      @apply translate-x-0 opacity-100;
+    }
+
+    &--closed {
+      @apply relative;
+      @apply w-0 min-w-0;
+      @apply -translate-x-full opacity-0;
+      @apply pointer-events-none;
+
+      .sidebarWrapper {
+        @apply invisible;
+      }
+    }
+
+    &--floating {
+      @apply w-[300px] min-w-[300px];
+      @apply absolute z-10 left-0 bottom-0;
+      @apply h-[calc(100dvh-var(--headerH))];
+      @apply pt-4 pb-8;
+      @apply translate-x-0 opacity-100;
+
+      .sidebarWrapper {
+        @apply visible;
+        @apply bg-white rounded-r-[12px] shadow-xl;
       }
     }
   }

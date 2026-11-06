@@ -23,14 +23,12 @@ const Sidebar = ({
 }) => {
   return (
     <aside
-      className={`appSidebar ${isSidebarOpen ? '' : isSidebarHovered ? 'appSidebar--floating' : 'hidden'} ${className}`}
+      className={`appSidebar ${isSidebarOpen ? 'appSidebar--open' : isSidebarHovered ? 'appSidebar--floating' : 'appSidebar--closed'} ${className}`}
       onMouseEnter={onSidebarHover}
       onMouseLeave={onSidebarLeave}
       {...props}
     >
-      <div
-        className={`sidebarWrapper ${isSidebarOpen ? '' : isSidebarHovered ? 'sidebarWrapper--floating' : ''} ${className}`}
-      >
+      <div className="sidebarWrapper">
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
