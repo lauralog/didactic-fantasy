@@ -10,7 +10,7 @@
   }
 }
 
-@mixin fillHover($fill: 1) {
+@mixin iconFill($fill: 1) {
   font-variation-settings:
     'FILL' #{$fill},
     'wght' 400,

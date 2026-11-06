@@ -15,7 +15,7 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) 
           onClick={() => setActiveTab(tab.label)}
           className={`tabItem ${activeTab === tab.label ? 'tabItem--active' : ''}`}
         >
-          {tab.icon && <span className="icon fillHover tabItem__icon">{tab.icon}</span>}
+          {tab.icon && <span className="icon iconFill tabItem__icon">{tab.icon}</span>}
           <span className="tabItem__label">{tab.label}</span>
         </button>
       ))}

@@ -62,23 +62,44 @@ const AppHeader = ({
 
       {/* PAGE ACTIONS */}
       <div className="appHeader__actions">
+        {/* Modify Button Component */}
+        <Button
+          hasIcon="false"
+          style="ghost"
+          size="sm"
+          className={`${isSidebarOpen ? 'hidden' : ''} text-nowrap`}
+        >
+          {/* Refactor color & sizes */}
+          <span className="text-[#A19E99] text-sm font-regular">
+            Edited {activePage.lastModified}
+          </span>
+        </Button>
+        <Tooltip tooltipText={'Share with specific people'}>
+          {/* Refactor >>> Button Component */}
+          <button className="iconButton iconButton_wText">
+            <span className="icon icon_size-md">people</span>
+            <span className="w-fit text-nowrap">Share</span>
+          </button>
+        </Tooltip>
         {/* Refactor >>> Button Component */}
-        <button className="iconButton iconButton_wText">
-          <span className="icon icon_size-md">people</span>
-          <span className="w-fit text-nowrap">Share</span>
-        </button>
-        {/* Refactor >>> Button Component */}
-        <button className="iconButton">
-          <span className="icon icon_size-md">link_2</span>
-        </button>
-        {/* Refactor >>> Button Component */}
-        <button className="iconButton">
-          <span className="icon icon_size-md">star</span>
-        </button>
-        {/* Refactor >>> Button Component */}
-        <button className="iconButton">
-          <span className="icon icon_size-md">more_horiz</span>
-        </button>
+        <Tooltip tooltipText={'Copy link'}>
+          <button className="iconButton">
+            <span className="icon icon_size-md">link_2</span>
+          </button>
+        </Tooltip>
+        <Tooltip tooltipText={'Add to your favourites'}>
+          {/* Refactor >>> Button Component */}
+          <button className="iconButton">
+            <span className="icon icon_size-md">star</span>
+          </button>
+        </Tooltip>
+
+        <Tooltip tooltipText="Page settings and actions" className="">
+          {/* Refactor >>> Button Component */}
+          <button className="iconButton">
+            <span className="icon icon_size-md">more_horiz</span>
+          </button>
+        </Tooltip>
       </div>
     </header>
   );

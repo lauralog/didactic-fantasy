@@ -3,7 +3,7 @@
 
 @layer components {
   .appSidebar {
-    @apply h-full w-[300px];
+    @apply h-full w-[300px] shrink-0;
 
     &--floating {
       @apply absolute z-50;
@@ -79,13 +79,13 @@
           &:hover {
             @apply bg-foreg/5;
             .icon {
-              @include fillHover(1);
+              @include iconFill(1);
             }
           }
 
           &__icon {
             @apply text-[#A6A5A2];
-            @include fillHover(0);
+            @include iconFill(0);
           }
           &__label {
             @apply pl-[6px];
@@ -96,7 +96,7 @@
             @apply bg-foreg/5;
             .tabItem__icon {
               @apply text-[#55534E];
-              @include fillHover(1);
+              @include iconFill(1);
             }
             .tabItem__label {
               @apply text-foreg;

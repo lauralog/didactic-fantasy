@@ -55,8 +55,14 @@ const AppPage = ({ activePage, className = '', ...props }) => {
           <span className="icon">{icon}</span>
         </div>
         <div className="headerControls">
-          <span>Backlinks</span>
-          <span>Comments</span>
+          <Button hasIcon="true" style="ghost" size="base">
+            <span className="icon">south_west</span>
+            <span>Backlinks</span>
+          </Button>
+          <Button style="ghost" size="base" hasIcon="true">
+            <span className="icon">chat</span>
+            <span>Add comment</span>
+          </Button>
         </div>
         <div className="headerTitle">
           <h1 className="display">{title}</h1>
@@ -68,21 +74,6 @@ const AppPage = ({ activePage, className = '', ...props }) => {
       {blocks.map((block) => (
         <Block key={block.id} block={block} />
       ))}
-
-      <Tooltip tooltipText="botón de home">
-        <Button>
-          <span className="icon text-2xl">home</span>
-        </Button>
-      </Tooltip>
-      <h2 className="block block--h1">hola soy un texto</h2>
-      <h3 className="block block--h2">hola soy un texto</h3>
-      <h4 className="block block--h3">hola soy un texto</h4>
-      <h5 className="block block--h4">hola soy un texto</h5>
-      <p className="block block--text">hola soy un texto</p>
-      {/* <small>hola soy un texto</small> */}
-      {/* <Button onClick={() => printAlert('click!')} className="mt-8 w-full">
-        ¡Pulsa!
-      </Button> */}
     </section>
   );
 };

@@ -1,12 +1,14 @@
 @use '@/assets/scss/main.scss';
+@use '@/assets/scss/tokens/mixins' as *;
 
 @layer components {
   .appPage {
     @apply pb-[30dvh];
     @apply grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     & > * {
       grid-column: 4 / 10;
+      min-width: 0;
     }
 
     &__imgBanner {
@@ -24,6 +26,8 @@
       }
       .headerControls {
         @apply pt-4 pb-2;
+        @include iconFill(1);
+        @apply flex items-center gap-2;
       }
       .headerTitle {
         @apply py-3;

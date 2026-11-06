@@ -48,7 +48,7 @@ const Block = ({ block, className = '', ...props }) => {
   return (
     <article block={block} className="block relative" data-block-id={block.id}>
       <div className="block__handlers w-fit">
-        {/* Refactor >>> Btn comp: handler */}
+        {/* Modify >>> Btn comp: handler */}
         <Button hasIcon="true" style="ghost" size="base" className="p-0">
           <span className="icon">add</span>
         </Button>
@@ -57,7 +57,7 @@ const Block = ({ block, className = '', ...props }) => {
         </Button>
       </div>
 
-      {/* BLOCK */}
+      {/* BLOCK CONTENT */}
       <div className={`block__content block--${block.type} ${className}`} {...props}>
         <BlockType block={block} className="blockContent" />
       </div>

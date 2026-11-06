@@ -51,7 +51,7 @@ export default function Home() {
 
   // HTML Element
   return (
-    <main className="relative w-screen h-screen overflow-y-hidden flex">
+    <main className="relative w-full min-w-0 h-screen overflow-y-hidden flex">
       <AppSidebar
         activePageId={activePageId}
         setActivePageId={setActivePageId}
@@ -62,17 +62,17 @@ export default function Home() {
         onSidebarLeave={handleSidebarLeave}
       />
 
-      <div className="w-full flex flex-col overflow-y-hidden">
+      <div className="flex-1 min-w-0 flex flex-col overflow-hidden">
         <AppHeader
           activePage={activePage}
           isSidebarOpen={sidebarOpen}
           toggleSidebar={toggleSidebar}
           onSidebarHover={handleSidebarHover}
           onSidebarLeave={handleSidebarLeave}
-          className="relative z-50 shrink-0"
+          className="relative z-50 min-w-0 shrink-0"
         ></AppHeader>
 
-        <AppPage activePage={activePage} className="w-full overflow-y-auto"></AppPage>
+        <AppPage activePage={activePage} className="w-full min-w-0 overflow-y-auto"></AppPage>
       </div>
 
       <Button

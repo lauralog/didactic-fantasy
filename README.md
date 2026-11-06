@@ -70,6 +70,11 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - Breadcrumb functionality and responsive -> difícil
 - App Header actions/ Marcar página como favorita en botón (y tiene que modificar los datos de pages.json -> set isFav = true)
 
+### Marcas en el código
+
+- Refactor
+- Modify
+
 ## Datos curiosos
 
 - Utilizo siempre ...props como fallback de propiedades aunque realmente no hace falta

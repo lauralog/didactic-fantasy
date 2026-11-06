@@ -58,6 +58,7 @@ body {
   }
   button {
     @apply text-md font-medium;
+    @apply text-nowrap;
   }
 
   input,
