@@ -30,11 +30,15 @@ const Heading4 = ({ block, className = '' }) => {
 
 const Block = ({ block, className = '', ...props }) => {
   const blockTypes = {
-    text: Text,
     h1: Heading1,
     h2: Heading2,
     h3: Heading3,
     h4: Heading4,
+    text: Text,
+    // quote: Quote,
+    // bulletList: BulletList,
+    // toggleList: ToggleList,
+    // callout: Callout,
     // image: Image,
   };
   const BlockType = blockTypes[block.type];
