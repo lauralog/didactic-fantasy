@@ -1,21 +1,33 @@
 @import 'material-symbols/outlined.css';
+@use '@/assets/scss/tokens/mixins' as *;
 
 @layer base {
   .icon {
     @apply inline-block;
     @apply font-['Material_Symbols_Outlined'];
     @apply text-lg;
+    @include iconFill(0);
 
-    &_size {
-      &-sm {
-        @apply h-[18px] text-[18px];
-      }
-      &-md {
-        @apply h-[20px] text-[20px];
-      }
-      &-lg {
-        @apply h-[24px] text-[24px];
-      }
+    // icon SIZEs
+    &-2xs {
+      @apply h-3 text-[12px];
+    }
+    &-xs {
+      @apply h-3.5 text-[14px];
+    }
+    &-sm {
+      @apply h-4 text-[16px];
+    }
+    &-md {
+      @apply h-5 text-[20px];
+    }
+    &-lg {
+      @apply h-6 text-[24px];
+    }
+
+    // FILLED
+    &-fill {
+      @include iconFill(1);
     }
   }
 }
