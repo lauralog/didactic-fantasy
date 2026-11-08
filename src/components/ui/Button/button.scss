@@ -77,9 +77,7 @@
     &--outline {
       @apply border border-[var(--button-border-color)]/10;
       @apply bg-transparent;
-      .icon {
-        @apply text-[var(--button-icon-color)];
-      }
+
       &:hover {
         @apply bg-foreg/10;
       }
@@ -88,9 +86,6 @@
       @apply bg-transparent border-transparent;
       @apply text-[var(--button-text-color)];
 
-      .icon {
-        @apply text-[var(--button-icon-color)];
-      }
       &:hover {
         @apply bg-foreg/10;
       }
@@ -99,33 +94,18 @@
     // Sizes
     &-2xs {
       @apply h-5 rounded-sm; //h20
-      .icon {
-        @apply h-3 text-[12px];
-      }
     }
     &-xs {
-      @apply h-5 px-[8px] rounded-sm; //h20
-      .icon {
-        @apply h-4 text-[16px];
-      }
+      @apply h-5 px-[8px] text-[14px] rounded-sm; //h20
     }
     &-sm {
       @apply h-6 px-[8px] text-[14px] rounded-sm; //h24
-      .icon {
-        @apply h-5 text-[20px];
-      }
     }
     &-md {
       @apply h-7 px-[8px] text-[14px] rounded-sm; //h28
-      .icon {
-        @apply h-5 text-[20px];
-      }
     }
     &-lg {
       @apply h-8 px-[12px] text-[14px] rounded-sm; //h32
-      .icon {
-        @apply h-5 text-[20px];
-      }
     }
   }
 

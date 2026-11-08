@@ -25,9 +25,14 @@
         }
       }
       .headerControls {
-        @apply pt-4 pb-2;
-        @include iconFill(1);
+        @apply pt-4 pb-2 opacity-100;
         @apply flex items-center gap-2;
+        .icon {
+          @include iconFill(1);
+        }
+        &:hover {
+          @apply opacity-100;
+        }
       }
       .headerTitle {
         @apply py-3;

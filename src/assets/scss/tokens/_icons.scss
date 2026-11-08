@@ -1,7 +1,7 @@
 @use '@/assets/scss/tokens/mixins' as *;
 @import 'material-symbols/outlined.css';
 
-@layer base {
+@layer utilities {
   .icon {
     @apply inline-block;
     @apply font-['Material_Symbols_Outlined'];

@@ -55,11 +55,11 @@ const AppPage = ({ activePage, className = '', ...props }) => {
           <span className="icon">{icon}</span>
         </div>
         <div className="headerControls">
-          <Button variant="primary" style="solid">
-            <span className="icon">south_west</span>
+          <Button variant="tertiary" style="ghost">
+            <span className="icon icon-sm">south_west</span>
             <span>Backlinks</span>
           </Button>
-          <Button variant="secondary" style="outline">
+          <Button variant="tertiary" style="ghost">
             <span className="icon">chat</span>
             <span>Add comment</span>
           </Button>

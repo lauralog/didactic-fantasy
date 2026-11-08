@@ -84,10 +84,7 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 
 - Utilizo siempre ...props como fallback de propiedades aunque realmente no hace falta
 - margin-inline-end es una propiedad que añade margen a un elemento
-
-<!-- Borrar antes de hacer push
-- Para hacer el compoennte Breadcrumb he intentado seguir el modelo de la librería de shadcn para ver cómo están hechos y entenderlos y también porque me parece una buena idea crear esqueletos de ese estilo, aunque cuando hacemos componentes para una app directamente con su propio DS definido etc. creo que no son tan útiles ya que no necesitan esa flexibilidad que sí necesitan componentes de librerías para adaptarse a cualquier DS.
- -->
+- La manera en la que están hechas las variantes de los botones no me termina de convencer seguramente la hubiese hecho de otra manera o habría que ver de manera aislada si funciona bien pero la voy a dejar así por esta vez, quería ver cómo se podrían gestionar los estilos de esa manera y para este trabajo me sirve.
 
 ## Uso de IA
 
