@@ -8,12 +8,15 @@
     // @apply bg-blue-500/10;
 
     &__handlers {
-      @apply opacity-0 pr-2 w-fit;
+      @apply opacity-0 pr-2;
       @apply absolute w-fit max-w-fit;
       top: var(--block-handlers-padding-top);
       @apply left-0 -translate-x-full;
       @apply flex items-center gap-1;
       // @apply bg-amber-500/10;
+      .button {
+        @apply cursor-pointer;
+      }
       .icon {
         @apply text-xl text-fg4;
       }

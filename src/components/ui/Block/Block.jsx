@@ -12,20 +12,20 @@ import Button from '@/components/ui/Button/Button';
 //   lastModifiedDate: string;
 
 const Text = ({ block, className = '' }) => {
-  return <p className={className}>{block.content}</p>;
+  return <p className={`p blockContent--text ${className}`}>{block.content}</p>;
 };
 
 const Heading1 = ({ block, className = '' }) => {
-  return <h2 className={className}>{block.content}</h2>;
+  return <h2 className={`h1 ${className}`}>{block.content}</h2>;
 };
 const Heading2 = ({ block, className = '' }) => {
-  return <h3 className={className}>{block.content}</h3>;
+  return <h3 className={`h2 ${className}`}>{block.content}</h3>;
 };
 const Heading3 = ({ block, className = '' }) => {
-  return <h4 className={className}>{block.content}</h4>;
+  return <h4 className={`h3 ${className}`}>{block.content}</h4>;
 };
 const Heading4 = ({ block, className = '' }) => {
-  return <h5 className={className}>{block.content}</h5>;
+  return <h5 className={`h4 ${className}`}>{block.content}</h5>;
 };
 
 const Block = ({ block, className = '', ...props }) => {

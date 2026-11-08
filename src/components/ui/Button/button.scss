@@ -110,7 +110,7 @@
   }
 
   .iconButton {
-    @apply relative aspect-square !p-0;
+    @apply relative aspect-square !p-0 cursor-pointer;
     @apply flex items-center text-center;
     @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
   }
