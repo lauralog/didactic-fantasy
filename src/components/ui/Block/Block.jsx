@@ -46,18 +46,18 @@ const Block = ({ block, className = '', ...props }) => {
   console.log(blockTypes[block.type]);
 
   return (
-    <article block={block} className="block relative" data-block-id={block.id}>
-      <div className="block__handlers w-fit">
+    <article
+      block={block}
+      className="block relative"
+      data-block-id={block.id}
+      data-block-type={block.type}
+    >
+      <div className="block__handlers">
         {/* Modify >>> Btn comp: handler */}
-        <Button onlyIcon="true" style="ghost" size="base" className="p-0">
+        <Button onlyIcon={true} style="ghost">
           <span className="icon">add</span>
         </Button>
-        <Button
-          style="ghost"
-          size="base"
-          onlyIcon="true"
-          className="aspect-auto p-0 cursor-pointer"
-        >
+        <Button style="ghost" onlyIcon={true} className="!aspect-auto">
           <span className="icon">drag_indicator</span>
         </Button>
       </div>

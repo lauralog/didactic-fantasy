@@ -32,23 +32,26 @@
 
       &__header {
         @apply h-[44px] shrink-0;
-        @apply px-[12px] flex;
+        @apply px-3 flex;
 
         .headerGroup {
-          @apply flex items-center gap-[2px];
-          @apply text-[20px];
+          @apply flex items-center gap-0.5;
+          // @apply text-[20px];
+          .icon {
+            @apply text-fg3;
+          }
         }
       }
 
       &__search {
-        @apply px-[12px] pb-[6px];
+        @apply px-3 pb-1.5;
         @apply w-full flex items-center;
 
         .searchbar {
-          @apply pl-[8px] pr-[6px];
-          @apply w-full h-[32px];
-          @apply flex items-center justify-start gap-[2px];
-          @apply rounded-[8px] border border-foreg/10;
+          @apply pl-2 pr-1.5;
+          @apply w-full h-8;
+          @apply flex items-center justify-start gap-0.5;
+          @apply rounded-md border border-foreg/10;
           &__input {
             @apply w-full min-w-0;
             @apply flex-1 text-sm;
@@ -57,23 +60,23 @@
             box-shadow: none;
           }
           &__shortcut {
-            @apply py-[2px] px-[4px];
-            @apply bg-foreg/5 text-2xs text-[#8E8B86] font-semibold;
+            @apply py-0.5 px-1;
+            @apply bg-foreg/5 text-2xs text-fg3 font-semibold;
             @apply rounded-[4px] pointer-events-none;
           }
         }
       }
 
       &__tabGroup {
-        @apply py-[6px] pr-[8px] pl-[12px];
-        @apply flex items-center justify-start gap-[2px];
+        @apply py-1.5 pr-2 pl-3;
+        @apply flex items-center justify-start gap-0.5;
         @apply shadow-[-4px_8px_8px_0px_var(--color-sf1)];
         @apply relative z-10;
 
         .tabItem {
-          @apply h-[32px] pl-[5px] pr-[8px];
+          @apply h-8 pl-[5px] pr-4;
           @apply flex items-center;
-          @apply rounded-[8px];
+          @apply rounded-md;
           @apply text-sm capitalize;
 
           &:hover {
@@ -84,18 +87,18 @@
           }
 
           &__icon {
-            @apply text-[#A6A5A2];
+            @apply text-fg4;
             @include iconFill(0);
           }
           &__label {
-            @apply pl-[6px];
-            @apply text-[#7D7A75];
+            @apply pl-1.5;
+            @apply text-fg2;
           }
 
           &--active {
             @apply bg-foreg/5;
             .tabItem__icon {
-              @apply text-[#55534E];
+              @apply text-fg1;
               @include iconFill(1);
             }
             .tabItem__label {
@@ -109,11 +112,11 @@
         @apply px-2 h-full z-0 overflow-y-scroll;
 
         .pageList {
-          @apply mb-[12px] [&>*]:px-2;
+          @apply mb-3 [&>*]:px-2;
           @apply flex flex-col gap-[1px];
           &__title {
             @apply h-[30px] flex items-center;
-            @apply rounded-sm text-xs font-medium text-[#a19e99];
+            @apply rounded-sm text-xs font-medium text-fg4;
             &:hover {
               @apply bg-foreg/5 text-foreg;
             }
@@ -123,11 +126,11 @@
           &__item {
             @apply py-1.25 px-2;
             @apply flex items-center flex-nowrap text-nowrap overflow-x-hidden;
-            @apply rounded-sm text-sm text-[#5F5E59];
+            @apply rounded-sm text-sm text-fg1;
 
             .icon {
               @apply mr-2;
-              @apply text-[18px];
+              @apply text-lg;
               // token refactor icon-sm size & color
             }
             .label {
@@ -146,29 +149,35 @@
       }
 
       &__footer {
-        @apply px-[8px];
+        @apply px-2;
         @apply w-full h-[44px] shrink-0;
-        @apply flex items-center gap-[2px];
+        @apply flex items-center gap-0.5;
         @apply border-t border-foreg/10;
 
         .icon {
-          @apply text-[#8E8B86];
+          @apply text-fg3;
         }
 
         .userToggle {
-          @apply py-[4px] px-[8px];
+          @apply py-1 px-2 rounded-md;
           @apply flex-1 h-[30px];
           @apply flex items-center overflow-hidden;
           @apply text-sm;
+          &:hover {
+            @apply bg-foreg/10;
+          }
           &__avatarWrapper {
-            @include imgWrapper(cover);
-            @apply mr-[8px];
             @apply h-[22px] aspect-square;
-            @apply rounded-full;
+            .imageContainer {
+              @include imgWrapper(cover);
+              @apply mr-2;
+              @apply h-[22px] aspect-square;
+              @apply rounded-full;
+            }
           }
           &__username {
             @apply flex-1 truncate text-nowrap;
-            @apply text-[#5f5e59] font-medium;
+            @apply text-fg1 font-medium;
             @apply font-medium capitalize;
           }
           &__icon {

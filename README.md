@@ -84,7 +84,7 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 
 - Utilizo siempre ...props como fallback de propiedades aunque realmente no hace falta
 - margin-inline-end es una propiedad que añade margen a un elemento
-- La manera en la que están hechas las variantes de los botones no me termina de convencer seguramente la hubiese hecho de otra manera o habría que ver de manera aislada si funciona bien pero la voy a dejar así por esta vez, quería ver cómo se podrían gestionar los estilos de esa manera y para este trabajo me sirve.
+- La manera en la que están hechas las variantes de los botones no me termina de convencer seguramente la hubiese hecho de otra manera o habría que ver de manera aislada si funciona bien pero la voy a dejar así por esta vez, quería ver cómo se podrían gestionar los estilos de esa manera y para este trabajo me sirve. El planteamiento tiene sentido pero por algún mootivo hay algún conflicto entre capas de tailwind, lo que me ha hecho tener que usar algunos importants en casos MUY localizados al usar el componente Button (uso de important justificado lojuro).
 
 ## Uso de IA
 

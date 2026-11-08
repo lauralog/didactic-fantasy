@@ -33,26 +33,23 @@ const Sidebar = ({
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
             <Tooltip tooltipText="Close sidebar">
-              {/* Refactor >>> Button Component */}
-              <Button onlyIcon={true} onClick={toggleSidebar} variant="secondary" style="ghost">
+              <Button onlyIcon={true} variant="secondary" style="ghost" onClick={toggleSidebar}>
                 <span className="icon icon-md">thumbnail_bar</span>
               </Button>
             </Tooltip>
           </div>
           <div className="headerGroup">
-            {/* Refactor >>> Button Component */}
-            <button className="iconButton">
+            <Button onlyIcon={true} variant="secondary" style="ghost">
               {notifications.length > 0 && (
                 <span className="bubbleAlert bubbleAlert--notification  bubbleAlert-md">
                   {notifications.length}
                 </span>
               )}
               <span className="icon icon-md">inbox</span>
-            </button>
-            {/* Refactor >>> Button Component */}
-            <button className="iconButton">
+            </Button>
+            <Button onlyIcon={true} variant="secondary" style="ghost">
               <span className="icon icon-md">edit_square</span>
-            </button>
+            </Button>
           </div>
         </header>
         {/* SEARCHBAR */}
