@@ -10,7 +10,7 @@
   // border: 1px solid salmon;
   @apply box-border;
   &:focus {
-    @apply outline-2 outline-notion-blue outline-offset-2;
+    @apply outline-2 outline-primary outline-offset-2;
   }
 }
 

@@ -16,20 +16,20 @@ const SidebarTabsMenu = ({ user, className = '', ...props }) => {
       {/* BUTTONS */}
       {/* Refactor >>> Button Component */}
       <button className="iconButton">
-        <span className="icon icon_size-md">help</span>
+        <span className="icon icon-md">help</span>
         {news && (
           <span
             className="
-            iconButton__bubble 
-            iconButton__bubble--new 
-            iconButton__bubble_size-sm 
+            bubbleAlert 
+            bubbleAlert--new 
+            bubbleAlert-sm 
             top-1 right-1"
           ></span>
         )}
       </button>
       {/* Refactor >>> Button Component */}
       <button className="iconButton">
-        <span className="icon icon_size-md">view_cozy</span>
+        <span className="icon icon-md">view_cozy</span>
       </button>
     </footer>
   );

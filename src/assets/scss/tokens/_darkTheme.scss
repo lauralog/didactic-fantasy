@@ -3,8 +3,16 @@
 :root[data-theme='dark'] {
   color-scheme: dark;
   --color-backg: var(--black);
-  --color-sf1: var(--grey-900);
+  --color-sf1: var(--grey-950);
+  --color-sf2: var(--grey-900);
+
   --color-foreg: var(--white);
-  --color-fg1: var(--grey-50);
-  // --color-fg2: var(--grey-50);
+  --color-fg1: var(--grey-100);
+  --color-fg2: var(--grey-200);
+  --color-fg3: var(--grey-300);
+
+  --color-border: var(--white);
+
+  --color-primary: var(--blue);
+  --color-danger: var(--red);
 }

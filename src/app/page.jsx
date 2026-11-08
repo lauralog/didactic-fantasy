@@ -76,9 +76,11 @@ export default function Home() {
       </div>
 
       <Button
+        // Revisar boton
         onClick={toggleTheme}
         aria-pressed={theme === 'dark'}
-        className="absolute z-50 bottom-8 right-8 bg-foreg/10"
+        style="outline"
+        className="absolute z-50 bottom-8 right-8"
       >
         {theme === 'light' ? '🌑' : '☀️'}
       </Button>

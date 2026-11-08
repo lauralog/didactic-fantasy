@@ -7,11 +7,10 @@
     // @apply bg-blue-500/10;
 
     &__handlers {
-      @apply opacity-0;
+      @apply opacity-0 pr-2;
       @apply absolute w-fit max-w-fit;
       @apply top-[6px] left-0 -translate-x-full;
-      // @apply top-0 left-0 -translate-x-[66%];
-      @apply flex items-center;
+      @apply flex items-center gap-1;
       // @apply bg-amber-500/10;
       .icon {
         @apply text-[20px] text-[#ada9a3];

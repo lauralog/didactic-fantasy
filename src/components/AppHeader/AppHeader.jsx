@@ -40,19 +40,20 @@ const AppHeader = ({
       {/* Refactor >>> Button Component */}
       <Tooltip tooltipText="Lock sidebar open">
         <Button
-          hasIcon={true}
+          onlyIcon={true}
           variant="secondary"
-          className={`iconButton ${isSidebarOpen ? 'hidden' : ''} mr-2`}
+          style="ghost"
+          className={`${isSidebarOpen ? 'hidden' : ''} mr-2`}
           onClick={toggleSidebar}
           onMouseEnter={onSidebarHover}
           onMouseLeave={onSidebarLeave}
         >
           {notifications.length > 0 && (
-            <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
+            <span className="bubbleAlert bubbleAlert--notification  bubbleAlert-md">
               {notifications.length}
             </span>
           )}
-          <span className="icon">menu</span>
+          <span className="icon text-foreg">menu</span>
         </Button>
       </Tooltip>
       {/* BREADCRUMBS */}
@@ -61,44 +62,43 @@ const AppHeader = ({
       </nav>
 
       {/* PAGE ACTIONS */}
-      <div className="appHeader__actions">
+      <div className="appHeader__actions text-foreg">
         {/* Modify Button Component */}
         <Button
-          hasIcon="false"
+          // onlyIcon={true}
+          variant="tertiary"
           style="ghost"
-          size="sm"
-          className={`${isSidebarOpen ? 'hidden' : ''} text-nowrap`}
+          // size="sm"
+          className={`${isSidebarOpen ? 'hidden' : ''}`}
         >
           {/* Refactor color & sizes */}
-          <span className="text-[#A19E99] text-sm font-regular">
-            Edited {activePage.lastModified}
-          </span>
+          <span>Edited {activePage.lastModified}</span>
         </Button>
         <Tooltip tooltipText={'Share with specific people'}>
           {/* Refactor >>> Button Component */}
-          <button className="iconButton iconButton_wText">
-            <span className="icon icon_size-md">people</span>
-            <span className="w-fit text-nowrap">Share</span>
-          </button>
+          <Button variant="secondary" style="ghost">
+            <span className="icon icon-md text-foreg">people</span>
+            <span className="w-fit">Share</span>
+          </Button>
         </Tooltip>
         {/* Refactor >>> Button Component */}
         <Tooltip tooltipText={'Copy link'}>
-          <button className="iconButton">
-            <span className="icon icon_size-md">link_2</span>
-          </button>
+          <Button onlyIcon={true} variant="secondary" style="ghost">
+            <span className="icon icon-md text-foreg">link_2</span>
+          </Button>
         </Tooltip>
         <Tooltip tooltipText={'Add to your favourites'}>
           {/* Refactor >>> Button Component */}
-          <button className="iconButton">
-            <span className="icon icon_size-md">star</span>
-          </button>
+          <Button onlyIcon={true} variant="secondary" style="ghost">
+            <span className="icon icon-md text-foreg">star</span>
+          </Button>
         </Tooltip>
 
-        <Tooltip tooltipText="Page settings and actions" className="">
+        <Tooltip tooltipText="Page settings and actions">
           {/* Refactor >>> Button Component */}
-          <button className="iconButton">
-            <span className="icon icon_size-md">more_horiz</span>
-          </button>
+          <Button onlyIcon={true} variant="secondary" style="ghost">
+            <span className="icon icon-md text-foreg">more_horiz</span>
+          </Button>
         </Tooltip>
       </div>
     </header>

@@ -3,21 +3,24 @@
   //   Neutral colors
   --white: #ffffff;
   --grey-50: #f9f8f7;
-  //   --grey-100: #;
-  //   --grey-200: #;
-  //   --grey-300: #;
-  //   --grey-400: #;
-  --grey-500: #ada9a3;
-  --grey-600: #a19e99;
-  // --grey-700: #;
-  --grey-800: #5f5e59;
+  --grey-100: #e1e1e0;
+  --grey-200: #bfbdb9;
+  --grey-300: #a19e99;
+  --grey-400: #8e8b86;
+  --grey-500: #7d7a75;
+  --grey-600: #5f5e59;
+  --grey-700: #55534e;
+  --grey-800: #41403d;
   --grey-900: #2c2c2b;
+  --grey-950: #202020;
   --black: #171717;
 
   --yellow: #ffc766;
+  --yellow-hover: #c99435;
   --blue: #3083de;
-  --notion-blue: #3083de;
+  --blue-hover: #2877cc;
   --red: #e16358;
+  --red-hover: #d9392d;
 }
 
 // icon-primary: #383836
@@ -31,19 +34,28 @@
   --color-backg: var(--white);
   --color-sf1: var(--grey-50);
   --color-sf2: var(--grey-100);
-  --color-foreg: var(--black);
-  --color-fg1: var(--grey-900);
-  --color-fg2: var(--grey-800);
 
-  --color-border: var(--black);
+  --color-foreg: var(--grey-900);
+  --color-fg1: var(--grey-600);
+  --color-fg2: var(--grey-500);
+  --color-fg3: var(--grey-400);
+  --color-fg4: var(--grey-300);
 
-  --color-notion-blue: var(--notion-blue);
+  --color-border: var(--grey-900);
+
   --color-primary: var(--blue);
+  --color-primary-hover: var(--blue-hover);
+
   --color-danger: var(--red);
+  --color-danger-hover: var(--red-hover);
 
   /* UNIDADES --------------------------------------------------------------------*/
   /* Variables de border-radius (--radius-*) */
-  // --radius-12: 12px;
+  --radius-xl: 24px;
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
+  --radius-xs: 4px;
 
   /* Variables de espaciado (--spacing-*) esto es el equivalente a definir unidades numéricas en tailwind 
     a mí­ esto me gusta hacerlo en nuemritos, mientras que el radius quizÃ¡s tiene más sentido hacerlo de manera semÃ¡ntica (sm, md. lg...)

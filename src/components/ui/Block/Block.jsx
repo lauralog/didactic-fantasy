@@ -49,10 +49,15 @@ const Block = ({ block, className = '', ...props }) => {
     <article block={block} className="block relative" data-block-id={block.id}>
       <div className="block__handlers w-fit">
         {/* Modify >>> Btn comp: handler */}
-        <Button hasIcon="true" style="ghost" size="base" className="p-0">
+        <Button onlyIcon="true" style="ghost" size="base" className="p-0">
           <span className="icon">add</span>
         </Button>
-        <Button style="ghost" size="base" hasIcon="true" className="aspect-auto p-0 cursor-pointer">
+        <Button
+          style="ghost"
+          size="base"
+          onlyIcon="true"
+          className="aspect-auto p-0 cursor-pointer"
+        >
           <span className="icon">drag_indicator</span>
         </Button>
       </div>

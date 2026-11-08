@@ -38,6 +38,10 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 
 ## Roadmap
 
+[ ] : To do
+[x] : Done
+[/] : Pass or postponed
+
 ### Must Do
 
 - [x] Theming via CSS/Tailwind variables + themes
@@ -46,11 +50,12 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] App Header html/scss
 - [x] Tooltip Component (basic)
 - [x] Collapsible sidebar interaction (basic)
-- [PASSfn] Sidebar animations (branch sidebar-animations)
-- [ ] Page content bocks & Block Component (basic)
+- [/] Sidebar animations (branch sidebar-animations)
+- [x] Page content bocks & Block Component (basic)
+- [ ] Block Component Contextual menu on Drag icon
 - [ ] Pop-up Menu Component for contextual menus
 - [ ] Responsive layout
-- [ ] Refactor Buttons into ui/Button component/s
+- [/] Refactor Buttons into ui/Button component/s
 - [ ] App Page Block management??? >>> Block Component
 
 ### Should Do

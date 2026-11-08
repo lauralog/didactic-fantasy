@@ -12,11 +12,16 @@
       .breadcrumbList {
         @apply h-full w-fit;
         @apply flex items-center overflow-hidden;
+
+        // BREADCRUMB
         .breadcrumb {
           // token refactor units
-          @apply pl-[3px];
+          @apply pl-[3px] rounded-[4px];
           @apply min-w-0 max-w-48 overflow-hidden;
           @apply flex items-center;
+          &:hover {
+            @apply bg-foreg/10;
+          }
 
           &_last {
             @apply flex-1 min-w-0 max-w-full overflow-hidden;
@@ -48,9 +53,9 @@
     &__actions {
       @apply w-fit shrink-0;
       @apply flex items-center gap-[2px];
-      .iconButton {
-        @apply text-sm text-foreg font-regular;
-      }
+      // .iconButton {
+      //   @apply text-sm text-foreg font-regular;
+      // }
     }
   }
 }

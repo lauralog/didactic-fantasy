@@ -3,10 +3,10 @@
 
 @layer components {
   .button {
-    @apply py-2 px-4 w-fit;
-    @apply flex items-center justify-center;
-    @apply rounded-[8px] border-2;
-    @apply text-lg min-h-fit;
+    @apply px-4 w-fit min-w-fit min-h-fit;
+    @apply flex items-center justify-center gap-1.5;
+    @apply rounded-md border-2;
+    @apply text-lg text-nowrap;
     @apply cursor-pointer;
     transition:
       transform 150ms ease,
@@ -15,30 +15,46 @@
       color 150ms ease;
 
     // Valores por defecto.
-    // Uso variables locales para el componente botón
-    // para gestionar los colores y su modo de aplicación
-    // de manera independiente
-    --button-color: var(--primary);
-    --button-bg-opacity: 100%;
-
-    &:hover {
-      @apply opacity-80;
+    // Uso variables locales para el componente botón para gestionar
+    // los colores y su modo de aplicación de manera independiente
+    --button-text-color: var(--white);
+    --button-bg-color: var(--color-primary);
+    --button-bg-hover-color: var(--color-primary-hover);
+    --button-border-color: var(--color-primary);
+    --button-icon-color: var(--white);
+    .icon {
+      @apply flex items-center justify-center;
     }
 
     &:active {
-      @apply scale-[.97];
+      @apply scale-[.98];
+    }
+
+    &:disabled {
+      @apply opacity-50;
     }
 
     // Variants
     &--primary {
-      @apply border-danger;
-      --button-color: var(--color-primary);
-      @apply text-white;
+      --button-text-color: var(--white);
+      --button-bg-color: var(--color-primary);
+      --button-bg-hover-color: var(--color-primary-hover);
+      --button-border-color: var(--color-primary);
+      --button-icon-color: var(--white);
     }
     &--secondary {
-      --button-color: var(--foreg);
-      color: var(--black);
-      // bg-foreg/10
+      --button-text-color: var(--color-foreg);
+      --button-bg-color: var(--color-backg);
+      --button-bg-hover-color: var(--foreg);
+      --button-border-color: var(--color-foreg);
+      --button-icon-color: var(--color-fg3);
+    }
+    &--tertiary {
+      --button-text-color: var(--color-fg3);
+      --button-bg-color: var(--color-backg);
+      --button-bg-hover-color: var(--color-foreg);
+      --button-border-color: var(--color-fg3);
+      --button-icon-color: var(--color-fg3);
     }
     &--danger {
       --button-color: var(--color-danger);
@@ -47,73 +63,98 @@
 
     // Styles
     &--solid {
-      @apply bg-[var(--button-color)]/100;
+      @apply text-[var(--button-text-color)];
+      @apply bg-[var(--button-bg-color)];
+      @apply border-[var(--button-border-color)];
+      .icon {
+        @apply text-[var(--button-icon-color)]/75;
+      }
+      &:hover {
+        @apply bg-[var(--button-bg-hover-color)];
+        @apply border-[var(--button-bg-hover-color)];
+      }
     }
     &--outline {
-      @apply border border-[var(--button-color)];
+      @apply border border-[var(--button-border-color)]/10;
       @apply bg-transparent;
+      .icon {
+        @apply text-[var(--button-icon-color)];
+      }
+      &:hover {
+        @apply bg-foreg/10;
+      }
     }
     &--ghost {
-      @apply bg-transparent border-0;
+      @apply bg-transparent border-transparent;
+      @apply text-[var(--button-text-color)];
+
+      .icon {
+        @apply text-[var(--button-icon-color)];
+      }
       &:hover {
-        @apply bg-[var(--button-color)/30];
+        @apply bg-foreg/10;
       }
     }
 
     // Sizes
-    &--xs {
-      @apply h-[8px];
+    &-2xs {
+      @apply h-5 rounded-sm; //h20
+      .icon {
+        @apply h-3 text-[12px];
+      }
     }
-    &--sm {
-      @apply h-[12px] px-[8px];
+    &-xs {
+      @apply h-5 px-[8px] rounded-sm; //h20
+      .icon {
+        @apply h-4 text-[16px];
+      }
     }
-    &--base {
-      @apply h-[24px];
+    &-sm {
+      @apply h-6 px-[8px] text-[14px] rounded-sm; //h24
+      .icon {
+        @apply h-5 text-[20px];
+      }
     }
-    &--md {
-      @apply h-[28px];
+    &-md {
+      @apply h-7 px-[8px] text-[14px] rounded-sm; //h28
+      .icon {
+        @apply h-5 text-[20px];
+      }
+    }
+    &-lg {
+      @apply h-8 px-[12px] text-[14px] rounded-sm; //h32
+      .icon {
+        @apply h-5 text-[20px];
+      }
     }
   }
 
   .iconButton {
-    @apply relative h-[28px] aspect-square;
-    @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
+    @apply relative aspect-square !p-0;
     @apply flex items-center text-center;
     @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
+  }
 
-    &:hover {
-      @apply bg-foreg/10;
+  .bubbleAlert {
+    @apply absolute top-0 right-0;
+    @apply p-[1px] aspect-square shrink-0;
+    @apply inline-flex items-center justify-center;
+    @apply rounded-full pointer-events-none;
+    @apply text-[9px] text-white font-semibold;
+
+    &--notification {
+      @apply bg-danger;
+    }
+    &--new {
+      @apply bg-primary;
+      @apply outline-1 outline-white;
     }
 
-    &_wText {
-      @apply px-[8px];
-      @apply aspect-auto text-nowrap;
-      @apply flex items-center gap-[6px];
+    &-sm {
+      @apply h-2;
     }
-
-    &__bubble {
-      @apply absolute top-0 right-0;
-      @apply p-[1px] aspect-square shrink-0;
-      @apply inline-flex items-center justify-center;
-      @apply rounded-full pointer-events-none;
-      @apply text-[9px] text-white font-semibold;
-
-      &--notification {
-        @apply bg-danger;
-      }
-      &--new {
-        @apply bg-primary;
-        @apply outline-1 outline-white;
-      }
-
-      &_size {
-        &-sm {
-          @apply h-[8px];
-        }
-        &-md {
-          @apply h-[12px];
-        }
-      }
+    &-md {
+      @apply h-3;
     }
   }
 }

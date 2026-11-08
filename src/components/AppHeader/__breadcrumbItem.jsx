@@ -21,7 +21,7 @@ const BreadcrumbItem = ({
 }) => {
   return (
     <div className={`breadcrumb ${isLast ? 'breadcrumb_last' : ''}  ${className}`} {...props}>
-      <span className="icon icon_size-sm">{breadcrumb.icon}</span>
+      <span className="icon icon-md">{breadcrumb.icon}</span>
 
       <span className="breadcrumb__label">{breadcrumb.title}</span>
 
