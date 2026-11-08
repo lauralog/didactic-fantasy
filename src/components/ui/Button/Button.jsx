@@ -4,7 +4,7 @@ const Button = ({
   children,
   onClick,
   type = 'button',
-  hasIcon = false,
+  onlyIcon = false,
   variant = 'primary',
   style = 'solid',
   size = 'md',
@@ -17,10 +17,10 @@ const Button = ({
     <button
       type={type}
       className={`
-        ${hasIcon ? 'iconButton' : 'button'} 
+        ${onlyIcon ? 'iconButton' : 'button'} 
         button--${variant} 
         button--${style} 
-        button--${size} 
+        button-${size} 
         ${className}
       `}
       onClick={onClick}
