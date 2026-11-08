@@ -2,12 +2,12 @@
 
 @layer components {
   .appHeader {
-    @apply w-full h-[var(--headerH)] px-[12px];
+    @apply w-full h-[var(--headerH)] px-3;
     @apply flex justify-between items-center overflow-visible;
     @apply bg-backg text-sm text-foreg;
 
     &__navigation {
-      @apply h-full flex-1 mr-[8px];
+      @apply h-full flex-1 mr-2;
       @apply flex items-center overflow-hidden;
       .breadcrumbList {
         @apply h-full w-fit;
@@ -45,14 +45,14 @@
 
           &__separator {
             // token refactor color
-            @apply text-[#e6e5e3] shrink-0;
+            @apply text-sf2 shrink-0;
           }
         }
       }
     }
     &__actions {
       @apply w-fit shrink-0;
-      @apply flex items-center gap-[2px];
+      @apply flex items-center gap-0.5;
       // .iconButton {
       //   @apply text-sm text-foreg font-regular;
       // }
