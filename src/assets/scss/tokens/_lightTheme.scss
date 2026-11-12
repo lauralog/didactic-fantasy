@@ -5,7 +5,15 @@
   --color-backg: var(--white);
   --color-sf1: var(--grey-50);
   --color-sf2: var(--grey-100);
-  --color-foreg: var(--black);
-  --color-fg1: var(--grey-900);
-  --color-fg2: var(--grey-800);
+
+  --color-foreg: var(--grey-900);
+  --color-fg1: var(--grey-600);
+  --color-fg2: var(--grey-500);
+  --color-fg3: var(--grey-400);
+  --color-fg3: var(--grey-300);
+
+  --color-border: var(--grey-900);
+
+  --color-primary: var(--blue);
+  --color-danger: var(--red);
 }

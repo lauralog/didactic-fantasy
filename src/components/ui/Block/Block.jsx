@@ -12,20 +12,20 @@ import Button from '@/components/ui/Button/Button';
 //   lastModifiedDate: string;
 
 const Text = ({ block, className = '' }) => {
-  return <p className={className}>{block.content}</p>;
+  return <p className={`p blockContent--text ${className}`}>{block.content}</p>;
 };
 
 const Heading1 = ({ block, className = '' }) => {
-  return <h2 className={className}>{block.content}</h2>;
+  return <h2 className={`h1 ${className}`}>{block.content}</h2>;
 };
 const Heading2 = ({ block, className = '' }) => {
-  return <h3 className={className}>{block.content}</h3>;
+  return <h3 className={`h2 ${className}`}>{block.content}</h3>;
 };
 const Heading3 = ({ block, className = '' }) => {
-  return <h4 className={className}>{block.content}</h4>;
+  return <h4 className={`h3 ${className}`}>{block.content}</h4>;
 };
 const Heading4 = ({ block, className = '' }) => {
-  return <h5 className={className}>{block.content}</h5>;
+  return <h5 className={`h4 ${className}`}>{block.content}</h5>;
 };
 
 const Block = ({ block, className = '', ...props }) => {
@@ -46,13 +46,18 @@ const Block = ({ block, className = '', ...props }) => {
   console.log(blockTypes[block.type]);
 
   return (
-    <article block={block} className="block relative" data-block-id={block.id}>
-      <div className="block__handlers w-fit">
+    <article
+      block={block}
+      className="block relative"
+      data-block-id={block.id}
+      data-block-type={block.type}
+    >
+      <div className="block__handlers">
         {/* Modify >>> Btn comp: handler */}
-        <Button hasIcon="true" style="ghost" size="base" className="p-0">
+        <Button style="ghost">
           <span className="icon">add</span>
         </Button>
-        <Button style="ghost" size="base" hasIcon="true" className="aspect-auto p-0 cursor-pointer">
+        <Button style="ghost" className="aspect-auto">
           <span className="icon">drag_indicator</span>
         </Button>
       </div>

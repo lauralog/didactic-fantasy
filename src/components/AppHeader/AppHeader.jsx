@@ -76,29 +76,29 @@ const AppHeader = ({
         </Button>
         <Tooltip tooltipText={'Share with specific people'}>
           {/* Refactor >>> Button Component */}
-          <button className="iconButton iconButton_wText">
+          <Button variant="header" style="ghost">
             <span className="icon icon_size-md">people</span>
             <span className="w-fit text-nowrap">Share</span>
-          </button>
+          </Button>
         </Tooltip>
         {/* Refactor >>> Button Component */}
         <Tooltip tooltipText={'Copy link'}>
-          <button className="iconButton">
+          <Button variant="header" style="ghost">
             <span className="icon icon_size-md">link_2</span>
-          </button>
+          </Button>
         </Tooltip>
         <Tooltip tooltipText={'Add to your favourites'}>
           {/* Refactor >>> Button Component */}
-          <button className="iconButton">
+          <Button variant="header" style="ghost">
             <span className="icon icon_size-md">star</span>
-          </button>
+          </Button>
         </Tooltip>
 
         <Tooltip tooltipText="Page settings and actions" className="">
           {/* Refactor >>> Button Component */}
-          <button className="iconButton">
+          <Button variant="header" style="ghost">
             <span className="icon icon_size-md">more_horiz</span>
-          </button>
+          </Button>
         </Tooltip>
       </div>
     </header>

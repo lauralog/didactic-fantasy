@@ -77,8 +77,10 @@ export default function Home() {
 
       <Button
         onClick={toggleTheme}
+        style="ghost"
+        size="lg"
         aria-pressed={theme === 'dark'}
-        className="absolute z-50 bottom-8 right-8 bg-foreg/10"
+        className="absolute z-50 bottom-8 right-8"
       >
         {theme === 'light' ? '🌑' : '☀️'}
       </Button>

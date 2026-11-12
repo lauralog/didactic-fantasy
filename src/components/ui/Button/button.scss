@@ -3,9 +3,14 @@
 
 @layer components {
   .button {
-    @apply py-2 px-4 w-fit;
-    @apply flex items-center justify-center;
-    @apply rounded-[8px] border-2;
+    --button-color: var(--color-foreg);
+    --button-color-hover: var(--color-foreg);
+    --text-color: var(--color-backg);
+    // --button-color: var(--foreg);
+    // --button-border-color: var(--foreg);
+    @apply py-0 px-2 w-fit;
+    @apply flex items-center justify-center gap-1;
+    @apply rounded-md border-2;
     @apply text-lg min-h-fit;
     @apply cursor-pointer;
     transition:
@@ -14,15 +19,17 @@
       border-color 150ms ease,
       color 150ms ease;
 
+    .icon {
+      @apply flex items-center justify-center;
+    }
+
     // Valores por defecto.
     // Uso variables locales para el componente botón
     // para gestionar los colores y su modo de aplicación
     // de manera independiente
-    --button-color: var(--primary);
-    --button-bg-opacity: 100%;
 
     &:hover {
-      @apply opacity-80;
+      @apply bg-[var(--button-color)]/30;
     }
 
     &:active {
@@ -31,65 +38,66 @@
 
     // Variants
     &--primary {
-      @apply border-danger;
       --button-color: var(--color-primary);
+      --button-color-hover: var(--color-primary-hover);
       @apply text-white;
     }
     &--secondary {
-      --button-color: var(--foreg);
-      color: var(--black);
-      // bg-foreg/10
+      --button-color: var(--color-foreg);
     }
     &--danger {
       --button-color: var(--color-danger);
     }
-    // Button Handler
+    // Header
+    &--header {
+      --button-color: var(--color-foreg);
+    }
 
     // Styles
     &--solid {
-      @apply bg-[var(--button-color)]/100;
+      @apply bg-[var(--button-color)] text-[var(--text-color)];
+      @apply border-[var(--button-color)];
+      &:hover {
+        @apply bg-[var(--button-color-hover)];
+      }
     }
     &--outline {
-      @apply border border-[var(--button-color)];
-      @apply bg-transparent;
+      @apply bg-transparent  text-[var(--button-color)];
+      @apply border-[var(--button-color)];
+      &:hover {
+        @apply bg-[var(--button-color)]/10;
+      }
     }
     &--ghost {
-      @apply bg-transparent border-0;
+      @apply bg-transparent border-transparent text-[var(--button-color)];
       &:hover {
-        @apply bg-[var(--button-color)/30];
+        @apply bg-[var(--color-foreg)]/10;
       }
     }
 
     // Sizes
-    &--xs {
-      @apply h-[8px];
+    &-2xs {
+      @apply h-5 rounded-sm; //h20
     }
-    &--sm {
-      @apply h-[12px] px-[8px];
+    &-xs {
+      @apply h-5 px-2 text-[14px] rounded-sm; //h20
     }
-    &--base {
-      @apply h-[24px];
+    &-sm {
+      @apply h-6 px-2 text-[14px] rounded-sm; //h24
     }
-    &--md {
-      @apply h-[28px];
+    &-md {
+      @apply h-7 px-2 text-[14px] rounded-sm; //h28
+    }
+    &-lg {
+      @apply h-8 px-3 text-[14px] rounded-md; //h32
     }
   }
 
   .iconButton {
-    @apply relative h-[28px] aspect-square;
-    @apply rounded-[6px] text-[#8e8b86]; //#a6a5a2
+    @apply relative p-0 aspect-square;
+    @apply rounded-sm text-fg3; //#a6a5a2
     @apply flex items-center text-center;
     @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
-
-    &:hover {
-      @apply bg-foreg/10;
-    }
-
-    &_wText {
-      @apply px-[8px];
-      @apply aspect-auto text-nowrap;
-      @apply flex items-center gap-[6px];
-    }
 
     &__bubble {
       @apply absolute top-0 right-0;

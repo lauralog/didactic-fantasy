@@ -4,17 +4,21 @@
   .block {
     @apply w-full h-fit relative;
     @apply flex;
+    --block-handlers-padding-top: 6px;
     // @apply bg-blue-500/10;
 
     &__handlers {
-      @apply opacity-0;
+      @apply opacity-0 pr-2;
       @apply absolute w-fit max-w-fit;
-      @apply top-[6px] left-0 -translate-x-full;
-      // @apply top-0 left-0 -translate-x-[66%];
-      @apply flex items-center;
-      // @apply bg-amber-500/10;
+      top: var(--block-handlers-padding-top);
+      @apply left-0 -translate-x-full;
+      @apply flex items-center gap-1;
+      @apply bg-amber-500/10;
+      .button {
+        @apply cursor-pointer;
+      }
       .icon {
-        @apply text-[20px] text-[#ada9a3];
+        @apply text-xl text-fg4;
       }
 
       &:hover {
@@ -28,17 +32,37 @@
       // @apply bg-green-500/10;
     }
 
+    // h1
+    &[data-block-type='h1'] {
+      --block-handlers-padding-top: 36px;
+    }
     &--h1 {
       @apply p-[6px] pt-[30px];
+    }
+    // h2
+    &[data-block-type='h2'] {
+      --block-handlers-padding-top: 29px;
     }
     &--h2 {
       @apply p-[6px] pt-[26px];
     }
+    // h3
+    &[data-block-type='h3'] {
+      --block-handlers-padding-top: 22px;
+    }
     &--h3 {
       @apply p-[6px] pt-[22px];
     }
+    // h4
+    &[data-block-type='h4'] {
+      --block-handlers-padding-top: 18px;
+    }
     &--h4 {
       @apply p-[6px] pt-[18px];
+    }
+    // text
+    &[data-block-type='text'] {
+      --block-handlers-padding-top: 6px;
     }
     &--text {
       @apply p-[6px];

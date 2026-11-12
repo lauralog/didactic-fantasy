@@ -58,7 +58,7 @@
           }
           &__shortcut {
             @apply py-[2px] px-[4px];
-            @apply bg-foreg/5 text-2xs text-[#8E8B86] font-semibold;
+            @apply bg-foreg/5 text-2xs text-fg3 font-semibold;
             @apply rounded-[4px] pointer-events-none;
           }
         }
@@ -152,7 +152,7 @@
         @apply border-t border-foreg/10;
 
         .icon {
-          @apply text-[#8E8B86];
+          @apply text-fg3;
         }
 
         .userToggle {
