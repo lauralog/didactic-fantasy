@@ -1,11 +1,13 @@
 'use client';
 
+import Button from '@/components/ui/Button/Button';
+
 const SidebarTabsMenu = ({ user, className = '', ...props }) => {
   const news = true;
   return (
     <footer className={`sidebarWrapper__footer ${className}`}>
       {/* USER */}
-      <div role="button" className="iconButton userToggle">
+      <div role="button" className="button button--ghost userToggle py-0">
         {/* Refactor >>> Avatar Component */}
         <div className="userToggle__avatarWrapper">
           <img className="avatar" src={user.avatar} alt={`foto de perfil de ${user.username}`} />
@@ -14,23 +16,20 @@ const SidebarTabsMenu = ({ user, className = '', ...props }) => {
         <span className="icon userToggle__icon">chevron_right</span>
       </div>
       {/* BUTTONS */}
-      {/* Refactor >>> Button Component */}
-      <button className="iconButton">
-        <span className="icon icon_size-md">help</span>
+      <Button>
         {news && (
           <span
             className="
             iconButton__bubble 
             iconButton__bubble--new 
-            iconButton__bubble_size-sm 
-            top-1 right-1"
+            iconButton__bubble_size-sm"
           ></span>
         )}
-      </button>
-      {/* Refactor >>> Button Component */}
-      <button className="iconButton">
+        <span className="icon icon_size-md">help</span>
+      </Button>
+      <Button>
         <span className="icon icon_size-md">view_cozy</span>
-      </button>
+      </Button>
     </footer>
   );
 };

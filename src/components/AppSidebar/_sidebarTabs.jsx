@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 
+import Button from '@/components/ui/Button/Button';
+
 const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
 
   return (
     <nav className="sidebarWrapper__tabGroup">
       {sidebarTabs.map((tab, key) => (
-        // Refactor >>> Button Component
-        <button
+        <Button
           key={key}
           data-active={activeTab === tab.label}
           onClick={() => setActiveTab(tab.label)}
@@ -17,7 +18,7 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) 
         >
           {tab.icon && <span className="icon iconFill tabItem__icon">{tab.icon}</span>}
           <span className="tabItem__label">{tab.label}</span>
-        </button>
+        </Button>
       ))}
     </nav>
   );

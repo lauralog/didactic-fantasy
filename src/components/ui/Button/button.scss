@@ -45,12 +45,18 @@
     &--secondary {
       --button-color: var(--color-foreg);
     }
+    &--tertiary {
+      --button-color: var(--color-fg3);
+    }
     &--danger {
       --button-color: var(--color-danger);
     }
-    // Header
+    // Specific
     &--header {
       --button-color: var(--color-foreg);
+    }
+    &--sidebar {
+      --button-color: var(--color-fg2);
     }
 
     // Styles
@@ -95,9 +101,8 @@
 
   .iconButton {
     @apply relative p-0 aspect-square;
-    @apply rounded-sm text-fg3; //#a6a5a2
-    @apply flex items-center text-center;
-    @apply [&>span.icon]:mx-auto [&>span]:leading-[100%];
+    @apply flex items-center rounded-sm;
+    @apply [&>span]:leading-[100%];
 
     &__bubble {
       @apply absolute top-0 right-0;

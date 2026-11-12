@@ -29,9 +29,10 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
   return (
     <li
       id={id}
+      role="button"
       onClick={onClick}
       data-active={isActive}
-      className={`pageList__item ${isActive ? 'pageList__item--active' : ''}`}
+      className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
     >
       <span className="icon">{icon}</span>
       <span className="label">{title}</span>

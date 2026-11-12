@@ -40,9 +40,9 @@ const AppHeader = ({
       {/* Refactor >>> Button Component */}
       <Tooltip tooltipText="Lock sidebar open">
         <Button
-          hasIcon={true}
           variant="secondary"
-          className={`iconButton ${isSidebarOpen ? 'hidden' : ''} mr-2`}
+          style="ghost"
+          className={`${isSidebarOpen ? 'hidden' : ''} mr-2`}
           onClick={toggleSidebar}
           onMouseEnter={onSidebarHover}
           onMouseLeave={onSidebarLeave}
@@ -64,7 +64,7 @@ const AppHeader = ({
       <div className="appHeader__actions">
         {/* Modify Button Component */}
         <Button
-          hasIcon="false"
+          variant="tertiary"
           style="ghost"
           size="sm"
           className={`${isSidebarOpen ? 'hidden' : ''} text-nowrap`}
@@ -75,27 +75,23 @@ const AppHeader = ({
           </span>
         </Button>
         <Tooltip tooltipText={'Share with specific people'}>
-          {/* Refactor >>> Button Component */}
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">people</span>
             <span className="w-fit text-nowrap">Share</span>
           </Button>
         </Tooltip>
-        {/* Refactor >>> Button Component */}
         <Tooltip tooltipText={'Copy link'}>
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">link_2</span>
           </Button>
         </Tooltip>
         <Tooltip tooltipText={'Add to your favourites'}>
-          {/* Refactor >>> Button Component */}
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">star</span>
           </Button>
         </Tooltip>
 
         <Tooltip tooltipText="Page settings and actions" className="">
-          {/* Refactor >>> Button Component */}
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">more_horiz</span>
           </Button>

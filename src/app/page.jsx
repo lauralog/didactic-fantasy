@@ -80,7 +80,7 @@ export default function Home() {
         style="ghost"
         size="lg"
         aria-pressed={theme === 'dark'}
-        className="absolute z-50 bottom-8 right-8"
+        className="absolute z-50 bottom-8 right-8 p-0 aspect-square"
       >
         {theme === 'light' ? '🌑' : '☀️'}
       </Button>

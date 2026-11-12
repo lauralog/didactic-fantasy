@@ -5,22 +5,22 @@ const Button = ({
   children,
   onClick,
   type = 'button',
-  variant = 'primary',
-  style = 'solid',
+  variant = 'secondary',
+  style = 'ghost',
   size = 'md',
   className = '',
   ...props
 }) => {
   // Automatización del antiguo onlyIcon
-  // El botón detecta si solo tiene un hijo y si este es un span con la clase .icon
+  // El botón detecta si su último hijo es un span con la clase .icon
   // En caso afirmativo, se pinta la clase iconButton
   const childArray = Children.toArray(children);
+  const lastChild = childArray[childArray.length - 1];
   const hasIconChild =
-    childArray.length === 1 &&
-    isValidElement(childArray[0]) &&
-    childArray[0].type === 'span' &&
-    typeof childArray[0].props.className === 'string' &&
-    childArray[0].props.className.split(/\s+/).includes('icon');
+    isValidElement(lastChild) &&
+    lastChild.type === 'span' &&
+    typeof lastChild.props.className === 'string' &&
+    lastChild.props.className.split(/\s+/).includes('icon');
 
   // Al usar: <Button variant="primary"></Button>
   // Pintará: class="button button--primary"
@@ -28,10 +28,10 @@ const Button = ({
     <button
       type={type}
       className={`button
-        ${hasIconChild ? 'iconButton' : ''}
         button--${variant} 
         button--${style} 
         button-${size}
+        ${hasIconChild ? 'iconButton' : ''}
         ${className}
       `}
       onClick={onClick}
