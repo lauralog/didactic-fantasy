@@ -55,8 +55,12 @@
       --button-color: var(--color-fg2);
     }
     &--theming {
-      --button-color: var(--color-foreg);
       @apply shadow-xl border-1;
+      @apply bg-backg border-foreg text-foreg;
+
+      &:hover {
+        @apply bg-foreg border-backg text-backg;
+      }
     }
 
     // Styles
