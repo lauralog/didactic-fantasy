@@ -5,6 +5,13 @@
   .appSidebar {
     @apply h-full w-[300px] shrink-0;
 
+    &--opened {
+      // opacity-1?
+    }
+    &--closed {
+      // opacity-0?
+    }
+
     &--floating {
       @apply absolute z-50;
       @apply left-0 bottom-0 h-[calc(100dvh-var(--headerH))];
