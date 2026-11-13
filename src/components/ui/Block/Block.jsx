@@ -28,6 +28,11 @@ const Heading4 = ({ block, className = '' }) => {
   return <h5 className={`h4 ${className}`}>{block.content}</h5>;
 };
 
+// PASS - no me sirve para el json de bloques porque referencia a otra page
+// const PageLinkMock = ({ block, className = '' }) => {
+//   return <a className={`p blockContent--text ${className}`}>{block.content}</a>;
+// };
+
 const Block = ({ block, className = '', ...props }) => {
   const blockTypes = {
     h1: Heading1,
@@ -40,6 +45,7 @@ const Block = ({ block, className = '', ...props }) => {
     // toggleList: ToggleList,
     // callout: Callout,
     // image: Image,
+    // linkToPage: PageLinkMock,
   };
   const BlockType = blockTypes[block.type];
 

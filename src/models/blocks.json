@@ -1,0 +1,171 @@
+[
+  {
+    "id": "f3a5f574-ae6b-40c5-a59e-5bcd913e4086",
+    "content": "Asignatura página",
+    "type": "h1",
+    "creationDate": "2026-07-14T15:10:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "a2b6a685-bf7c-41d6-b6aa-6dcea24f5197",
+    "content": "Información general",
+    "type": "h2",
+    "creationDate": "2026-07-14T15:12:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "b1c7b796-c08d-42e7-c7bb-7edfb35062a8",
+    "content": "Esta página sirve como espacio de organización para recopilar toda la información relacionada con una asignatura. Aquí se pueden almacenar apuntes, materiales de estudio, enlaces de interés y cualquier otro recurso necesario durante el curso.",
+    "type": "text",
+    "creationDate": "2026-07-14T15:15:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "d9e9d9b8-e2af-4409-e9dd-9f01d57284ca",
+    "content": "Material y organización",
+    "type": "h2",
+    "creationDate": "2026-07-14T15:20:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "c0d8c8a7-d19e-43f8-d8cc-8fe0c46173b9",
+    "content": "En este apartado se pueden organizar los temas impartidos en clase, guardar documentos PDF, consultar bibliografía recomendada y registrar las fechas importantes del calendario académico. También permite mantener un seguimiento del progreso y de las tareas pendientes.",
+    "type": "text",
+    "creationDate": "2026-07-14T15:25:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "f3a67196-c08d-42e7-e1b6-7edfb35062a8",
+    "content": "Proyectos de Diseño Interactivo I",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:30:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "a2b782a7-d19e-43f8-f2c7-8fe0c46173b9",
+    "content": "Experiencia de Usuario",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:32:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "b1c893b8-e2af-4409-a3d8-9f01d57284ca",
+    "content": "Programación para Diseñadores",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:34:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "c0d9a4c9-f3b0-451a-b4e9-a012e68395db",
+    "content": "Lenguajes de Programación",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:36:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "d9eab5da-04c1-462b-c5fa-b123f794a6ec",
+    "content": "Interfaz y Cultura",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:38:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "e1fab6eb-15d2-473c-d60b-c23408a57bfd",
+    "content": "Computación Física",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:40:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "f2abc7fc-26e3-484d-e71c-d34519b68c0e",
+    "content": "Proyectos de Diseño Interactivo II",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:42:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  },
+  {
+    "id": "a3bcd80d-37f4-495e-f82d-e45620c79d1f",
+    "content": "Prácticas",
+    "type": "h3",
+    "creationDate": "2026-07-14T15:44:00Z",
+    "createdBy": "user-Id-123456",
+    "lastModified": "10/10/2026",
+    "lastModifiedBy": "user-Id-123456",
+    "style": {
+      "bgColor": "default",
+      "fgColor": "default"
+    }
+  }
+]

@@ -84,18 +84,18 @@
           }
 
           &__icon {
-            @apply text-[#A6A5A2];
+            @apply text-fg4;
             @include iconFill(0);
           }
           &__label {
-            @apply pl-[6px];
-            @apply text-[#7D7A75];
+            @apply pl-1.5;
+            @apply text-fg2;
           }
 
           &--active {
             @apply bg-foreg/5;
             .tabItem__icon {
-              @apply text-[#55534E];
+              @apply text-fg1;
               @include iconFill(1);
             }
             .tabItem__label {
@@ -109,7 +109,7 @@
         @apply px-2 h-full z-0 overflow-y-scroll;
 
         .pageList {
-          @apply mb-[12px] [&>*]:px-2;
+          @apply mb-3 [&>*]:px-2;
           @apply flex flex-col gap-[1px];
           &__title {
             @apply h-[30px] flex items-center;
@@ -121,16 +121,16 @@
 
           /* _sidebarListItem */
           &__item {
-            @apply py-1.25 px-2;
-            @apply flex items-center flex-nowrap text-nowrap overflow-x-hidden;
-            @apply rounded-sm text-sm text-[#5F5E59];
+            @apply py-1.25 px-2 min-h-[30px] overflow-x-hidden;
+            @apply flex items-center flex-nowrap text-nowrap;
+            @apply rounded-sm text-sm text-fg1;
 
             .icon {
-              @apply mr-2;
-              @apply text-[18px];
-              // token refactor icon-sm size & color
+              @apply mr-2 text-fg1;
+              @apply flex items-center justify-center;
             }
             .label {
+              @apply text-fg1;
               @apply truncate;
             }
 
@@ -139,7 +139,11 @@
             }
             &--active,
             &[data-active='true'] {
-              @apply bg-foreg/5 text-foreg;
+              @apply bg-foreg/5;
+              .label,
+              .icon {
+                @apply text-foreg;
+              }
             }
           }
         }
@@ -152,23 +156,24 @@
         @apply border-t border-foreg/10;
 
         .icon {
-          @apply text-fg3;
+          @apply text-fg2;
+          @apply flex items-center justify-center;
         }
 
         .userToggle {
-          @apply py-[4px] px-[8px];
+          @apply py-1 px-2;
           @apply flex-1 h-[30px];
           @apply flex items-center overflow-hidden;
           @apply text-sm;
           &__avatarWrapper {
             @include imgWrapper(cover);
-            @apply mr-[8px];
+            @apply mr-2;
             @apply h-[22px] aspect-square;
             @apply rounded-full;
           }
           &__username {
             @apply flex-1 truncate text-nowrap;
-            @apply text-[#5f5e59] font-medium;
+            @apply text-fg1 font-medium;
             @apply font-medium capitalize;
           }
           &__icon {

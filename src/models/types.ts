@@ -5,7 +5,7 @@
 // como por ejemplo: el último usuario que ha modificado una página
 
 interface NotionPage {
-  id: string;
+  uuid: string;
   title: string;
   icon: string;
   imgBanner: string;
@@ -26,18 +26,22 @@ interface NotionPage {
 // para este ejercicio voy a hacerlo así
 
 interface NotionBlock {
-  id: string;
+  uuid: string;
   content: any;
   type: string; // text, quote, heading, callout, toggle, code, page...
   createdBy: string; // usuario que ha creado el bloque
   lastModifiedBy: string; // usuario que ha creado el bloque
   creationDate: string;
   lastModifiedDate: string;
-  bgColor: string;
-  textColor: string;
+  style: {
+    bgColor: string;
+    fgColor: string;
+  };
 }
 
+
 interface NotionUser {
+  uuid: string;
   mail: string;
   username: string;
   avatar: string;

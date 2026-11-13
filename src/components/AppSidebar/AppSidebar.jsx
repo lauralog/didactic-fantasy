@@ -1,7 +1,7 @@
 'use client';
 import './appSidebar.scss';
 // Data
-import { notifications, sidebarTabs, user } from '@/models/appMenus';
+import { notifications, sidebarTabs, user } from '@/models/appData';
 import notionPages from '@/models/pages.json';
 // Components
 import SidebarTabsMenu from './_sidebarTabs';

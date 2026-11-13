@@ -8,13 +8,13 @@
 
     &_size {
       &-sm {
-        @apply h-[18px] text-[18px];
+        @apply h-[18px] text-[18px]; // text-lg
       }
       &-md {
-        @apply h-[20px] text-[20px];
+        @apply h-[20px] text-[20px]; // text-xl
       }
       &-lg {
-        @apply h-[24px] text-[24px];
+        @apply h-[24px] text-[24px]; // text-2xl
       }
     }
   }

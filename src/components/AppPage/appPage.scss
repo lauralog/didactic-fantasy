@@ -37,5 +37,11 @@
         @apply py-3;
       }
     }
+
+    &__content {
+      .emptyPageAlert {
+        @apply text-md text-fg4;
+      }
+    }
   }
 }

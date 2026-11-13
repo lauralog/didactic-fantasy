@@ -3,6 +3,7 @@
 
 @layer components {
   .button {
+    // Variables del comp para gestionar color y su aplicación independientemente
     --button-color: var(--color-foreg);
     --button-color-hover: var(--color-foreg);
     --text-color: var(--color-backg);
@@ -22,11 +23,6 @@
     .icon {
       @apply flex items-center justify-center;
     }
-
-    // Valores por defecto.
-    // Uso variables locales para el componente botón
-    // para gestionar los colores y su modo de aplicación
-    // de manera independiente
 
     &:hover {
       @apply bg-[var(--button-color)]/30;
@@ -86,16 +82,16 @@
       @apply h-5 rounded-sm; //h20
     }
     &-xs {
-      @apply h-5 px-2 text-[14px] rounded-sm; //h20
+      @apply h-5 px-2 text-sm rounded-sm; //h20
     }
     &-sm {
-      @apply h-6 px-2 text-[14px] rounded-sm; //h24
+      @apply h-6 px-2 text-sm rounded-sm; //h24
     }
     &-md {
-      @apply h-7 px-2 text-[14px] rounded-sm; //h28
+      @apply h-7 px-2 text-sm rounded-sm; //h28
     }
     &-lg {
-      @apply h-8 px-3 text-[14px] rounded-md; //h32
+      @apply h-8 px-3 text-sm rounded-md; //h32
     }
   }
 

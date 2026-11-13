@@ -10,7 +10,7 @@ import AppHeader from '@/components/AppHeader/AppHeader';
 import AppPage from '@/components/AppPage/AppPage';
 
 // Defino la página inicial por defecto
-const initialPageId = '7f3a9c21-6b84-4d52-ae17-92c5f08b3146';
+const initialPageId = 'a5d2097c-3e81-46b4-bf52-8a17c963d40e';
 
 export default function Home() {
   // Estados

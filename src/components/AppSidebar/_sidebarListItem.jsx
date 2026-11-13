@@ -34,7 +34,7 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
       data-active={isActive}
       className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
     >
-      <span className="icon">{icon}</span>
+      <span className="icon icon_size-sm">{icon}</span>
       <span className="label">{title}</span>
     </li>
   );

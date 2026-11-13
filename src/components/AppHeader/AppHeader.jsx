@@ -5,7 +5,7 @@ import BreadcrumbList from './_breadcrumbList';
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 
-import { notifications } from '@/models/appMenus';
+import { notifications } from '@/models/appData';
 
 // Esto creo que podría ser un hook porque hay anidación de páginas en el sidebar tb
 // Pero aún no sé cómo se hace un custom hook

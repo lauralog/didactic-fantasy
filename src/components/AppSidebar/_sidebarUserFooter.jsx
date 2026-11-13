@@ -16,7 +16,7 @@ const SidebarTabsMenu = ({ user, className = '', ...props }) => {
         <span className="icon userToggle__icon">chevron_right</span>
       </div>
       {/* BUTTONS */}
-      <Button>
+      <Button variant="sidebar" style="ghost">
         {news && (
           <span
             className="
@@ -27,7 +27,7 @@ const SidebarTabsMenu = ({ user, className = '', ...props }) => {
         )}
         <span className="icon icon_size-md">help</span>
       </Button>
-      <Button>
+      <Button variant="sidebar" style="ghost">
         <span className="icon icon_size-md">view_cozy</span>
       </Button>
     </footer>
