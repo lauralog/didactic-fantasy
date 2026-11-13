@@ -113,7 +113,7 @@
           @apply flex flex-col gap-[1px];
           &__title {
             @apply h-[30px] flex items-center;
-            @apply rounded-sm text-xs font-medium text-[#a19e99];
+            @apply rounded-sm text-xs font-medium text-fg4;
             &:hover {
               @apply bg-foreg/5 text-foreg;
             }

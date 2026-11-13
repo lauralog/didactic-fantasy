@@ -2,18 +2,17 @@
 
 @layer components {
   .appHeader {
-    @apply w-full h-[var(--headerH)] px-[12px];
+    @apply w-full h-[var(--headerH)] px-3;
     @apply flex justify-between items-center overflow-visible;
     @apply bg-backg text-sm text-foreg;
 
     &__navigation {
-      @apply h-full flex-1 mr-[8px];
+      @apply h-full flex-1 mr-2;
       @apply flex items-center overflow-hidden;
       .breadcrumbList {
         @apply h-full w-fit;
         @apply flex items-center overflow-hidden;
         .breadcrumb {
-          // token refactor units
           @apply pl-[3px];
           @apply min-w-0 max-w-48 overflow-hidden;
           @apply flex items-center;
@@ -27,20 +26,17 @@
           }
 
           &__label {
-            // token refactor units
             @apply me-[5px];
             @apply min-w-0 text-nowrap truncate;
           }
 
           .icon {
-            // token refactor units
             @apply me-[5px];
             @apply leading-[100%] shrink-0;
           }
 
           &__separator {
-            // token refactor color
-            @apply text-[#e6e5e3] shrink-0;
+            @apply text-fg1 shrink-0;
           }
         }
       }

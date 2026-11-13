@@ -70,9 +70,7 @@ const AppHeader = ({
           className={`${isSidebarOpen ? 'hidden' : ''} text-nowrap`}
         >
           {/* Refactor color & sizes */}
-          <span className="text-[#A19E99] text-sm font-regular">
-            Edited {activePage.lastModified}
-          </span>
+          <span className="text-fg4 text-sm font-regular">Edited {activePage.lastModified}</span>
         </Button>
         <Tooltip tooltipText={'Share with specific people'}>
           <Button variant="header" style="ghost">

@@ -53,13 +53,14 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
     - [ ] sidebarListItem buttons -> onClick page options
   - [ ] Block Handler -> onClick variant contextual menu
 - [ ] Responsive layout
-- [x] Refactor Buttons into ui/Button component/s
-- [x] App Page Block management??? >>> Block Component
 
 ### Should Do
 
+- [x] Refactor Buttons into ui/Button component/s
+- [x] App Page Block management???(basic: dynamic page>blocks rendering) >>> Block Component
+- Tooltip: custom positioning (changes text-color)
 - Tooltip: content hierarchy (changes text-color)
-- Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
+- [x] Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
 - [ ] Sidebar/ add onMouseEnter + State management for page actions
 - Tooltip: Layout sensitive position tooltip component
 
