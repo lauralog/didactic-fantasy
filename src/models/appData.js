@@ -17,6 +17,7 @@ export const sidebarTabs = [
     label: 'home',
     icon: 'home',
     iconSVG: HomeIcon,
+    tooltip: 'Home',
     // },
   },
   {
@@ -24,6 +25,7 @@ export const sidebarTabs = [
     label: 'chat',
     icon: 'chat',
     iconSVG: ChatIcon,
+    tooltip: 'Chat',
     // },
   },
   {
@@ -31,6 +33,7 @@ export const sidebarTabs = [
     label: 'meetings',
     icon: 'calendar_today',
     iconSVG: CalendarTodayIcon,
+    tooltip: 'Meetings',
     // },
   },
 ];

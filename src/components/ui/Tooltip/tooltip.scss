@@ -7,6 +7,7 @@
     .tooltip {
       @apply invisible opacity-0 pointer-events-none;
       @apply transition-opacity duration-200 ease-out;
+      @apply delay-300;
 
       @apply absolute bottom-0 translate-y-[calc(100%+4px)];
       @apply left-1/2 -translate-x-1/2;
@@ -17,7 +18,7 @@
     }
 
     &:hover .tooltip {
-      @apply visible opacity-100;
+      @apply visible opacity-100 delay-300;
     }
   }
 }

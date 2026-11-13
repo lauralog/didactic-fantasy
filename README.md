@@ -47,11 +47,14 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] Tooltip Component (basic)
 - [x] Collapsible sidebar interaction (basic)
 - [PASSfn] Sidebar animations (branch sidebar-animations)
-- [ ] Page content bocks & Block Component (basic)
-- [ ] Pop-up Menu Component for contextual menus
+- [x] Page content bocks & Block Component (basic)
+- [ ] Pop-up/Overlayed Menu Component for contextual menus
+  - [ ] Sidebar Pages (sidebarListItem) -> onMouseEnter variant
+    - [ ] sidebarListItem buttons -> onClick page options
+  - [ ] Block Handler -> onClick variant contextual menu
 - [ ] Responsive layout
-- [ ] Refactor Buttons into ui/Button component/s
-- [ ] App Page Block management??? >>> Block Component
+- [x] Refactor Buttons into ui/Button component/s
+- [x] App Page Block management??? >>> Block Component
 
 ### Should Do
 

@@ -69,7 +69,7 @@ export default function Home() {
           toggleSidebar={toggleSidebar}
           onSidebarHover={handleSidebarHover}
           onSidebarLeave={handleSidebarLeave}
-          className="relative z-50 min-w-0 shrink-0"
+          className="relative z-10 min-w-0 shrink-0"
         ></AppHeader>
 
         <AppPage activePage={activePage} className="w-full min-w-0 overflow-y-auto"></AppPage>
@@ -77,12 +77,16 @@ export default function Home() {
 
       <Button
         onClick={toggleTheme}
-        style="ghost"
-        size="lg"
+        variant="theming"
+        style="outlined"
+        size="theming"
         aria-pressed={theme === 'dark'}
-        className="absolute z-50 bottom-8 right-8 p-0 aspect-square"
+        className="absolute z-50 bottom-6 right-6 aspect-square p-2"
       >
-        {theme === 'light' ? '🌑' : '☀️'}
+        <span className="icon text-3xl">
+          {/* {theme === 'light' ? '🌑' : '☀️'} */}
+          {theme === 'light' ? 'dark_mode' : 'light_mode'}
+        </span>
       </Button>
     </main>
   );

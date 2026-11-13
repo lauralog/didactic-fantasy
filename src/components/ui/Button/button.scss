@@ -54,6 +54,10 @@
     &--sidebar {
       --button-color: var(--color-fg2);
     }
+    &--theming {
+      --button-color: var(--color-foreg);
+      @apply shadow-xl border-1;
+    }
 
     // Styles
     &--solid {
@@ -93,11 +97,15 @@
     &-lg {
       @apply h-8 px-3 text-sm rounded-md; //h32
     }
+    &-theming {
+      @apply h-fit  rounded-full;
+    }
   }
 
   .iconButton {
     @apply relative p-0 aspect-square;
-    @apply flex items-center rounded-sm;
+    @apply flex items-center;
+    // @apply rounded-sm;
     @apply [&>span]:leading-[100%];
 
     &__bubble {

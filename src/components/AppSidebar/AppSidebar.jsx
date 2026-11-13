@@ -33,28 +33,30 @@ const Sidebar = ({
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
             <Tooltip tooltipText="Close sidebar">
-              {/* Refactor >>> Button Component */}
               <Button variant="sidebar" onClick={toggleSidebar}>
                 <span className="icon icon_size-md">thumbnail_bar</span>
               </Button>
             </Tooltip>
           </div>
           <div className="headerGroup">
-            {/* Refactor >>> Button Component */}
-            <Button variant="sidebar">
-              {notifications.length > 0 && (
-                <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
-                  {notifications.length}
-                </span>
-              )}
-              <span className="icon icon_size-md">inbox</span>
-            </Button>
-            {/* Refactor >>> Button Component */}
-            <Button variant="sidebar">
-              <span className="icon icon_size-md">edit_square</span>
-            </Button>
+            <Tooltip tooltipText="Inbox notifications">
+              <Button variant="sidebar">
+                {notifications.length > 0 && (
+                  <span className="iconButton__bubble iconButton__bubble--notification  iconButton__bubble_size-md">
+                    {notifications.length}
+                  </span>
+                )}
+                <span className="icon icon_size-md">inbox</span>
+              </Button>
+            </Tooltip>
+            <Tooltip tooltipText="New...">
+              <Button variant="sidebar">
+                <span className="icon icon_size-md">edit_square</span>
+              </Button>
+            </Tooltip>
           </div>
         </header>
+
         {/* SEARCHBAR */}
         <div className="sidebarWrapper__search">
           <div className="inputWrapper searchbar" tab-index="0" aria-label="search or ask">
@@ -62,12 +64,14 @@ const Sidebar = ({
             <span className="searchbar__shortcut">⌘K</span>
           </div>
         </div>
+
         {/* TABS */}
         <SidebarTabsMenu
           className={`sidebarWrapper__tabGroup ${className}`}
           sidebarTabs={sidebarTabs}
           initialTab={'home'}
         />
+
         {/* PAGES */}
         {/* Refactor >>> Convertir pageList's a componente */}
         {/* ___Favs */}
