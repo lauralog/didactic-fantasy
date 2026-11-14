@@ -2,7 +2,7 @@ import './block.scss';
 
 import Button from '@/components/ui/Button/Button';
 import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
-import BlockEditionMenu from './_blockEditMenu';
+import BlockEditionMenu from './_BlockEditionMenu/BlockEditionMenu';
 
 const Text = ({ block, className = '' }) => {
   return <p className={`p blockContent--text ${className}`}>{block.content}</p>;

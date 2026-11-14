@@ -1,0 +1,12 @@
+@layer base {
+  .divider {
+    @apply flex bg-foreg/10;
+
+    &-x {
+      @apply w-full h-[1px];
+    }
+    &-y {
+      @apply h-full w-[1px];
+    }
+  }
+}

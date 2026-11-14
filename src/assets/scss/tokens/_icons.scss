@@ -7,6 +7,9 @@
     @apply text-lg;
 
     &_size {
+      &-xs {
+        @apply h-[16px] text-[16px]; // text-md
+      }
       &-sm {
         @apply h-[18px] text-[18px]; // text-lg
       }
