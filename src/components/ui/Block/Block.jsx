@@ -1,15 +1,8 @@
 import './block.scss';
 
 import Button from '@/components/ui/Button/Button';
-
-/** BLOCK INTERFACE */
-//   id: string;
-//   content: any;
-//   type: string;
-//   createdBy: string;
-//   lastModifiedBy: string;
-//   creationDate: string;
-//   lastModifiedDate: string;
+import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
+import BlockEditionMenu from './_blockEditMenu';
 
 const Text = ({ block, className = '' }) => {
   return <p className={`p blockContent--text ${className}`}>{block.content}</p>;
@@ -18,21 +11,20 @@ const Text = ({ block, className = '' }) => {
 const Heading1 = ({ block, className = '' }) => {
   return <h2 className={`h1 ${className}`}>{block.content}</h2>;
 };
+
 const Heading2 = ({ block, className = '' }) => {
   return <h3 className={`h2 ${className}`}>{block.content}</h3>;
 };
+
 const Heading3 = ({ block, className = '' }) => {
   return <h4 className={`h3 ${className}`}>{block.content}</h4>;
 };
+
 const Heading4 = ({ block, className = '' }) => {
   return <h5 className={`h4 ${className}`}>{block.content}</h5>;
 };
 
-// PASS - no me sirve para el json de bloques porque referencia a otra page
-// const PageLinkMock = ({ block, className = '' }) => {
-//   return <a className={`p blockContent--text ${className}`}>{block.content}</a>;
-// };
-
+// OK
 const Block = ({ block, className = '', ...props }) => {
   const blockTypes = {
     h1: Heading1,
@@ -40,32 +32,35 @@ const Block = ({ block, className = '', ...props }) => {
     h3: Heading3,
     h4: Heading4,
     text: Text,
-    // quote: Quote,
-    // bulletList: BulletList,
-    // toggleList: ToggleList,
-    // callout: Callout,
-    // image: Image,
-    // linkToPage: PageLinkMock,
   };
+
   const BlockType = blockTypes[block.type];
 
-  console.log(blockTypes[block.type]);
+  if (!BlockType) return null;
 
   return (
-    <article
-      block={block}
-      className="block relative"
-      data-block-id={block.id}
-      data-block-type={block.type}
-    >
+    <article className="block relative" data-block-id={block.id} data-block-type={block.type}>
       <div className="block__handlers">
-        {/* Modify >>> Btn comp: handler */}
         <Button style="ghost">
           <span className="icon">add</span>
         </Button>
-        <Button style="ghost" className="aspect-auto">
-          <span className="icon">drag_indicator</span>
-        </Button>
+
+        {/* DRAG + EDIT HANDLER */}
+        <CollapsibleMenu
+          trigger={({ isOpen, toggleMenu }) => (
+            <Button
+              onClick={toggleMenu}
+              style="ghost"
+              className="aspect-auto"
+              aria-expanded={isOpen}
+              aria-label="Toggle block edition menu"
+            >
+              <span className="icon">drag_indicator</span>
+            </Button>
+          )}
+        >
+          <BlockEditionMenu />
+        </CollapsibleMenu>
       </div>
 
       {/* BLOCK CONTENT */}

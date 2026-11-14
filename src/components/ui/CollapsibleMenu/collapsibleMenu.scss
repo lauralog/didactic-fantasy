@@ -1,0 +1,19 @@
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .collapsibleMenu {
+    @apply relative;
+
+    &__panel {
+      @apply hidden absolute z-50 w-[265px];
+      @apply top-1/2 right-full mr-2;
+      @apply -translate-y-1/2;
+      @apply bg-backg shadow-xl;
+      @apply rounded-lg border border-foreg/10;
+
+      &--open {
+        @apply block;
+      }
+    }
+  }
+}

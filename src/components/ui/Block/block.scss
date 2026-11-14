@@ -2,18 +2,18 @@
 
 @layer components {
   .block {
+    --block-handlers-padding-top: 6px;
     @apply w-full h-fit relative;
     @apply flex;
-    --block-handlers-padding-top: 6px;
     // @apply bg-blue-500/10;
 
     &__handlers {
       @apply opacity-0 pr-2;
       @apply absolute w-fit max-w-fit;
-      top: var(--block-handlers-padding-top);
+      @apply top-[var(--block-handlers-padding-top)];
       @apply left-0 -translate-x-full;
       @apply flex items-center gap-1;
-      @apply bg-amber-500/10;
+      // @apply bg-amber-500/10;
       .button {
         @apply cursor-pointer;
       }
