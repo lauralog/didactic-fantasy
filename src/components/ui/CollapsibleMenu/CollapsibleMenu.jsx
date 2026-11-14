@@ -49,9 +49,6 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
         toggleMenu,
       })}
 
-      {/* <div className={`collapsibleMenu__panel ${isOpen ? 'collapsibleMenu__panel--open' : ''}`}>
-        {children}
-      </div> */}
       {isOpen &&
         createPortal(
           <>
@@ -74,3 +71,21 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
 };
 
 export default CollapsibleMenu;
+
+// USAGE
+//   <CollapsibleMenu
+//     trigger={({ isOpen, toggleMenu }) => (
+//
+//         < Trigger element
+//           onClick={toggleMenu}
+//           aria-expanded={isOpen}
+//           aria-label="Menu name"
+//         >
+//           Trigger element content
+//         </ Trigger element>
+//
+//     )}
+//   >
+//
+//     {/* < custom Menu Component /> */}
+//   </CollapsibleMenu>

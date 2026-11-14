@@ -1,0 +1,7 @@
+@use '@/assets/scss/main.scss';
+
+@layer components {
+  .sharePageMenu {
+    @apply w-fit;
+  }
+}

@@ -10,7 +10,7 @@
     }
 
     &__panel {
-      @apply fixed z-[9999] w-[265px];
+      @apply fixed z-[9999] w-[265px] p-2;
       @apply -translate-y-1/2;
       @apply bg-backg shadow-xl;
       @apply rounded-lg border border-foreg/10;
