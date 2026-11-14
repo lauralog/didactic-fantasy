@@ -4,6 +4,8 @@ import './appHeader.scss';
 import BreadcrumbList from './_breadcrumbList';
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
+import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
+import SharePageMenu from './_shareMenu/SharePageMenu';
 
 // Data
 import pages from '@/models/pages.json';
@@ -28,7 +30,6 @@ const AppHeader = ({
   return (
     <header className={`appHeader ${className}`} {...props}>
       {/* SIDEBAR TOGGLE */}
-      {/* Refactor >>> Button Component */}
       <Tooltip tooltipText="Lock sidebar open">
         <Button
           variant="secondary"
@@ -53,33 +54,47 @@ const AppHeader = ({
 
       {/* PAGE ACTIONS */}
       <div className="appHeader__actions">
-        {/* Modify Button Component */}
         <Button
           variant="tertiary"
           style="ghost"
           size="sm"
           className={`${isSidebarOpen ? 'hidden' : ''} text-nowrap`}
         >
-          {/* Refactor color & sizes */}
           <span className="text-fg4 text-sm font-regular">Edited {activePage.lastModified}</span>
         </Button>
-        <Tooltip tooltipText={'Share with specific people'}>
-          <Button variant="header" style="ghost">
-            <span className="icon icon_size-md">people</span>
-            <span className="w-fit text-nowrap">Share</span>
-          </Button>
-        </Tooltip>
+        {/* Share button + Contextual menu */}
+        <CollapsibleMenu
+          trigger={({ isOpen, toggleMenu }) => (
+            <Tooltip tooltipText={'Share with specific people'}>
+              <Button
+                onClick={toggleMenu}
+                variant="header"
+                style="ghost"
+                aria-expanded={isOpen}
+                aria-label="Toggle share menu"
+              >
+                <span className="icon icon_size-md">people</span>
+                <span className="w-fit text-nowrap">Share</span>
+              </Button>
+            </Tooltip>
+          )}
+        >
+          <SharePageMenu />
+        </CollapsibleMenu>
+
+        {/* Link button */}
         <Tooltip tooltipText={'Copy link'}>
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">link_2</span>
           </Button>
         </Tooltip>
+        {/* Favourites button */}
         <Tooltip tooltipText={'Add to your favourites'}>
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">star</span>
           </Button>
         </Tooltip>
-
+        {/* Page actions button */}
         <Tooltip tooltipText="Page settings and actions" className="">
           <Button variant="header" style="ghost">
             <span className="icon icon_size-md">more_horiz</span>

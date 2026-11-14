@@ -13,7 +13,7 @@
     }
 
     &--floating {
-      @apply absolute z-50;
+      @apply absolute z-10;
       @apply left-0 bottom-0 h-[calc(100dvh-var(--headerH))];
       @apply w-fit pt-2 pb-6 flex flex-col justify-center items-center;
 

@@ -1,0 +1,90 @@
+@use '@/assets/scss/main.scss';
+@use '@/components/ui/Button/button.scss';
+@use '@/assets/scss/tokens/mixins' as *;
+
+@layer components {
+  .collapsibleMenu {
+    @apply relative;
+
+    &__overlay {
+      @apply fixed z-50 inset-0;
+      @apply h-screen w-screen;
+      @apply bg-foreg/5;
+    }
+
+    &__panel {
+      @apply fixed z-[51] w-[265px] p-1;
+      @apply -translate-y-1/2;
+      @apply bg-backg shadow-xl;
+      @apply rounded-lg border border-foreg/10;
+    }
+  }
+
+  .menuSection {
+    @apply w-full py-2;
+    @apply flex flex-col gap-[1px];
+    &--search {
+      @apply mt-1 px-2 py-1;
+      input[type='text'] {
+        @apply w-full h-7 px-2;
+        @apply text-sm;
+        @apply rounded-sm border border-foreg/10;
+        &:focus {
+          @apply outline-none;
+          @apply border-2 border-primary;
+        }
+      }
+    }
+
+    &__label {
+      @apply mt-1.5 mb-2 px-2;
+      @apply text-xs font-medium text-fg2;
+    }
+
+    &__item {
+      @extend .button;
+      @extend .button--ghost;
+      @extend .button-md;
+      @apply w-full px-2;
+      @apply flex items-center justify-between gap-2;
+      &:active {
+        @apply scale-[.99];
+      }
+      .iconL {
+        @extend .icon_size-xs;
+      }
+      .name {
+        @apply flex-1 flex items-center;
+      }
+      .iconR {
+        @extend .icon_size-xs;
+        @apply w-fit -mr-2 text-fg4;
+      }
+    }
+  }
+
+  .menuSection--infoFooter {
+    @apply p-2;
+    @apply text-xs text-fg4;
+    &__label {
+      @apply font-medium;
+    }
+    &__user {
+      @apply flex items-center;
+      .avatarWrapper {
+        @include imgWrapper(cover);
+        @apply h-[16px] aspect-square;
+        @apply mr-1 rounded-full;
+      }
+      .username {
+        @apply capitalize;
+      }
+    }
+    &__lastModifiedDate {
+      @apply mt-px;
+    }
+    &__blockCharacters {
+      @apply mt-px;
+    }
+  }
+}
