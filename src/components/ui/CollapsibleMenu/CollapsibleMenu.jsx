@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 // createPortal: Permite renderizar HTML dentro de document.body,
 // independientemente de quién sea el padre de ese HTML.
 import { createPortal } from 'react-dom';
@@ -41,28 +41,6 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
 
     setIsOpen((isOpen) => !isOpen);
   };
-
-  useEffect(() => {
-    // Si el menú no está opened no hacemos nada
-    if (!isOpen) return;
-
-    // Si el menú no está open...
-    const handleOutsideClick = (ev) => {
-      // Recibimos el evento Click
-      // Event.target es el elemento donde el usuario ha hecho click
-      // Comprobar si el ev.target está dentro de la referencia
-      // y si no es así pasa el estado a opened = false -> closed
-      if (!menuRef.current.contains(ev.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleOutsideClick);
-
-    // Limpiar el evento cuando el menú esté cerrado para no acumular clicks innecesarios
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [isOpen]);
 
   return (
     <div ref={menuRef} className={`collapsibleMenu ${className}`}>
