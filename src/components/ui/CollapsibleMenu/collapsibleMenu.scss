@@ -4,16 +4,16 @@
   .collapsibleMenu {
     @apply relative;
 
+    &__overlay {
+      @apply fixed inset-0 z-[9998];
+      @apply bg-foreg/10;
+    }
+
     &__panel {
-      @apply hidden absolute z-50 w-[265px];
-      @apply top-1/2 right-full mr-2;
+      @apply fixed z-[9999] w-[265px];
       @apply -translate-y-1/2;
       @apply bg-backg shadow-xl;
       @apply rounded-lg border border-foreg/10;
-
-      &--open {
-        @apply block;
-      }
     }
   }
 }
