@@ -1,4 +1,5 @@
 @use '@/assets/scss/main.scss';
+@use '@/components/ui/Button/button.scss';
 
 @layer components {
   .appHeader {
@@ -8,35 +9,76 @@
 
     &__navigation {
       @apply h-full flex-1 mr-2;
-      @apply flex items-center overflow-hidden;
+      @apply flex items-center;
       .breadcrumbList {
         @apply h-full w-fit;
-        @apply flex items-center overflow-hidden;
-        .breadcrumb {
-          @apply pl-[3px];
-          @apply min-w-0 max-w-48 overflow-hidden;
+        @apply flex items-center;
+
+        .breadcrumbItem {
+          @apply relative;
           @apply flex items-center;
+          .breadcrumb {
+            @extend .button--ghost;
+            @extend .button-md;
+            @apply pl-[3px];
 
-          &_last {
-            @apply flex-1 min-w-0 max-w-full overflow-hidden;
+            @apply min-w-0 max-w-48;
+            @apply flex items-center;
 
-            .breadcrumb__label {
+            &_last {
+              @apply flex-1 min-w-0 max-w-full;
+
+              .breadcrumb__label {
+                @apply min-w-0 text-nowrap truncate;
+              }
+            }
+
+            &__label {
+              @apply me-[5px];
               @apply min-w-0 text-nowrap truncate;
             }
-          }
 
-          &__label {
-            @apply me-[5px];
-            @apply min-w-0 text-nowrap truncate;
-          }
+            .icon {
+              @apply me-[5px];
+              @apply leading-[100%] shrink-0;
+            }
 
-          .icon {
-            @apply me-[5px];
-            @apply leading-[100%] shrink-0;
-          }
+            &__separator {
+              @apply text-fg1 shrink-0;
+            }
 
-          &__separator {
-            @apply text-fg1 shrink-0;
+            &__dropdown {
+              @apply hidden;
+              &:hover {
+                @apply absolute top-7 left-0;
+                @apply box-border w-[200px] max-w-[calc(100vw-2rem)] p-1 overflow-x-hidden;
+                @apply flex flex-col gap-px;
+                @apply rounded-md border border-foreg/10 shadow-xl;
+                @apply h-fit bg-backg;
+              }
+
+              .pageItem {
+                @extend .button;
+                @extend .button--ghost;
+                @extend .button-md;
+                @apply w-full min-h-fit justify-start overflow-hidden;
+                // Separar emoji en su propio span
+                &__label {
+                  @apply min-w-0 flex-1 truncate text-left;
+                }
+              }
+            }
+          }
+          &:hover {
+            .breadcrumb {
+              &__dropdown {
+                @apply absolute top-7 left-0;
+                @apply box-border w-[200px] max-w-[calc(100vw-2rem)] p-1 overflow-x-hidden;
+                @apply flex flex-col gap-px;
+                @apply rounded-md border border-foreg/10 shadow-xl;
+                @apply h-fit bg-backg;
+              }
+            }
           }
         }
       }

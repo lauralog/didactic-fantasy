@@ -1,4 +1,4 @@
-import BreadcrumbItem from './__breadcrumbItem';
+import BreadcrumbItem from './_breadcrumbItem';
 
 /**
  * Este componente es el wrapper de los Breadcrumb Items

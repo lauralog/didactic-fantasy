@@ -1,7 +1,7 @@
 import './appHeader.scss';
 
 // Components
-import BreadcrumbList from './_breadcrumbList';
+import BreadcrumbList from './_breadcrumbs/BreadcrumbList';
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
