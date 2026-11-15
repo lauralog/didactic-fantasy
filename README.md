@@ -48,30 +48,34 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] Collapsible sidebar interaction (basic)
 - [PASSfn] Sidebar animations (branch sidebar-animations)
 - [x] Page content bocks & Block Component (basic)
-- [ ] Pop-up/Overlayed Menu Component for contextual menus
+- [x] Pop-up/Overlayed Menu Component for contextual menus
   - [ ] Sidebar Pages (sidebarListItem) -> onMouseEnter variant
     - [ ] sidebarListItem buttons -> onClick page options
-  - [ ] Block Handler -> onClick variant contextual menu
-- [ ] Responsive layout
+  - [x] Block Handler -> onClick variant contextual menu
+- [ ] Responsive layout fixes
+  - [ ] Fix grid margins when sidebar closed
+  - [ ] Custom sidebar width draggable
+  - [ ] Custom collapsable menu absolute positioning (top, bottom, left, right, centerX, centerY)
+- [ ] Finish Change Block Color collapsable menu CSS
+- [ ] Change Block Color functionality (ref. en COULD DO)
 
 ### Should Do
 
 - [x] Refactor Buttons into ui/Button component/s
 - [x] App Page Block management???(basic: dynamic page>blocks rendering) >>> Block Component
+- [x] Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
 - Tooltip: custom positioning (changes text-color)
 - Tooltip: content hierarchy (changes text-color)
-- [x] Refactor '[#hex]' colors (including TW themes que el dark mode no funciona si no)
-- [ ] Sidebar/ add onMouseEnter + State management for page actions
 - Tooltip: Layout sensitive position tooltip component
 
 ### Could Do
 
 - Refactor tabs into component
 - ui/Avatar component
-- Refactor all [px] units into tailwind units
+- [x] Refactor all [px] units into tailwind units
 - Sidebar/ Refactor components
 - Block interactive color change
-- Breadcrumb functionality and responsive -> difícil
+- [x] Breadcrumb functionality and responsive -> difícil
 - App Header actions/ Marcar página como favorita en botón (y tiene que modificar los datos de pages.json -> set isFav = true)
 
 ### Marcas en el código
