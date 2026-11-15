@@ -17,11 +17,11 @@
     ],
     "parentId": "",
     "mockedChildrenPages": [
-      "Lista de asignaturas",
-      "Calendario",
-      "Calificaciones",
-      "Burocracia y trámites",
-      "Instalaciones y Talleres"
+      "📚 Lista de asignaturas",
+      "📅 Calendario",
+      "📝 Calificaciones",
+      "📋 Burocracia y trámites",
+      "🏫 Instalaciones y Talleres"
     ]
   },
   {
@@ -42,14 +42,14 @@
     ],
     "parentId": "7f3a9c21-6b84-4d52-ae17-92c5f08b3146",
     "mockedChildrenPages": [
-      "Proyectos de Diseño Interactivo I",
-      "Experiencia de Usuario",
-      "Programación para Diseñadores",
-      "Lenguajes de Programación",
-      "Interfaz y Cultura",
-      "Computación Física",
-      "Proyectos de Diseño Interactivo II",
-      "Prácticas"
+      "🎨 Proyectos de Diseño Interactivo I",
+      "👤 Experiencia de Usuario",
+      "💻 Programación para Diseñadores",
+      "⌨️ Lenguajes de Programación",
+      "🖥️ Interfaz y Cultura",
+      "⚡ Computación Física",
+      "🧩 Proyectos de Diseño Interactivo II",
+      "💼 Prácticas"
     ]
   },
   {
@@ -88,7 +88,7 @@
       "b9c45f74-ae6b-40c5-a59e-5bcd913e4086"
     ],
     "parentId": "",
-    "mockedChildrenPages": ["Crepúsculo"]
+    "mockedChildrenPages": ["🌙 Crepúsculo"]
   },
   {
     "id": "e1b5c803-7d26-49fa-a418-6c02f93e715b",
@@ -127,10 +127,10 @@
     ],
     "parentId": "",
     "mockedChildrenPages": [
-      "Garbanzos con curry",
-      "Fideos con curry",
-      "Pollo con curry",
-      "Arroz con verduras y curry"
+      "🍛 Garbanzos con curry",
+      "🍜 Fideos con curry",
+      "🍗 Pollo con curry",
+      "🥘 Arroz con verduras y curry"
     ]
   },
   {
@@ -150,7 +150,7 @@
       "e4f9e463-9d5a-4fb4-948d-4abc802d3f75"
     ],
     "parentId": "7f3a9c21-6b84-4d52-ae17-92c5f08b3146",
-    "mockedChildrenPages": ["Que se acabe ya este año de mierda de una puta vez"]
+    "mockedChildrenPages": ["💩 Que se acabe ya este año de mierda de una puta vez"]
   },
   {
     "id": "a5d2097c-3e81-46b4-bf52-8a17c963d40e",

@@ -49,14 +49,16 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [PASSfn] Sidebar animations (branch sidebar-animations)
 - [x] Page content bocks & Block Component (basic)
 - [x] Pop-up/Overlayed Menu Component for contextual menus
-  - [ ] Sidebar Pages (sidebarListItem) -> onMouseEnter variant
-    - [ ] sidebarListItem buttons -> onClick page options
+  - [x] Sidebar Pages (sidebarListItem) -> onMouseEnter variant
+    - [x] sidebarListItem buttons -> onClick page options
   - [x] Block Handler -> onClick variant contextual menu
+- [ ] Sidebar interactions: sidebar animations
+- [ ] Sidebar interactions: custom width draggable
 - [ ] Responsive layout fixes
   - [ ] Fix grid margins when sidebar closed
-  - [ ] Custom sidebar width draggable
   - [ ] Custom collapsable menu absolute positioning (top, bottom, left, right, centerX, centerY)
 - [ ] Finish Change Block Color collapsable menu CSS
+- [ ] !!! Aislar SidebarListItem para poder reutilizarlo en el actual para las páginas hijas, tal y como está ahora no se puede reutilizar!!!!!!!!!!
 - [ ] Change Block Color functionality (ref. en COULD DO)
 
 ### Should Do
@@ -75,7 +77,7 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
 - [x] Refactor all [px] units into tailwind units
 - Sidebar/ Refactor components
 - Block interactive color change
-- [x] Breadcrumb functionality and responsive -> difícil
+- [x] Breadcrumb functionality and responsive
 - App Header actions/ Marcar página como favorita en botón (y tiene que modificar los datos de pages.json -> set isFav = true)
 
 ### Marcas en el código

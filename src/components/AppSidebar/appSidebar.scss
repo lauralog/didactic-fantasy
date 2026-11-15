@@ -113,7 +113,8 @@
       }
 
       &__pagesNav {
-        @apply px-2 h-full z-0 overflow-y-scroll;
+        @apply px-2 h-full z-0;
+        @apply overflow-y-scroll;
 
         .pageList {
           @apply mb-3 [&>*]:px-2;
@@ -128,19 +129,9 @@
 
           /* _sidebarListItem */
           &__item {
-            @apply py-1.25 px-2 min-h-[30px] overflow-x-hidden;
+            @apply py-1.25 px-2 min-h-[30px] w-full;
             @apply flex items-center flex-nowrap text-nowrap;
-            @apply rounded-sm text-sm text-fg1;
-
-            .icon {
-              @apply mr-2 text-fg1;
-              @apply flex items-center justify-center;
-            }
-            .label {
-              @apply text-fg1;
-              @apply truncate;
-            }
-
+            @apply rounded-sm text-sm text-fg1 cursor-pointer;
             &:hover {
               @apply bg-foreg/5;
             }
@@ -151,6 +142,35 @@
               .icon {
                 @apply text-foreg;
               }
+            }
+            // chevron-right icon
+            &[data-expanded='true'] {
+              .dropdownToggle {
+                @apply rotate-90;
+              }
+            }
+
+            .icon {
+              @apply mr-2 text-fg1;
+              @apply flex items-center justify-center;
+            }
+            .label {
+              @apply flex-1;
+              @apply text-fg1 truncate;
+            }
+            .dropdownToggle > .icon,
+            .actionButtons > button > .icon {
+              @apply text-fg3;
+              &:hover {
+                @apply text-fg2;
+              }
+            }
+            .dropdownToggle {
+              @apply mr-1;
+            }
+            .actionButtons {
+              @apply flex items-center gap-px;
+              @apply pl-2 w-fit justify-end;
             }
           }
         }
@@ -170,7 +190,7 @@
         .userToggle {
           @apply py-1 px-2;
           @apply flex-1 h-[30px];
-          @apply flex items-center overflow-hidden;
+          @apply flex items-center;
           @apply text-sm;
           &__avatarWrapper {
             @include imgWrapper(cover);

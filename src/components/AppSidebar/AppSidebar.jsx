@@ -5,7 +5,7 @@ import { notifications, sidebarTabs, user } from '@/models/appData';
 import notionPages from '@/models/pages.json';
 // Components
 import SidebarTabsMenu from './_sidebarTabs';
-import SidebarListItem from './_sidebarListItem';
+import SidebarListItem from './_sidebarListItem/SidebarListItem';
 import SidebarUserFooter from './_sidebarUserFooter';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
 import Button from '@/components/ui/Button/Button';
@@ -32,11 +32,9 @@ const Sidebar = ({
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
-            <Tooltip tooltipText="Close sidebar">
-              <Button variant="sidebar" onClick={toggleSidebar}>
-                <span className="icon icon_size-md">thumbnail_bar</span>
-              </Button>
-            </Tooltip>
+            <Button variant="sidebar" onClick={toggleSidebar}>
+              <span className="icon icon_size-md">thumbnail_bar</span>
+            </Button>
           </div>
           <div className="headerGroup">
             <Tooltip tooltipText="Inbox notifications">

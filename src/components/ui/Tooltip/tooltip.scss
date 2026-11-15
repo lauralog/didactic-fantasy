@@ -2,23 +2,15 @@
 
 @layer components {
   .tooltipWrapper {
-    @apply relative inline-flex w-fit h-fit;
+    @apply inline-flex w-fit h-fit;
+  }
 
-    .tooltip {
-      @apply invisible opacity-0 pointer-events-none;
-      @apply transition-opacity duration-200 ease-out;
-      @apply delay-300;
-
-      @apply absolute bottom-0 translate-y-[calc(100%+4px)];
-      @apply left-1/2 -translate-x-1/2;
-
-      @apply z-50 w-fit px-2 py-1 rounded-md;
-      @apply bg-fg1 text-backg;
-      @apply text-nowrap text-xs;
-    }
-
-    &:hover .tooltip {
-      @apply visible opacity-100 delay-300;
-    }
+  .tooltip {
+    @apply fixed z-100;
+    @apply px-2 py-1 rounded-md;
+    @apply bg-fg1 text-backg;
+    @apply text-nowrap text-xs;
+    @apply -translate-x-1/2 translate-y-1;
+    @apply pointer-events-none;
   }
 }
