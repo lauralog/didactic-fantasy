@@ -144,8 +144,8 @@ const Sidebar = ({
         </nav>
         {/* USER MENU */}
         <SidebarUserFooter user={user} />
-        <div className="appSidebar__resizeHandle" onMouseDown={handleResizeMouseDown} />
       </div>
+      <div className="appSidebar__resizeHandle" onMouseDown={handleResizeMouseDown} />
     </aside>
   );
 };

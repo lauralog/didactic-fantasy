@@ -42,17 +42,13 @@
       @apply left-0 bottom-0;
 
       .sidebarWrapper {
-        opacity: 1;
-        transform: translateX(0);
-        visibility: visible;
+        @apply opacity-100 visible;
+        @apply translate-x-0;
+
         transition:
           opacity 220ms ease,
           transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
           visibility 0s;
-        // border-radius 220ms ease,
-        // box-shadow 220ms ease,
-        // border-color 220ms ease,
-        // background-color 200ms ease;
       }
     }
   }
@@ -72,7 +68,7 @@
   .appSidebar {
     &__resizeHandle {
       @apply absolute top-0 bottom-0 right-0 z-20;
-      @apply w-2 cursor-col-resize;
+      @apply cursor-col-resize w-2;
 
       &::after {
         content: '';
@@ -206,7 +202,7 @@
           }
 
           &__item {
-            @apply py-1.25 px-2 min-h-[30px] w-full;
+            @apply py-1.25 px-2 h-[30px] w-full;
             @apply flex items-center flex-nowrap text-nowrap;
             @apply rounded-sm text-sm text-fg1 cursor-pointer;
 
@@ -262,7 +258,7 @@
       }
 
       &__footer {
-        @apply px-[8px];
+        @apply px-2;
         @apply w-full h-[44px] shrink-0;
         @apply flex items-center gap-[2px];
         @apply border-t border-foreg/10;
