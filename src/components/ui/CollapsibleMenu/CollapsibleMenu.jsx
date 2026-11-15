@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // createPortal: Permite renderizar HTML dentro de document.body,
 // independientemente de quién sea el padre de ese HTML.
 import { createPortal } from 'react-dom';
 
 import './collapsibleMenu.scss';
 
-const CollapsibleMenu = ({ trigger, children, className = '' }) => {
+const CollapsibleMenu = ({ trigger, children, className = '', placement = 'left' }) => {
   // Estado para guardar si el menú está opened o closed
   const [isOpen, setIsOpen] = useState(false);
   // Estado para guardar la posición del trigger
@@ -16,6 +16,34 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
   // Guarda una referencia al contenedor que incluya el botón y el menú.
   // Se usará esta referencia para luego sabe si el usuario ha hecho click fuera y poder cambiar el estado a close.
   const menuRef = useRef(null);
+  const nestedRef = useRef(null);
+
+  useEffect(() => {
+    // Fallback: Si el menú está closed, terminar. Para evitar escuchar clicks cuando el menú está cerrado.
+    if (!isOpen) return;
+
+    // Función que gestiona el evento click del navegador
+    const closeOnOutsideClick = (ev) => {
+      // ev.targer: elemento sobre el que se ha hecho click :HTMLElement
+      // console.log(menuRef, nestedRef, ev.target);
+
+      // Comprobamos dónde se ha hecho el click
+      // menuRef: menú padre
+      // nestedRef: portal del menú hijo
+      // Si el clic se ha producido dentro del menú principal
+      // o dentro del panel anidado, la función se acaba sin cerrar el menú
+      if (menuRef.current?.contains(ev.target) || nestedRef.current?.contains(ev.target)) {
+        return;
+      }
+
+      // Si ninguna de las comprobaciones anteriores se cumple, se cierra el menú
+      setIsOpen(false);
+    };
+
+    // Escuchamos evento click
+    document.addEventListener('click', closeOnOutsideClick);
+    return () => document.removeEventListener('click', closeOnOutsideClick);
+  }, [isOpen]);
 
   const toggleMenu = () => {
     if (!isOpen && menuRef.current) {
@@ -31,7 +59,7 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
       // Nota a futuro: cambiar para hacerlo responsive
       setMenuPosition({
         top: rect.top + rect.height / 2,
-        left: rect.left - 265 - 8,
+        left: placement === 'right' ? rect.right + 8 : rect.left - 265 - 8,
       });
       // Colocación:
       // Centrado verticalmente respecto al trigger.
@@ -55,6 +83,7 @@ const CollapsibleMenu = ({ trigger, children, className = '' }) => {
             <div className="collapsibleMenu__overlay" onClick={() => setIsOpen(false)} />
 
             <div
+              ref={nestedRef}
               className="collapsibleMenu__panel"
               style={{
                 top: menuPosition.top,

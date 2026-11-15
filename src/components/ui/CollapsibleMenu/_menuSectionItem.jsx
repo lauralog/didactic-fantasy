@@ -1,6 +1,6 @@
-const MenuSectionItem = ({ leftIcon = '', label, rightIcon = '', className = '' }) => {
+const MenuSectionItem = ({ leftIcon = '', label, rightIcon = '', className = '', onClick }) => {
   return (
-    <li role="button" className={`menuSection__item ${className}`}>
+    <li role="button" className={`menuSection__item ${className}`} onClick={onClick}>
       {leftIcon && <span className="icon iconL">{leftIcon}</span>}
 
       <span className="name">{label}</span>
