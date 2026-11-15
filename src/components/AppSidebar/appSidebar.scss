@@ -143,6 +143,12 @@
                 @apply text-foreg;
               }
             }
+            // chevron-right icon
+            &[data-expanded='true'] {
+              .dropdownToggle {
+                @apply rotate-90;
+              }
+            }
 
             .icon {
               @apply mr-2 text-fg1;

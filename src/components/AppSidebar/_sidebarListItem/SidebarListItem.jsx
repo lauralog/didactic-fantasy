@@ -36,70 +36,89 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
   const { id, icon, title } = page;
 
   const [isHovered, setIsHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <li
-      id={id}
-      role="button"
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      data-active={isActive}
-      data-hovered={isHovered}
-      className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
-    >
-      {isHovered && (
-        <Button
-          style="ghost"
-          size="xs"
-          className="dropdownToggle"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          <span className="icon icon_size-xs m-0">chevron_right</span>
-        </Button>
-      )}
-      <span className="icon icon_size-sm">{icon}</span>
-      <span className="label">{title}</span>
-      {isHovered && (
-        <span className="actionButtons">
-          {/* Add Page inside */}
-          <Tooltip tooltipText="Add a page inside">
-            <Button
-              style="ghost"
-              size="xs"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <span className="icon icon_size-sm m-0">add</span>
-            </Button>
-          </Tooltip>
-
-          {/* Page Options */}
-          <CollapsibleMenu
-            placement="right"
-            trigger={({ toggleMenu }) => (
-              <Tooltip tooltipText="Remove, rename, and more...">
-                <Button
-                  style="ghost"
-                  size="xs"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMenu();
-                  }}
-                >
-                  <span className="icon icon_size-sm m-0">more_horiz</span>
-                </Button>
-              </Tooltip>
-            )}
+    <>
+      {/* Refactor for component reusability at nested pages */}
+      <li
+        id={id}
+        role="button"
+        onClick={onClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        data-active={isActive}
+        data-hovered={isHovered}
+        data-expanded={isExpanded}
+        className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
+      >
+        {isHovered && (
+          <Button
+            style="ghost"
+            size="xs"
+            className="dropdownToggle"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsExpanded(!isExpanded);
+            }}
           >
-            <SidebarPageOptionsMenu page={page} />
-          </CollapsibleMenu>
-        </span>
+            <span className="icon icon_size-xs m-0">chevron_right</span>
+          </Button>
+        )}
+        <span className="icon icon_size-sm">{icon}</span>
+        <span className="label">{title}</span>
+        {isHovered && (
+          <span className="actionButtons">
+            {/* Add Page inside */}
+            <Tooltip tooltipText="Add a page inside">
+              <Button
+                style="ghost"
+                size="xs"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                <span className="icon icon_size-sm m-0">add</span>
+              </Button>
+            </Tooltip>
+
+            {/* Page Options */}
+            <CollapsibleMenu
+              placement="right"
+              trigger={({ toggleMenu }) => (
+                <Tooltip tooltipText="Remove, rename, and more...">
+                  <Button
+                    style="ghost"
+                    size="xs"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleMenu();
+                    }}
+                  >
+                    <span className="icon icon_size-sm m-0">more_horiz</span>
+                  </Button>
+                </Tooltip>
+              )}
+            >
+              <SidebarPageOptionsMenu page={page} />
+            </CollapsibleMenu>
+          </span>
+        )}
+      </li>
+      {/* NESTED PAGES - Provisional (mocked) */}
+      {isExpanded && page.mockedChildrenPages?.length > 0 && (
+        <ul className="pageList">
+          {page.mockedChildrenPages.map((child, index) => (
+            <li
+              key={index}
+              className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
+            >
+              {child}
+            </li>
+          ))}
+        </ul>
       )}
-    </li>
+    </>
   );
 };
 
