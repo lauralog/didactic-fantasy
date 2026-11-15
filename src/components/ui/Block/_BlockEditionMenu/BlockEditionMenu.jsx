@@ -5,6 +5,7 @@ import Divider from '@/components/ui/Divider';
 import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
 import { MenuSectionItem } from '@/components/ui/CollapsibleMenu/_collapsibleMenuItems';
 import ChangeBlockTypeMenu from './_ChangeBlockTypeMenu';
+import ChangeBlockColorsMenu from './_ChangeBlockColorsMenu';
 
 // Data
 import { user } from '@/models/appData';
@@ -58,7 +59,19 @@ const BlockEditionMenu = () => {
           </CollapsibleMenu>
         </div>
         {/* Change Block Color */}
-
+        {/* <CollapsibleMenu
+          placement="right"
+          trigger={({ toggleMenu }) => (
+            <MenuSectionItem
+              leftIcon="imagesearch_Roller"
+              label="Color"
+              rightIcon="chevron_right"
+              onClick={toggleMenu}
+            />
+          )}
+        >
+          <ChangeBlockColorsMenu />
+        </CollapsibleMenu> */}
         <MenuSectionItem leftIcon="imagesearch_Roller" label="Color" rightIcon="chevron_right" />
       </div>
 
