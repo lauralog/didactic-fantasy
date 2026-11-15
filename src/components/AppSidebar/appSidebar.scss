@@ -8,16 +8,16 @@
 
     &__resizeHandle {
       @apply absolute top-0 bottom-0 right-0 z-20;
-      @apply w-2 cursor-col-resize touch-none;
+      @apply w-2 cursor-col-resize;
 
       &::after {
         content: '';
-        @apply absolute top-0 bottom-0 left-1/2 w-px;
-        @apply bg-transparent transition-colors;
+        @apply absolute top-0 bottom-0 right-0 w-[2px];
+        @apply bg-transparent transition-colors bg-primary;
       }
 
       &:hover::after {
-        @apply bg-foreg/30;
+        @apply bg-primary;
       }
     }
 
