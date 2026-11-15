@@ -1,5 +1,5 @@
 'use client';
-import './appSidebar.scss';
+import './../appSidebar.scss';
 
 // Hooks
 import { useState } from 'react';
@@ -7,6 +7,8 @@ import { useState } from 'react';
 // Components
 import Button from '@/components/ui/Button/Button';
 import Tooltip from '@/components/ui/Tooltip/Tooltip';
+import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
+import SidebarPageOptionsMenu from './_sidebarPageOptionsMenu';
 
 /**
  * Componente que representa un elemento de página en el sidebar,
@@ -55,16 +57,26 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
       <span className="label">{title}</span>
       {isHovered && (
         <span className="actionButtons">
+          {/* Add Page inside */}
           <Tooltip tooltipText="Add a page inside">
             <Button style="ghost" size="xs">
               <span className="icon icon_size-sm m-0">add</span>
             </Button>
           </Tooltip>
-          <Tooltip tooltipText="Remove, rename, and more...">
-            <Button style="ghost" size="xs">
-              <span className="icon icon_size-sm m-0">more_horiz</span>
-            </Button>
-          </Tooltip>
+
+          {/* Page Options */}
+          <CollapsibleMenu
+            placement="right"
+            trigger={({ toggleMenu }) => (
+              <Tooltip tooltipText="Remove, rename, and more...">
+                <Button style="ghost" size="xs" onClick={toggleMenu}>
+                  <span className="icon icon_size-sm m-0">more_horiz</span>
+                </Button>
+              </Tooltip>
+            )}
+          >
+            <SidebarPageOptionsMenu page={page} />
+          </CollapsibleMenu>
         </span>
       )}
     </li>

@@ -3,7 +3,7 @@ import { useId } from 'react';
 // Components
 import Divider from '@/components/ui/Divider';
 import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
-import MenuSectionItem from '@/components/ui/CollapsibleMenu/_menuSectionItem';
+import { MenuSectionItem } from '@/components/ui/CollapsibleMenu/_collapsibleMenuItems';
 import ChangeBlockTypeMenu from './_ChangeBlockTypeMenu';
 
 // Data
@@ -91,6 +91,7 @@ const BlockEditionMenu = () => {
       <Divider className="px-2" />
 
       {/* BLOCK INFO FOOTER */}
+      {/* Refactor >>>>> CollapsibleMenu/MenuFooterSection */}
       <div className="menuSection menuSection--infoFooter">
         <div className="menuSection--infoFooter__label">Last edited</div>
         <div className="menuSection--infoFooter__user">
