@@ -92,11 +92,7 @@ const Sidebar = ({
         </div>
 
         {/* TABS */}
-        <SidebarTabsMenu
-          className={className}
-          sidebarTabs={sidebarTabs}
-          initialTab={'home'}
-        />
+        <SidebarTabsMenu className={className} sidebarTabs={sidebarTabs} initialTab={'home'} />
 
         {/* PAGES */}
         {/* Refactor >>> Convertir pageList's a componente */}

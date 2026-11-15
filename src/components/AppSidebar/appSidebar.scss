@@ -42,22 +42,15 @@
     &--floating {
       @apply absolute z-10;
       @apply left-0 bottom-0;
-      @apply h-[calc(100dvh-var(--headerH))];
-      @apply pt-2 pb-6;
-      @apply flex flex-col justify-center items-center;
 
       .sidebarWrapper {
-        @apply h-full max-h-[90dvh];
-        @apply rounded-r-[24px] border border-foreg/10;
-        @apply bg-sf1 shadow-xl;
+        // opacity: 1;
+        // transform: translateX(0);
+        // visibility: visible;
+        // pointer-events: auto;
 
-        opacity: 1;
-        transform: translateX(0);
-        visibility: visible;
-        pointer-events: auto;
-
-        // Delay only when entering floating
-        transition-delay: 150ms, 150ms, 0ms;
+        // // Delay only when entering floating
+        // transition-delay: 150ms, 150ms, 0ms;
       }
     }
 
@@ -72,6 +65,16 @@
 }
 
 @layer components {
+  .appSidebar--floating {
+    @apply h-[calc(100dvh-var(--headerH))];
+    @apply pt-2 pb-6;
+    @apply flex flex-col justify-center items-center;
+    .sidebarWrapper {
+      @apply h-full max-h-[90dvh];
+      @apply rounded-r-xl border border-foreg/10;
+      @apply bg-sf1 shadow-xl;
+    }
+  }
   .appSidebar {
     .sidebarWrapper {
       @apply p-0 [&>*]:px-6;
@@ -258,12 +261,13 @@
 
         .icon {
           @apply text-fg2;
+          @apply min-w-fit shrink-0;
           @apply flex items-center justify-center;
         }
 
         .userToggle {
           @apply py-1 px-2;
-          @apply flex-1 h-[30px];
+          @apply flex-1 min-w-0 h-[30px];
           @apply flex items-center;
           @apply text-sm;
 
@@ -271,17 +275,17 @@
             @include imgWrapper(cover);
             @apply mr-2;
             @apply h-[22px] aspect-square;
-            @apply rounded-full;
+            @apply rounded-full shrink-0;
           }
 
           &__username {
-            @apply flex-1 truncate text-nowrap;
-            @apply text-fg1 font-medium;
-            @apply font-medium capitalize;
+            @apply flex-1 min-w-0;
+            @apply text-fg1 font-medium capitalize;
+            @apply truncate text-nowrap;
           }
 
           &__icon {
-            // @apply shrink-0;
+            @apply min-w-fit shrink-0;
           }
         }
       }
