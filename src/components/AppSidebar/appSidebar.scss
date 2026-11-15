@@ -6,35 +6,33 @@
     @apply h-full shrink-0;
     position: relative;
 
-    &__resizeHandle {
-      @apply absolute top-0 bottom-0 right-0 z-20;
-      @apply w-2 cursor-col-resize;
-
-      &::after {
-        content: '';
-        @apply absolute top-0 bottom-0 right-0 w-[2px];
-        @apply bg-transparent transition-colors bg-primary;
-      }
-
-      &:hover::after {
-        @apply bg-primary;
-      }
-    }
-
-    // OPEN
-    &--open {
+    // OPENED
+    &--opened {
       @apply flex;
+
       .sidebarWrapper {
+        @apply opacity-100 visible;
+        @apply translate-x-0;
+
+        transition:
+          opacity 200ms ease,
+          transform 300ms ease-in-out,
+          visibility 0s;
       }
     }
 
     // CLOSED
     &--closed {
       @apply absolute opacity-0;
+
       .appSidebar__resizeHandle {
         @apply hidden;
       }
+
       .sidebarWrapper {
+        @apply opacity-0 invisible;
+
+        transform: translateX(-8px);
       }
     }
 
@@ -44,22 +42,18 @@
       @apply left-0 bottom-0;
 
       .sidebarWrapper {
-        // opacity: 1;
-        // transform: translateX(0);
-        // visibility: visible;
-        // pointer-events: auto;
-
-        // // Delay only when entering floating
-        // transition-delay: 150ms, 150ms, 0ms;
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+        transition:
+          opacity 220ms ease,
+          transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+          visibility 0s;
+        // border-radius 220ms ease,
+        // box-shadow 220ms ease,
+        // border-color 220ms ease,
+        // background-color 200ms ease;
       }
-    }
-
-    // Shared visual transitions
-    .sidebarWrapper {
-      transition:
-        opacity 220ms ease,
-        transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
-        visibility 300ms;
     }
   }
 }
@@ -76,6 +70,20 @@
     }
   }
   .appSidebar {
+    &__resizeHandle {
+      @apply absolute top-0 bottom-0 right-0 z-20;
+      @apply w-2 cursor-col-resize;
+
+      &::after {
+        content: '';
+        @apply absolute top-0 bottom-0 right-0 w-[2px];
+        @apply bg-transparent transition-colors bg-primary;
+      }
+
+      &:hover::after {
+        @apply bg-primary;
+      }
+    }
     .sidebarWrapper {
       @apply p-0 [&>*]:px-6;
       @apply w-full h-full flex flex-col;

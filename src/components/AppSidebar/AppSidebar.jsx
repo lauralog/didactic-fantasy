@@ -50,13 +50,13 @@ const Sidebar = ({
 
   return (
     <aside
-      className={`appSidebar min-w-[220px] max-w-[480px] ${isSidebarOpen ? 'appSidebar--open' : isSidebarHovered ? 'appSidebar--floating' : 'appSidebar--closed'} ${className}`}
+      className={`appSidebar min-w-[220px] max-w-[480px] ${isSidebarOpen ? 'appSidebar--opened' : isSidebarHovered ? 'appSidebar--floating' : 'appSidebar--closed'} ${className}`}
       style={{ width: `${sidebarWidth}px` }}
       onMouseEnter={onSidebarHover}
       onMouseLeave={onSidebarLeave}
       {...props}
     >
-      <div className={`sidebarWrapper`}>
+      <div className={`sidebarWrapper overflow-hidden`}>
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
@@ -144,8 +144,8 @@ const Sidebar = ({
         </nav>
         {/* USER MENU */}
         <SidebarUserFooter user={user} />
+        <div className="appSidebar__resizeHandle" onMouseDown={handleResizeMouseDown} />
       </div>
-      <div className="appSidebar__resizeHandle" onMouseDown={handleResizeMouseDown} />
     </aside>
   );
 };
