@@ -49,7 +49,14 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
       className={` pageList__item ${isActive ? 'pageList__item--active' : ''}`}
     >
       {isHovered && (
-        <Button style="ghost" size="xs" className="dropdownToggle">
+        <Button
+          style="ghost"
+          size="xs"
+          className="dropdownToggle"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           <span className="icon icon_size-xs m-0">chevron_right</span>
         </Button>
       )}
@@ -59,7 +66,13 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
         <span className="actionButtons">
           {/* Add Page inside */}
           <Tooltip tooltipText="Add a page inside">
-            <Button style="ghost" size="xs">
+            <Button
+              style="ghost"
+              size="xs"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
               <span className="icon icon_size-sm m-0">add</span>
             </Button>
           </Tooltip>
@@ -69,7 +82,14 @@ const SidebarListItem = ({ page, isActive = false, onClick, className = '', ...p
             placement="right"
             trigger={({ toggleMenu }) => (
               <Tooltip tooltipText="Remove, rename, and more...">
-                <Button style="ghost" size="xs" onClick={toggleMenu}>
+                <Button
+                  style="ghost"
+                  size="xs"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMenu();
+                  }}
+                >
                   <span className="icon icon_size-sm m-0">more_horiz</span>
                 </Button>
               </Tooltip>
