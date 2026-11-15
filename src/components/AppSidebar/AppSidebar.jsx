@@ -32,11 +32,9 @@ const Sidebar = ({
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
-            <Tooltip tooltipText="Close sidebar">
-              <Button variant="sidebar" onClick={toggleSidebar}>
-                <span className="icon icon_size-md">thumbnail_bar</span>
-              </Button>
-            </Tooltip>
+            <Button variant="sidebar" onClick={toggleSidebar}>
+              <span className="icon icon_size-md">thumbnail_bar</span>
+            </Button>
           </div>
           <div className="headerGroup">
             <Tooltip tooltipText="Inbox notifications">
