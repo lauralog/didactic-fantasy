@@ -3,28 +3,70 @@
 
 @layer components {
   .appSidebar {
-    @apply h-full w-[300px] shrink-0;
+    @apply h-full shrink-0;
+    position: relative;
 
-    &--opened {
-      // opacity-1?
+    &__resizeHandle {
+      @apply absolute top-0 bottom-0 right-0 z-20;
+      @apply w-2 cursor-col-resize touch-none;
+
+      &::after {
+        content: '';
+        @apply absolute top-0 bottom-0 left-1/2 w-px;
+        @apply bg-transparent transition-colors;
+      }
+
+      &:hover::after {
+        @apply bg-foreg/30;
+      }
     }
+
+    // OPEN
+    &--open {
+      @apply flex;
+      .sidebarWrapper {
+      }
+    }
+
+    // CLOSED
     &--closed {
-      // opacity-0?
+      @apply absolute opacity-0;
+      .appSidebar__resizeHandle {
+        @apply hidden;
+      }
+      .sidebarWrapper {
+      }
     }
 
+    // FLOATING
     &--floating {
       @apply absolute z-10;
-      @apply left-0 bottom-0 h-[calc(100dvh-var(--headerH))];
-      @apply w-fit pt-2 pb-6 flex flex-col justify-center items-center;
+      @apply left-0 bottom-0;
+      @apply h-[calc(100dvh-var(--headerH))];
+      @apply pt-2 pb-6;
+      @apply flex flex-col justify-center items-center;
 
-      @apply translate-x-0 opacity-100 visible;
       .sidebarWrapper {
         @apply h-full max-h-[90dvh];
-
-        @apply translate-x-0 opacity-100 visible;
         @apply rounded-r-[24px] border border-foreg/10;
         @apply bg-sf1 shadow-xl;
+
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+
+        // Delay only when entering floating
+        transition-delay: 150ms, 150ms, 0ms;
       }
+    }
+
+    // Shared visual transitions
+    .sidebarWrapper {
+      transition:
+        opacity 220ms ease,
+        transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 300ms;
     }
   }
 }
@@ -32,8 +74,8 @@
 @layer components {
   .appSidebar {
     .sidebarWrapper {
-      @apply p-0 [&>*]:px-6; // [&>*]:py-2
-      @apply w-[300px] h-full flex flex-col;
+      @apply p-0 [&>*]:px-6;
+      @apply w-full h-full flex flex-col;
       @apply border-r border-foreg/10;
       @apply bg-sf1 text-foreg;
 
@@ -56,6 +98,7 @@
           @apply w-full h-[32px];
           @apply flex items-center justify-start gap-[2px];
           @apply rounded-[8px] border border-foreg/10;
+
           &__input {
             @apply w-full min-w-0;
             @apply flex-1 text-sm;
@@ -63,6 +106,7 @@
             outline: none;
             box-shadow: none;
           }
+
           &__shortcut {
             @apply py-[2px] px-[4px];
             @apply bg-foreg/5 text-2xs text-fg3 font-semibold;
@@ -72,41 +116,62 @@
       }
 
       &__tabGroup {
-        @apply py-[6px] pr-[8px] pl-[12px];
+        @apply py-[6px] pr-2 pl-3;
         @apply flex items-center justify-start gap-[2px];
         @apply shadow-[-4px_8px_8px_0px_var(--color-sf1)];
         @apply relative z-10;
+        container-type: inline-size;
 
         .tabItem {
-          @apply h-[32px] pl-[5px] pr-[8px];
+          @apply h-8 pl-[5px] pr-2;
           @apply flex items-center;
-          @apply rounded-[8px];
+          @apply rounded-md;
           @apply text-sm capitalize;
+
+          @container (max-width: 256px) {
+            @apply pr-px;
+          }
 
           &:hover {
             @apply bg-foreg/5;
+
             .icon {
               @include iconFill(1);
             }
           }
 
           &__icon {
-            @apply text-fg4;
+            @apply text-fg4 leading-[100%] ml-0;
             @include iconFill(0);
+            @apply transition-all duration-200 ease-in;
           }
+
           &__label {
-            @apply pl-1.5;
+            @apply inline-block pl-px;
             @apply text-fg2;
+            @apply opacity-100 overflow-hidden whitespace-nowrap;
+            @apply transition-all duration-200 ease-in;
+
+            @container (max-width: 256px) {
+              @apply max-w-0 pl-0 opacity-0;
+            }
           }
 
           &--active {
             @apply bg-foreg/5;
+
+            @container (max-width: 256px) {
+              @apply pr-2;
+            }
+
             .tabItem__icon {
               @apply text-fg1;
               @include iconFill(1);
             }
+
             .tabItem__label {
               @apply text-foreg;
+              @apply pl-px opacity-100 max-w-[256px];
             }
           }
         }
@@ -119,31 +184,35 @@
         .pageList {
           @apply mb-3 [&>*]:px-2;
           @apply flex flex-col gap-[1px];
+
           &__title {
             @apply h-[30px] flex items-center;
             @apply rounded-sm text-xs font-medium text-fg4;
+
             &:hover {
               @apply bg-foreg/5 text-foreg;
             }
           }
 
-          /* _sidebarListItem */
           &__item {
             @apply py-1.25 px-2 min-h-[30px] w-full;
             @apply flex items-center flex-nowrap text-nowrap;
             @apply rounded-sm text-sm text-fg1 cursor-pointer;
+
             &:hover {
               @apply bg-foreg/5;
             }
+
             &--active,
             &[data-active='true'] {
               @apply bg-foreg/5;
+
               .label,
               .icon {
                 @apply text-foreg;
               }
             }
-            // chevron-right icon
+
             &[data-expanded='true'] {
               .dropdownToggle {
                 @apply rotate-90;
@@ -154,20 +223,25 @@
               @apply mr-2 text-fg1;
               @apply flex items-center justify-center;
             }
+
             .label {
               @apply flex-1;
               @apply text-fg1 truncate;
             }
+
             .dropdownToggle > .icon,
             .actionButtons > button > .icon {
               @apply text-fg3;
+
               &:hover {
                 @apply text-fg2;
               }
             }
+
             .dropdownToggle {
               @apply mr-1;
             }
+
             .actionButtons {
               @apply flex items-center gap-px;
               @apply pl-2 w-fit justify-end;
@@ -192,17 +266,20 @@
           @apply flex-1 h-[30px];
           @apply flex items-center;
           @apply text-sm;
+
           &__avatarWrapper {
             @include imgWrapper(cover);
             @apply mr-2;
             @apply h-[22px] aspect-square;
             @apply rounded-full;
           }
+
           &__username {
             @apply flex-1 truncate text-nowrap;
             @apply text-fg1 font-medium;
             @apply font-medium capitalize;
           }
+
           &__icon {
             // @apply shrink-0;
           }
