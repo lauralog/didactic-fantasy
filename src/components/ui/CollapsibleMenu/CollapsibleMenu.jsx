@@ -80,7 +80,13 @@ const CollapsibleMenu = ({ trigger, children, className = '', placement = 'left'
       {isOpen &&
         createPortal(
           <>
-            <div className="collapsibleMenu__overlay" onClick={() => setIsOpen(false)} />
+            <div
+              className="collapsibleMenu__overlay"
+              onClick={(ev) => {
+                ev.stopPropagation();
+                setIsOpen(false);
+              }}
+            />
 
             <div
               ref={nestedRef}
