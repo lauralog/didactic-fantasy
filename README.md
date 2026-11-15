@@ -52,8 +52,8 @@ Se ha enriquecido este sistema considerando variantes de componentes, que se mar
   - [x] Sidebar Pages (sidebarListItem) -> onMouseEnter variant
     - [x] sidebarListItem buttons -> onClick page options
   - [x] Block Handler -> onClick variant contextual menu
-- [ ] Sidebar interactions: sidebar animations
-- [ ] Sidebar interactions: custom width draggable
+- [[/]PASS - no consigo q funcione del todo bien] Sidebar interactions: sidebar animations
+- [x] Sidebar interactions: custom width draggable
 - [ ] Responsive layout fixes
   - [ ] Fix grid margins when sidebar closed
   - [ ] Custom collapsable menu absolute positioning (top, bottom, left, right, centerX, centerY)

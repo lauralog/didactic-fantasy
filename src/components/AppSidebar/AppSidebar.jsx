@@ -1,5 +1,7 @@
 'use client';
 import './appSidebar.scss';
+import { useState } from 'react';
+
 // Data
 import { notifications, sidebarTabs, user } from '@/models/appData';
 import notionPages from '@/models/pages.json';
@@ -21,14 +23,40 @@ const Sidebar = ({
   className = '',
   ...props
 }) => {
+  const [sidebarWidth, setSidebarWidth] = useState(300);
+
+  /**
+   * Función para redimensionar el ancho del sidebar con eventos de mouse
+   * @param {*} event
+   * @returns
+   */
+  const handleResizeMouseDown = (event) => {
+    if (event.button !== 0) return;
+
+    event.preventDefault();
+    const sidebar = event.currentTarget.parentElement;
+    const handleMouseMove = (moveEvent) => {
+      const sidebarLeft = sidebar.getBoundingClientRect().left;
+      setSidebarWidth(moveEvent.clientX - sidebarLeft);
+    };
+    const handleMouseUp = () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
   return (
     <aside
-      className={`appSidebar ${isSidebarOpen ? '' : isSidebarHovered ? 'appSidebar--floating' : 'hidden'} ${className}`}
+      className={`appSidebar min-w-[220px] max-w-[480px] ${isSidebarOpen ? 'appSidebar--opened' : isSidebarHovered ? 'appSidebar--floating' : 'appSidebar--closed'} ${className}`}
+      style={{ width: `${sidebarWidth}px` }}
       onMouseEnter={onSidebarHover}
       onMouseLeave={onSidebarLeave}
       {...props}
     >
-      <div className={`sidebarWrapper`}>
+      <div className={`sidebarWrapper overflow-hidden`}>
         {/* HEADER */}
         <header className="sidebarWrapper__header">
           <div className="headerGroup flex-1">
@@ -64,11 +92,7 @@ const Sidebar = ({
         </div>
 
         {/* TABS */}
-        <SidebarTabsMenu
-          className={`sidebarWrapper__tabGroup ${className}`}
-          sidebarTabs={sidebarTabs}
-          initialTab={'home'}
-        />
+        <SidebarTabsMenu className={className} sidebarTabs={sidebarTabs} initialTab={'home'} />
 
         {/* PAGES */}
         {/* Refactor >>> Convertir pageList's a componente */}
@@ -120,6 +144,7 @@ const Sidebar = ({
         </nav>
         {/* USER MENU */}
         <SidebarUserFooter user={user} />
+        <div className="appSidebar__resizeHandle" onMouseDown={handleResizeMouseDown} />
       </div>
     </aside>
   );

@@ -9,7 +9,7 @@ const SidebarTabsMenu = ({ sidebarTabs, initialTab, className = '', ...props }) 
   const [activeTab, setActiveTab] = useState(initialTab);
 
   return (
-    <nav className="sidebarWrapper__tabGroup">
+    <nav className={`sidebarWrapper__tabGroup ${className}`}>
       {sidebarTabs.map((tab, key) => (
         <Tooltip key={key} tooltipText={tab.tooltip}>
           <Button
