@@ -2,7 +2,10 @@ import { useId } from 'react';
 
 // Components
 import Divider from '@/components/ui/Divider';
+import CollapsibleMenu from '@/components/ui/CollapsibleMenu/CollapsibleMenu';
 import MenuSectionItem from '@/components/ui/CollapsibleMenu/_menuSectionItem';
+import ChangeBlockTypeMenu from './_ChangeBlockTypeMenu';
+import ChangeBlockColorsMenu from './_ChangeBlockColorsMenu';
 
 // Data
 import { user } from '@/models/appData';
@@ -20,7 +23,7 @@ const BlockEditionMenu = () => {
   };
 
   return (
-    <div className="menu">
+    <div className="menuWrapper">
       <div className="menuSection menuSection--search">
         <label className="sr-only" htmlFor={searchInputId}>
           Search actions
@@ -34,11 +37,42 @@ const BlockEditionMenu = () => {
       </div>
 
       {/* SECTION */}
-      <ul className="menuSection">
-        <li className="menuSection__label">Heading 1</li>
-        <MenuSectionItem leftIcon="cached" label="Turn into" rightIcon="chevron_right" />
-        <MenuSectionItem leftIcon="imagesearch_Roller" label="Color" rightIcon="chevron_right" />
-      </ul>
+      <div className="menuSection">
+        {/* He tenido que  poner divs en esta sección porque al tener otro Menú anidado salta un error de que 
+        un li no puede contener otros lis dentro de él y esto causa un 'hidration error', 
+        a parte de que supongo que a nivel semántico es extremadamente incorrecto*/}
+        <div className="menuSection__label">Heading 1</div>
+        <div>
+          {/* Change Block Type */}
+          <CollapsibleMenu
+            placement="right"
+            trigger={({ toggleMenu }) => (
+              <MenuSectionItem
+                leftIcon="cached"
+                label="Turn into"
+                rightIcon="chevron_right"
+                onClick={toggleMenu}
+              />
+            )}
+          >
+            <ChangeBlockTypeMenu />
+          </CollapsibleMenu>
+        </div>
+        {/* Change Block Color */}
+        <CollapsibleMenu
+          placement="right"
+          trigger={({ toggleMenu }) => (
+            <MenuSectionItem
+              leftIcon="imagesearch_Roller"
+              label="Color"
+              rightIcon="chevron_right"
+              onClick={toggleMenu}
+            />
+          )}
+        >
+          <ChangeBlockColorsMenu />
+        </CollapsibleMenu>
+      </div>
 
       {/* SECTION */}
       <Divider className="px-2" />
