@@ -23,7 +23,7 @@ const AppHeader = ({
   className = '',
   ...props
 }) => {
-  console.log('páginas:', activePage, activePage.id);
+  // console.log('páginas:', activePage, activePage.id);
 
   const breadcrumbs = useGetPageBreadcrumbs(activePage, pages);
 

@@ -1,7 +1,7 @@
 // import '@/components/ui/CollapsibleMenu/collapsibleMenu.scss';
 
 // Components
-import MenuSectionItem from '@/components/ui/CollapsibleMenu/_menuSectionItem';
+import { MenuSectionItem } from '@/components/ui/CollapsibleMenu/_collapsibleMenuItems';
 
 const ChangeBlockTypeMenu = () => {
   return (
